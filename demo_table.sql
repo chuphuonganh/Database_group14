@@ -274,10 +274,25 @@ INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) 
 ('Starboy', '2016-11-25', 9, 7, 18),
 ('Dangerous Woman', '2016-05-20', 13, 1, 15);
 
-INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
-('Shake It Off', 230, '2014-10-27', 'English', 1, 1),
-('Perfect', 263, '2017-03-03', 'English', 2, 1),
-('Dynamite', 199, '2020-08-21', 'Korean', 3, 4);
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language) VALUES
+('Shake It Off', 230, '2014-10-27', 'English'),
+('Perfect', 263, '2017-03-03', 'English'),
+('Dynamite', 199, '2020-08-21', 'Korean'),
+('Love Story', 235, '2008-09-15', 'English'),
+('You Belong With Me', 231, '2009-04-18', 'English'),
+('Blank Space', 231, '2014-11-10', 'English'),
+('Shake It Off', 219, '2014-08-18', 'English'),
+('All Too Well (10 Min Version)', 613, '2021-11-12', 'English'),
+('Anti-Hero', 200, '2022-10-21', 'English'),
+('Cruel Summer', 178, '2019-08-23', 'English'),
+('Enchanted', 352, '2010-10-25', 'English'),
+('Bad Blood', 211, '2015-05-17', 'English'),
+('Wildest Dreams', 220, '2015-08-31', 'English'),
+('Delicate', 232, '2018-03-12', 'English'),
+('Cardigan', 240, '2020-07-24', 'English'),
+('Willow', 215, '2020-12-11', 'English');
+
+
 
 INSERT INTO Library (LikedSong, FavouriteSong, TotalSongs, PlayCount) VALUES
 (1, 1, 10, 50),
@@ -286,5 +301,7 @@ INSERT INTO Library (LikedSong, FavouriteSong, TotalSongs, PlayCount) VALUES
 INSERT INTO Users (UserName, Email, LibraryID, Address, City, Country) VALUES
 ('Alice', 'alice@example.com', 1, '123 Main St', 'Los Angeles', 'USA'),
 ('Bob', 'bob@example.com', 2, '456 Elm St', 'London', 'UK');
+
+
 
 
