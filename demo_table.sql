@@ -77,6 +77,11 @@ CREATE TABLE Songs_has_Playlists (
     FOREIGN KEY (SongsID) REFERENCES Songs(SongsID) ON DELETE CASCADE,
     FOREIGN KEY (PlaylistID) REFERENCES Playlists(PlaylistID) ON DELETE CASCADE
 );
+ALTER TABLE library
+ADD CONSTRAINT FK_FavouriteSong
+FOREIGN KEY (FavouriteSong) REFERENCES songs(SongsID);
+
+
 -- Thêm dữ liệu vào bảng Artist
 INSERT INTO Artist (ArtistName, Country, Style, City, DateOfBirth, Phone, Email) VALUES
 ('Taylor Swift', 'USA', 'Pop', 'Nashville', '1989-12-13', '1234567890', 'taylor@swift.com'),
