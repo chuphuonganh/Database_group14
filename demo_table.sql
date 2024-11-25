@@ -342,6 +342,7 @@ INSERT INTO Songs (SongName, Duration, PublishedDate, Language, GenreID, AlbumID
 ('Love Lies', 229, '2018-02-16', 'English', 1, NULL),
 ('Savage', 210, '2020-05-02', 'English', 2, 5),
 ('Hot Girl Summer', 200, '2019-08-09', 'English', 2, NULL),
+('Save Your Tears', 210, '2020-08-09', 'English', 1, 3),
 ('Say So', 210, '2020-05-01', 'English', 2, 6),
 ('Need to Know', 230, '2021-10-15', 'English', 2, 7),
 ('Montero (Call Me By Your Name)', 240, '2021-03-26', 'English', 2, 8),
@@ -631,10 +632,13 @@ INSERT INTO Songs (SongName, Duration, PublishedDate, Language, GenreID, AlbumID
 ('Nocturne', 235, '2016-07-01', 'Mandarin', 1, NULL),
 ('Best of Eason Chan', 243, '2015-06-12', 'Cantonese', 1, NULL),
 ('Good Day', 210, '2010-12-09', 'Korean', 1, NULL),
+('Good 4 U', 220, '2021-05-14', 'English', 1, 6),
 ('Under the Moonlight', 240, '2017-02-13', 'Cantonese', 1, NULL),
 ('Firework', 227, '2010-08-24', 'English', 1, NULL),
 ('Blinding Lights', 200, '2019-11-29', 'English', 1, NULL),
+('Somebody That I Used to Know', 230, '2011-07-05', 'English', 1, 28),
 ('The Scientist', 287, '2002-09-09', 'English', 1, NULL),
+('Peaches', 240, '2021-03-19', 'English', 1, 5),
 ('How You Like That', 196, '2020-06-26', 'Korean', 4, NULL);
 
 
