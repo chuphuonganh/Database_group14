@@ -820,6 +820,16 @@ INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID
 ('Love Me Right', 233, '2020-05-29', 'English', 5, 1),
 ('1000 Doves', 249, '2020-05-29', 'English', 5, 1),
 ('Babylon', 237, '2020-05-29', 'English', 5, 1),
+('Royals', 232, '2013-06-03', 'English', NULL, 1),
+('Green Light', 232, '2017-03-02', 'English', NULL, 1),
+('Tennis Court', 216, '2013-04-22', 'English', NULL, 1),
+('Perfect Places', 258, '2017-06-02', 'English', NULL, 1),
+('Team', 204, '2013-06-03', 'English', NULL, 1),
+('Buzzcut Season', 245, '2013-06-03', 'English', NULL, 1),
+('Liability', 204, '2017-01-27', 'English', NULL, 1),
+('Sober', 225, '2017-06-02', 'English', NULL, 1),
+('A World Alone', 255, '2013-06-03', 'English', NULL, 1),
+('Writer In The Dark', 227, '2017-06-02', 'English', NULL, 1),
 ('Grenade', 234, '2010-10-04', 'English', 8, 1),
 ('Just The Way You Are', 258, '2010-10-04', 'English', 8, 1),
 ('The Lazy Song', 185, '2010-10-04', 'English', 8, 1),
@@ -829,7 +839,17 @@ INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID
 ('Runaway Baby', 213, '2010-10-04', 'English', 8, 1),
 ('Our First Time', 244, '2010-10-04', 'English', 8, 1),
 ('Billionaire', 225, '2010-10-04', 'English', 8, 1),
-('Somewhere In Brooklyn', 255, '2010-10-04', 'English', 8, 1);
+('Somewhere In Brooklyn', 255, '2010-10-04', 'English', 8, 1),
+('Youth', 247, '2015-12-04', 'English', NULL, 1),
+('Dance To This', 217, '2018-05-16', 'English', NULL, 1),
+('My My My!', 224, '2018-01-25', 'English', NULL, 1),
+('Bloom', 227, '2018-02-15', 'English', NULL, 1),
+('The Good Side', 213, '2018-02-15', 'English', NULL, 1),
+('Wild', 218, '2015-12-04', 'English', NULL, 1),
+('Fools', 214, '2015-12-04', 'English', NULL, 1),
+('Heaven', 222, '2018-09-14', 'English', NULL, 1),
+('Talk Me Down', 234, '2016-10-21', 'English', NULL, 1),
+('Lucky Strike', 225, '2018-08-31', 'English', NULL, 1);
 
 
 INSERT INTO Library (FavouriteSong, CreatedDate, TotalSongs, PlayCount) VALUES
