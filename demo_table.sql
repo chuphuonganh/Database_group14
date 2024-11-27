@@ -876,7 +876,200 @@ INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID
 ('Fools', 214, '2015-12-04', 'English', NULL, 1),
 ('Heaven', 222, '2018-09-14', 'English', NULL, 1),
 ('Talk Me Down', 234, '2016-10-21', 'English', NULL, 1),
-('Lucky Strike', 225, '2018-08-31', 'English', NULL, 1);
+('Lucky Strike', 225, '2018-08-31', 'English', NULL, 1),
+('With You', 243, '2007-12-04', 'English', NULL, 7),
+('Forever', 248, '2008-04-09', 'English', NULL, 7),
+('No Guidance', 261, '2019-06-08', 'English', NULL, 7),
+('Heat', 222, '2019-07-26', 'English', NULL, 7),
+('Run It!', 215, '2005-06-30', 'English', NULL, 7),
+('Yeah!', 250, '2004-01-27', 'English', NULL, 7),
+('Burn', 251, '2004-03-21', 'English', NULL, 7),
+('OMG', 268, '2010-03-22', 'English', NULL, 7),
+('U Got It Bad', 257, '2001-08-07', 'English', NULL, 7),
+('Love in This Club', 279, '2008-02-22', 'English', NULL, 7),
+('Say Aah', 245, '2009-11-14', 'English', NULL, 7),
+('Bottoms Up', 250, '2010-07-27', 'English', NULL, 7),
+('Na Na', 230, '2014-01-21', 'English', NULL, 7),
+('Slow Motion', 211, '2015-01-20', 'English', NULL, 7),
+('Heart Attack', 262, '2012-03-26', 'English', NULL, 7),
+-- SZA
+('Love Galore', 245, '2017-04-28', 'English', NULL, 18),
+('The Weekend', 236, '2017-06-09', 'English', NULL, 18),
+('Good Days', 279, '2020-12-25', 'English', NULL, 18),
+('I Hate U', 192, '2021-12-03', 'English', NULL, 18),
+('Broken Clocks', 211, '2017-06-09', 'English', NULL, 18),
+
+-- H.E.R.
+('Focus', 209, '2016-09-09', 'English', NULL, 12),
+('Best Part', 194, '2017-10-20', 'English', NULL, 12),
+('Slide', 213, '2019-09-27', 'English', NULL, 12),
+('Damage', 198, '2020-10-21', 'English', NULL, 12),
+('Could’ve Been', 234, '2018-08-03', 'English', NULL, 12),
+
+-- Jhene Aiko
+('Spotless Mind', 227, '2014-09-09', 'English', NULL, 12),
+('The Worst', 237, '2013-11-12', 'English', NULL, 12),
+('B.S.', 206, '2020-03-06', 'English', NULL, 12),
+('P*$$Y Fairy (OTW)', 208, '2020-01-17', 'English', NULL, 12),
+('Sativa', 257, '2017-09-22', 'English', NULL, 12),
+
+-- Normani
+('Motivation', 223, '2019-08-16', 'English', NULL, 7),
+('Wild Side', 221, '2021-07-16', 'English', NULL, 7),
+('Waves', 228, '2018-11-15', 'English', NULL, 7),
+('Love Lies', 204, '2018-02-14', 'English', NULL, 7),
+('Fair', 197, '2022-03-18', 'English', NULL, 7),
+-- Nas
+('If I Ruled The World', 247, '1996-06-04', 'English', NULL, 6),
+('The World Is Yours', 267, '1994-04-19', 'English', NULL, 6),
+('One Mic', 285, '2002-04-16', 'English', NULL, 6),
+('NY State of Mind', 292, '1994-04-19', 'English', NULL, 6),
+('Nas Is Like', 235, '1999-03-02', 'English', NULL, 6),
+
+-- Kendrick Lamar
+('HUMBLE.', 177, '2017-03-30', 'English', NULL, 6),
+('DNA.', 185, '2017-04-14', 'English', NULL, 6),
+('Alright', 217, '2015-06-30', 'English', NULL, 6),
+('Swimming Pools (Drank)', 237, '2012-07-31', 'English', NULL, 6),
+('Money Trees', 393, '2012-10-22', 'English', NULL, 6),
+
+-- J. Cole
+('No Role Modelz', 290, '2014-12-09', 'English', NULL, 6),
+('Middle Child', 215, '2019-01-23', 'English', NULL, 6),
+('Love Yourz', 229, '2014-12-09', 'English', NULL, 6),
+('Wet Dreamz', 239, '2014-12-09', 'English', NULL, 6),
+('G.O.M.D.', 298, '2014-12-09', 'English', NULL, 6),
+
+-- Logic
+('1-800-273-8255', 251, '2017-04-28', 'English', NULL, 6),
+('Homicide', 244, '2019-05-03', 'English', NULL, 6),
+('Black Spiderman', 309, '2017-04-14', 'English', NULL, 6),
+('Under Pressure', 560, '2014-10-21', 'English', NULL, 6),
+('Everyday', 247, '2018-03-02', 'English', NULL, 6),
+
+-- Lizzo
+('Truth Hurts', 173, '2017-09-19', 'English', NULL, 1),
+('Juice', 212, '2019-01-04', 'English', NULL, 1),
+('Good as Hell', 167, '2016-03-08', 'English', NULL, 1),
+('About Damn Time', 199, '2022-04-14', 'English', NULL, 1),
+('Cuz I Love You', 175, '2019-04-19', 'English', NULL, 1),
+-- Lil Nas X
+('Old Town Road', 157, '2019-12-03', 'English', NULL, 6),
+('Montero (Call Me By Your Name)', 137, '2021-03-26', 'English', NULL, 6),
+('Industry Baby', 213, '2021-07-23', 'English', NULL, 6),
+('Panini', 118, '2019-06-20', 'English', NULL, 6),
+('That’s What I Want', 177, '2021-09-17', 'English', NULL, 6),
+
+-- Travis Scott
+('SICKO MODE', 312, '2018-08-03', 'English', NULL, 20),
+('HIGHEST IN THE ROOM', 181, '2019-10-04', 'English', NULL, 20),
+('STARGAZING', 240, '2018-08-03', 'English', NULL, 20),
+('GOOSEBUMPS', 242, '2016-09-16', 'English', NULL, 20),
+('ANTIDOTE', 263, '2015-09-18', 'English', NULL, 20),
+
+-- Future
+('Mask Off', 215, '2017-02-17', 'English', NULL, 20),
+('Life Is Good', 222, '2020-01-10', 'English', NULL, 20),
+('Low Life', 314, '2016-02-05', 'English', NULL, 20),
+('Wait For U', 182, '2022-04-29', 'English', NULL, 20),
+('Jumpman', 213, '2015-09-20', 'English', NULL, 20),
+
+-- Kanye West
+('Stronger', 311, '2007-07-31', 'English', NULL, 6),
+('Gold Digger', 207, '2005-07-05', 'English', NULL, 6),
+('Heartless', 225, '2008-11-04', 'English', NULL, 6),
+('Flashing Lights', 232, '2007-11-22', 'English', NULL, 6),
+('Power', 276, '2010-07-01', 'English', NULL, 6),
+
+-- Jay-Z
+('Empire State of Mind', 275, '2009-10-20', 'English', NULL, 6),
+('99 Problems', 211, '2004-04-27', 'English', NULL, 6),
+('Run This Town', 267, '2009-08-24', 'English', NULL, 6),
+('Big Pimpin\'', 293, '2000-12-28', 'English', NULL, 6),
+('Dirt Off Your Shoulder', 250, '2003-12-04', 'English', NULL, 6),
+
+-- Eminem
+('Lose Yourself', 326, '2002-10-28', 'English', NULL, 6),
+('Without Me', 291, '2002-05-14', 'English', NULL, 6),
+('The Real Slim Shady', 284, '2000-04-18', 'English', NULL, 6),
+('Stan', 404, '2000-12-09', 'English', NULL, 6),
+('Love the Way You Lie', 263, '2010-06-21', 'English', NULL, 6),
+-- Jessie J
+('Price Tag', 220, '2011-01-25', 'English', NULL, 1),
+('Domino', 214, '2011-08-29', 'English', NULL, 1),
+('Bang Bang', 219, '2014-07-29', 'English', NULL, 1),
+('Flashlight', 208, '2015-04-23', 'English', NULL, 1),
+('Who You Are', 213, '2011-11-07', 'English', NULL, 1),
+
+-- Demi Lovato
+('Skyscraper', 223, '2011-07-12', 'English', NULL, 1),
+('Sorry Not Sorry', 211, '2017-07-11', 'English', NULL, 1),
+('Confident', 223, '2015-10-16', 'English', NULL, 1),
+('Heart Attack', 211, '2013-02-24', 'English', NULL, 1),
+('Cool for the Summer', 205, '2015-07-01', 'English', NULL, 1),
+
+-- Nicki Minaj
+('Super Bass', 203, '2011-04-05', 'English', NULL, 6),
+('Anaconda', 252, '2014-08-04', 'English', NULL, 6),
+('Starships', 211, '2012-02-14', 'English', NULL, 6),
+('Moment 4 Life', 263, '2010-12-07', 'English', NULL, 6),
+('Chun-Li', 209, '2018-04-12', 'English', NULL, 6),
+
+-- Cardi B
+('Bodak Yellow', 230, '2017-06-16', 'English', NULL, 6),
+('I Like It', 253, '2018-05-25', 'English', NULL, 6),
+('WAP', 187, '2020-08-07', 'English', NULL, 6),
+('Money', 192, '2018-10-23', 'English', NULL, 6),
+('Press', 178, '2019-05-31', 'English', NULL, 6),
+
+-- Megan Thee Stallion
+('Savage', 157, '2020-04-07', 'English', NULL, 6),
+('Hot Girl Summer', 201, '2019-08-09', 'English', NULL, 6),
+('Body', 162, '2020-11-20', 'English', NULL, 6),
+('Thot Shit', 198, '2021-06-11', 'English', NULL, 6),
+('Big Ole Freak', 182, '2018-10-22', 'English', NULL, 6),
+
+-- Doja Cat
+('Say So', 238, '2019-11-07', 'English', NULL, 6),
+('Kiss Me More', 208, '2021-04-09', 'English', NULL, 6),
+('Juicy', 191, '2019-08-15', 'English', NULL, 6),
+('Woman', 172, '2021-10-01', 'English', NULL, 6),
+('Streets', 217, '2019-11-07', 'English', NULL, 6),
+('Dance Monkey', 209, '2019-05-10', 'English', NULL, 1),
+('Never Seen the Rain', 208, '2019-07-16', 'English', NULL, 1),
+('Fly Away', 230, '2020-11-13', 'English', NULL, 1),
+('Cloudy Day', 211, '2021-06-10', 'English', NULL, 1),
+('Bad Child', 192, '2020-03-12', 'English', NULL, 1),
+
+-- Lorde
+('Royals', 185, '2013-06-03', 'English', NULL, 1),
+('Team', 193, '2013-09-13', 'English', NULL, 1),
+('Green Light', 228, '2017-03-02', 'English', NULL, 1),
+('Solar Power', 216, '2021-06-10', 'English', NULL, 1),
+('Tennis Court', 198, '2013-06-07', 'English', NULL, 1),
+
+-- Sam Smith
+('Stay With Me', 172, '2014-04-14', 'English', NULL, 12),
+('I’m Not the Only One', 248, '2014-08-31', 'English', NULL, 12),
+('Too Good at Goodbyes', 201, '2017-09-08', 'English', NULL, 12),
+('Dancing with a Stranger', 171, '2019-01-11', 'English', NULL, 12),
+('Unholy', 156, '2022-09-22', 'English', NULL, 12),
+
+-- Ellie Goulding
+('Lights', 231, '2010-11-16', 'English', NULL, 9),
+('Burn', 231, '2013-07-05', 'English', NULL, 9),
+('Love Me Like You Do', 252, '2015-01-07', 'English', NULL, 9),
+('On My Mind', 224, '2015-09-17', 'English', NULL, 9),
+('Close to Me', 211, '2018-10-24', 'English', NULL, 9),
+
+-- Florence Welch
+('Dog Days Are Over', 252, '2008-12-01', 'English', NULL, 17),
+('Shake It Out', 244, '2011-09-14', 'English', NULL, 17),
+('Spectrum', 224, '2012-07-05', 'English', NULL, 17),
+('Hunger', 220, '2018-05-03', 'English', NULL, 17),
+('King', 262, '2022-02-23', 'English', NULL, 17);
+
+
 
 
 INSERT INTO Library (FavouriteSong, CreatedDate, TotalSongs, PlayCount) VALUES
