@@ -396,51 +396,50 @@ INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) 
     ('My Way: The Best Of Frank Sinatra [Disc 1]', '1997-10-14', 85, 85, 15),
     ('Roda De Funk', '1999-06-25', 86, 86, 10);
 INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
-('The Boy Is Mine', 259, '1998-04-27', 'English', NULL, 7),
-('I Wanna Be Down', 222, '1994-10-12', 'English', NULL, 7),
-('Have You Ever?', 283, '1998-04-13', 'English', NULL, 7),
-('Almost Doesn’t Count', 213, '1999-10-25', 'English', NULL, 7),
-('Sitting Up In My Room', 236, '1995-03-21', 'English', NULL, 7),
-('Put It Down', 230, '2012-06-28', 'English', NULL, 7),
-('When You Touch Me', 228, '2004-10-05', 'English', NULL, 7),
-('Baby', 204, '1994-10-12', 'English', NULL, 7),
-('Top of the World', 210, '1999-09-13', 'English', NULL, 7),
-('So Sick', 218, '2006-01-01', 'English', NULL, 7),
-('Miss Independent', 227, '2008-06-25', 'English', NULL, 7),
-('Closer', 220, '2008-04-14', 'English', NULL, 7),
-('Because of You', 220, '2007-04-30', 'English', NULL, 7),
-('Sexy Love', 236, '2006-05-01', 'English', NULL, 7),
-('Let Me Love You', 230, '2004-10-14', 'English', NULL, 7),
-('Go On Girl', 218, '2007-05-01', 'English', NULL, 7),
-('One in a Million', 234, '2006-10-10', 'English', NULL, 7),
-('Part of the List', 218, '2007-12-11', 'English', NULL, 7),
-('All of Me', 269, '2013-08-12', 'English', NULL, 7),
-('Ordinary People', 238, '2005-11-04', 'English', NULL, 7),
-('Tonight (Best You Ever Had)', 247, '2012-12-14', 'English', NULL, 7),
-('Green Light', 215, '2008-11-03', 'English', NULL, 7),
-('Save Room', 204, '2006-10-10', 'English', NULL, 7),
-('Used to Love U', 222, '2004-04-06', 'English', NULL, 7),
-('Let’s Stay Together', 256, '2010-12-01', 'English', NULL, 7),
-('You & I (Nobody in the World)', 228, '2014-03-24', 'English', NULL, 7),
-('If You’re Out There', 238, '2008-11-01', 'English', NULL, 7),
-('Mine', 230, '2010-08-04', 'English', 38, 1),
-('Back to December', 290, '2010-11-15', 'English', 38, 1),
-('Speak Now', 244, '2010-10-25', 'English', 38, 1),
-('Dynamite', 199, '2020-08-21', 'English', NULL, 4),
-('Butter', 162, '2021-05-21', 'English', NULL, 4),
-('Permission to Dance', 212, '2021-07-09', 'English', NULL, 4),
-('Boy With Luv', 229, '2019-04-12', 'Korean', NULL, 4),
-('Fake Love', 233, '2018-05-18', 'Korean', NULL, 4),
-('Spring Day', 292, '2017-02-13', 'Korean', NULL, 4),
-('Life Goes On', 223, '2020-11-20', 'Korean', NULL, 4),
-('Fire', 211, '2016-05-02', 'Korean', NULL, 4),
-('Mic Drop', 247, '2017-09-18', 'Korean', NULL, 4),
-('DNA', 224, '2017-09-18', 'Korean', NULL, 4),
-('Idol', 230, '2018-08-24', 'Korean', NULL, 4),
-('Blood Sweat & Tears', 237, '2016-10-10', 'Korean', NULL, 4),
-('Save Me', 215, '2016-05-02', 'Korean', NULL, 4),
-('No More Dream', 228, '2013-06-12', 'Korean', NULL, 4),
-('Run', 233, '2015-11-30', 'Korean', NULL, 4),
+-- Axé Bahia 2001
+('Dança do Ventre', 230, '2001-02-10', 'Portuguese', 54, 14),
+('O Canto da Cidade', 210, '2001-02-10', 'Portuguese', 54, 14),
+('Rebolation', 200, '2001-02-10', 'Portuguese', 54, 14),
+-- BBC Sessions [Disc 1] [Live]
+('Communication Breakdown [Live]', 185, '1997-11-11', 'English', 55, 12),
+('What Is and What Should Never Be [Live]', 270, '1997-11-11', 'English', 55, 12),
+('Dazed and Confused [Live]', 370, '1997-11-11', 'English', 55, 12),
+-- Bongo Fury
+('Advance Romance', 240, '1975-10-02', 'English', 56, 10),
+('Carolina Hard-Core Ecstasy', 310, '1975-10-02', 'English', 56, 10),
+('Debra Kadabra', 220, '1975-10-02', 'English', 56, 10),
+-- Carnaval 2001
+('Explode Coração', 210, '2001-03-10', 'Portuguese', 57, 15),
+('Festa na Favela', 240, '2001-03-10', 'Portuguese', 57, 15),
+('Coração Brasileiro', 230, '2001-03-10', 'Portuguese', 57, 15),
+-- Chill: Brazil (Disc 1)
+('Aquarela do Brasil', 300, '2002-04-12', 'Portuguese', 58, 13),
+('Corcovado', 240, '2002-04-12', 'Portuguese', 58, 13),
+('Garota de Ipanema', 270, '2002-04-12', 'Portuguese', 58, 13),
+-- Chill: Brazil (Disc 2)
+('Samba de Verão', 210, '2002-04-12', 'Portuguese', 59, 13),
+('Wave', 240, '2002-04-12', 'Portuguese', 59, 13),
+('Chega de Saudade', 260, '2002-04-12', 'Portuguese', 59, 13),
+-- Garage Inc. (Disc 1)
+('Turn the Page', 335, '1998-11-24', 'English', 60, 11),
+('Whiskey in the Jar', 320, '1998-11-24', 'English', 60, 11),
+('Die, Die My Darling', 195, '1998-11-24', 'English', 60, 11),
+-- Greatest Hits II
+('A Kind of Magic', 270, '1991-10-28', 'English', 61, 17),
+('Under Pressure', 240, '1991-10-28', 'English', 61, 17),
+('Radio Ga Ga', 305, '1991-10-28', 'English', 61, 17),
+-- Greatest Kiss
+('Rock and Roll All Nite', 180, '1997-04-08', 'English', 62, 20),
+('Detroit Rock City', 220, '1997-04-08', 'English', 62, 20),
+('Beth', 160, '1997-04-08', 'English', 62, 20),
+-- Heart of the Night
+('Heart of the Night', 230, '1998-06-15', 'English', 63, 16),
+('Midnight Magic', 245, '1998-06-15', 'English', 63, 16),
+('Calm Horizons', 210, '1998-06-15', 'English', 63, 16),
+-- International Superhits
+('Basket Case', 182, '2001-11-13', 'English', 64, 21),
+('Good Riddance (Time of Your Life)', 157, '2001-11-13', 'English', 64, 21),
+('When I Come Around', 175, '2001-11-13', 'English', 64, 21),
 ('A Head Full of Dreams', 237, '2015-12-04', 'English', 2, 2),
 ('Birds', 236, '2015-12-04', 'English', 2, 2),
 ('Hymn for the Weekend', 258, '2016-01-25', 'English', 2, 2),
@@ -969,16 +968,6 @@ INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID
 ('Love Me Right', 233, '2020-05-29', 'English', 5, 1),
 ('1000 Doves', 249, '2020-05-29', 'English', 5, 1),
 ('Babylon', 237, '2020-05-29', 'English', 5, 1),
-('Royals', 232, '2013-06-03', 'English', NULL, 1),
-('Green Light', 232, '2017-03-02', 'English', NULL, 1),
-('Tennis Court', 216, '2013-04-22', 'English', NULL, 1),
-('Perfect Places', 258, '2017-06-02', 'English', NULL, 1),
-('Team', 204, '2013-06-03', 'English', NULL, 1),
-('Buzzcut Season', 245, '2013-06-03', 'English', NULL, 1),
-('Liability', 204, '2017-01-27', 'English', NULL, 1),
-('Sober', 225, '2017-06-02', 'English', NULL, 1),
-('A World Alone', 255, '2013-06-03', 'English', NULL, 1),
-('Writer In The Dark', 227, '2017-06-02', 'English', NULL, 1),
 ('Grenade', 234, '2010-10-04', 'English', 8, 1),
 ('Just The Way You Are', 258, '2010-10-04', 'English', 8, 1),
 ('The Lazy Song', 185, '2010-10-04', 'English', 8, 1),
@@ -989,207 +978,149 @@ INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID
 ('Our First Time', 244, '2010-10-04', 'English', 8, 1),
 ('Billionaire', 225, '2010-10-04', 'English', 8, 1),
 ('Somewhere In Brooklyn', 255, '2010-10-04', 'English', 8, 1),
-('Youth', 247, '2015-12-04', 'English', NULL, 1),
-('Dance To This', 217, '2018-05-16', 'English', NULL, 1),
-('My My My!', 224, '2018-01-25', 'English', NULL, 1),
-('Bloom', 227, '2018-02-15', 'English', NULL, 1),
-('The Good Side', 213, '2018-02-15', 'English', NULL, 1),
-('Wild', 218, '2015-12-04', 'English', NULL, 1),
-('Fools', 214, '2015-12-04', 'English', NULL, 1),
-('Heaven', 222, '2018-09-14', 'English', NULL, 1),
-('Talk Me Down', 234, '2016-10-21', 'English', NULL, 1),
-('Lucky Strike', 225, '2018-08-31', 'English', NULL, 1),
-('With You', 243, '2007-12-04', 'English', NULL, 7),
-('Forever', 248, '2008-04-09', 'English', NULL, 7),
-('No Guidance', 261, '2019-06-08', 'English', NULL, 7),
-('Heat', 222, '2019-07-26', 'English', NULL, 7),
-('Run It!', 215, '2005-06-30', 'English', NULL, 7),
-('Yeah!', 250, '2004-01-27', 'English', NULL, 7),
-('Burn', 251, '2004-03-21', 'English', NULL, 7),
-('OMG', 268, '2010-03-22', 'English', NULL, 7),
-('U Got It Bad', 257, '2001-08-07', 'English', NULL, 7),
-('Love in This Club', 279, '2008-02-22', 'English', NULL, 7),
-('Say Aah', 245, '2009-11-14', 'English', NULL, 7),
-('Bottoms Up', 250, '2010-07-27', 'English', NULL, 7),
-('Na Na', 230, '2014-01-21', 'English', NULL, 7),
-('Slow Motion', 211, '2015-01-20', 'English', NULL, 7),
-('Heart Attack', 262, '2012-03-26', 'English', NULL, 7),
--- SZA
-('Love Galore', 245, '2017-04-28', 'English', NULL, 18),
-('The Weekend', 236, '2017-06-09', 'English', NULL, 18),
-('Good Days', 279, '2020-12-25', 'English', NULL, 18),
-('I Hate U', 192, '2021-12-03', 'English', NULL, 18),
-('Broken Clocks', 211, '2017-06-09', 'English', NULL, 18),
-
--- H.E.R.
-('Focus', 209, '2016-09-09', 'English', NULL, 12),
-('Best Part', 194, '2017-10-20', 'English', NULL, 12),
-('Slide', 213, '2019-09-27', 'English', NULL, 12),
-('Damage', 198, '2020-10-21', 'English', NULL, 12),
-('Could’ve Been', 234, '2018-08-03', 'English', NULL, 12),
-
--- Jhene Aiko
-('Spotless Mind', 227, '2014-09-09', 'English', NULL, 12),
-('The Worst', 237, '2013-11-12', 'English', NULL, 12),
-('B.S.', 206, '2020-03-06', 'English', NULL, 12),
-('P*$$Y Fairy (OTW)', 208, '2020-01-17', 'English', NULL, 12),
-('Sativa', 257, '2017-09-22', 'English', NULL, 12),
-
--- Normani
-('Motivation', 223, '2019-08-16', 'English', NULL, 7),
-('Wild Side', 221, '2021-07-16', 'English', NULL, 7),
-('Waves', 228, '2018-11-15', 'English', NULL, 7),
-('Love Lies', 204, '2018-02-14', 'English', NULL, 7),
-('Fair', 197, '2022-03-18', 'English', NULL, 7),
--- Nas
-('If I Ruled The World', 247, '1996-06-04', 'English', NULL, 6),
-('The World Is Yours', 267, '1994-04-19', 'English', NULL, 6),
-('One Mic', 285, '2002-04-16', 'English', NULL, 6),
-('NY State of Mind', 292, '1994-04-19', 'English', NULL, 6),
-('Nas Is Like', 235, '1999-03-02', 'English', NULL, 6),
-
--- Kendrick Lamar
-('HUMBLE.', 177, '2017-03-30', 'English', NULL, 6),
-('DNA.', 185, '2017-04-14', 'English', NULL, 6),
-('Alright', 217, '2015-06-30', 'English', NULL, 6),
-('Swimming Pools (Drank)', 237, '2012-07-31', 'English', NULL, 6),
-('Money Trees', 393, '2012-10-22', 'English', NULL, 6),
-
--- J. Cole
-('No Role Modelz', 290, '2014-12-09', 'English', NULL, 6),
-('Middle Child', 215, '2019-01-23', 'English', NULL, 6),
-('Love Yourz', 229, '2014-12-09', 'English', NULL, 6),
-('Wet Dreamz', 239, '2014-12-09', 'English', NULL, 6),
-('G.O.M.D.', 298, '2014-12-09', 'English', NULL, 6),
-
--- Logic
-('1-800-273-8255', 251, '2017-04-28', 'English', NULL, 6),
-('Homicide', 244, '2019-05-03', 'English', NULL, 6),
-('Black Spiderman', 309, '2017-04-14', 'English', NULL, 6),
-('Under Pressure', 560, '2014-10-21', 'English', NULL, 6),
-('Everyday', 247, '2018-03-02', 'English', NULL, 6),
-
--- Lizzo
-('Truth Hurts', 173, '2017-09-19', 'English', NULL, 1),
-('Juice', 212, '2019-01-04', 'English', NULL, 1),
-('Good as Hell', 167, '2016-03-08', 'English', NULL, 1),
-('About Damn Time', 199, '2022-04-14', 'English', NULL, 1),
-('Cuz I Love You', 175, '2019-04-19', 'English', NULL, 1),
--- Lil Nas X
-('Old Town Road', 157, '2019-12-03', 'English', NULL, 6),
-('Montero (Call Me By Your Name)', 137, '2021-03-26', 'English', NULL, 6),
-('Industry Baby', 213, '2021-07-23', 'English', NULL, 6),
-('Panini', 118, '2019-06-20', 'English', NULL, 6),
-('That’s What I Want', 177, '2021-09-17', 'English', NULL, 6),
-
--- Travis Scott
-('SICKO MODE', 312, '2018-08-03', 'English', NULL, 20),
-('HIGHEST IN THE ROOM', 181, '2019-10-04', 'English', NULL, 20),
-('STARGAZING', 240, '2018-08-03', 'English', NULL, 20),
-('GOOSEBUMPS', 242, '2016-09-16', 'English', NULL, 20),
-('ANTIDOTE', 263, '2015-09-18', 'English', NULL, 20),
-
--- Future
-('Mask Off', 215, '2017-02-17', 'English', NULL, 20),
-('Life Is Good', 222, '2020-01-10', 'English', NULL, 20),
-('Low Life', 314, '2016-02-05', 'English', NULL, 20),
-('Wait For U', 182, '2022-04-29', 'English', NULL, 20),
-('Jumpman', 213, '2015-09-20', 'English', NULL, 20),
-
--- Kanye West
-('Stronger', 311, '2007-07-31', 'English', NULL, 6),
-('Gold Digger', 207, '2005-07-05', 'English', NULL, 6),
-('Heartless', 225, '2008-11-04', 'English', NULL, 6),
-('Flashing Lights', 232, '2007-11-22', 'English', NULL, 6),
-('Power', 276, '2010-07-01', 'English', NULL, 6),
-
--- Jay-Z
-('Empire State of Mind', 275, '2009-10-20', 'English', NULL, 6),
-('99 Problems', 211, '2004-04-27', 'English', NULL, 6),
-('Run This Town', 267, '2009-08-24', 'English', NULL, 6),
-('Big Pimpin\'', 293, '2000-12-28', 'English', NULL, 6),
-('Dirt Off Your Shoulder', 250, '2003-12-04', 'English', NULL, 6),
-
--- Eminem
-('Lose Yourself', 326, '2002-10-28', 'English', NULL, 6),
-('Without Me', 291, '2002-05-14', 'English', NULL, 6),
-('The Real Slim Shady', 284, '2000-04-18', 'English', NULL, 6),
-('Stan', 404, '2000-12-09', 'English', NULL, 6),
-('Love the Way You Lie', 263, '2010-06-21', 'English', NULL, 6),
--- Jessie J
-('Price Tag', 220, '2011-01-25', 'English', NULL, 1),
-('Domino', 214, '2011-08-29', 'English', NULL, 1),
-('Bang Bang', 219, '2014-07-29', 'English', NULL, 1),
-('Flashlight', 208, '2015-04-23', 'English', NULL, 1),
-('Who You Are', 213, '2011-11-07', 'English', NULL, 1),
-
--- Demi Lovato
-('Skyscraper', 223, '2011-07-12', 'English', NULL, 1),
-('Sorry Not Sorry', 211, '2017-07-11', 'English', NULL, 1),
-('Confident', 223, '2015-10-16', 'English', NULL, 1),
-('Heart Attack', 211, '2013-02-24', 'English', NULL, 1),
-('Cool for the Summer', 205, '2015-07-01', 'English', NULL, 1),
-
--- Nicki Minaj
-('Super Bass', 203, '2011-04-05', 'English', NULL, 6),
-('Anaconda', 252, '2014-08-04', 'English', NULL, 6),
-('Starships', 211, '2012-02-14', 'English', NULL, 6),
-('Moment 4 Life', 263, '2010-12-07', 'English', NULL, 6),
-('Chun-Li', 209, '2018-04-12', 'English', NULL, 6),
-
--- Cardi B
-('Bodak Yellow', 230, '2017-06-16', 'English', NULL, 6),
-('I Like It', 253, '2018-05-25', 'English', NULL, 6),
-('WAP', 187, '2020-08-07', 'English', NULL, 6),
-('Money', 192, '2018-10-23', 'English', NULL, 6),
-('Press', 178, '2019-05-31', 'English', NULL, 6),
-
--- Megan Thee Stallion
-('Savage', 157, '2020-04-07', 'English', NULL, 6),
-('Hot Girl Summer', 201, '2019-08-09', 'English', NULL, 6),
-('Body', 162, '2020-11-20', 'English', NULL, 6),
-('Thot Shit', 198, '2021-06-11', 'English', NULL, 6),
-('Big Ole Freak', 182, '2018-10-22', 'English', NULL, 6),
-
--- Doja Cat
-('Say So', 238, '2019-11-07', 'English', NULL, 6),
-('Kiss Me More', 208, '2021-04-09', 'English', NULL, 6),
-('Juicy', 191, '2019-08-15', 'English', NULL, 6),
-('Woman', 172, '2021-10-01', 'English', NULL, 6),
-('Streets', 217, '2019-11-07', 'English', NULL, 6),
-('Dance Monkey', 209, '2019-05-10', 'English', NULL, 1),
-('Never Seen the Rain', 208, '2019-07-16', 'English', NULL, 1),
-('Fly Away', 230, '2020-11-13', 'English', NULL, 1),
-('Cloudy Day', 211, '2021-06-10', 'English', NULL, 1),
-('Bad Child', 192, '2020-03-12', 'English', NULL, 1),
-
--- Lorde
-('Royals', 185, '2013-06-03', 'English', NULL, 1),
-('Team', 193, '2013-09-13', 'English', NULL, 1),
-('Green Light', 228, '2017-03-02', 'English', NULL, 1),
-('Solar Power', 216, '2021-06-10', 'English', NULL, 1),
-('Tennis Court', 198, '2013-06-07', 'English', NULL, 1),
-
--- Sam Smith
-('Stay With Me', 172, '2014-04-14', 'English', NULL, 12),
-('I’m Not the Only One', 248, '2014-08-31', 'English', NULL, 12),
-('Too Good at Goodbyes', 201, '2017-09-08', 'English', NULL, 12),
-('Dancing with a Stranger', 171, '2019-01-11', 'English', NULL, 12),
-('Unholy', 156, '2022-09-22', 'English', NULL, 12),
-
--- Ellie Goulding
-('Lights', 231, '2010-11-16', 'English', NULL, 9),
-('Burn', 231, '2013-07-05', 'English', NULL, 9),
-('Love Me Like You Do', 252, '2015-01-07', 'English', NULL, 9),
-('On My Mind', 224, '2015-09-17', 'English', NULL, 9),
-('Close to Me', 211, '2018-10-24', 'English', NULL, 9),
-
--- Florence Welch
-('Dog Days Are Over', 252, '2008-12-01', 'English', NULL, 17),
-('Shake It Out', 244, '2011-09-14', 'English', NULL, 17),
-('Spectrum', 224, '2012-07-05', 'English', NULL, 17),
-('Hunger', 220, '2018-05-03', 'English', NULL, 17),
-('King', 262, '2022-02-23', 'English', NULL, 17);
+('Starry Night Opening [Live]', 200, '1997-05-15', 'English', 80, 16),
+('Midnight Stars [Live]', 270, '1997-05-15', 'English', 80, 16),
+('Nightfall Dreams [Live]', 240, '1997-05-15', 'English', 80, 16),
+('Supernatural Vibes', 210, '1999-06-15', 'English', 71, 13),
+('Ethereal Sounds', 220, '1999-06-15', 'English', 71, 13),
+('Soulful Journey', 240, '1999-06-15', 'English', 71, 13),
+('Shining Through', 210, '2007-06-05', 'English', 65, 11),
+('Into the Horizon', 220, '2007-06-05', 'English', 65, 11),
+('Enlightened Soul', 230, '2007-06-05', 'English', 65, 11),
+('Ziggy Stardust', 210, '1972-06-16', 'English', 11, 50),
+('Suffragette City', 230, '1972-06-16', 'English', 11, 50),
+('Rock ‘n’ Roll Suicide', 240, '1972-06-16', 'English', 11, 50),
+-- Acústico MTV [Live]
+('A Estrada', 220, '1999-05-15', 'Portuguese', 13, 51),
+('O Que É, O Que É?', 230, '1999-05-15', 'Portuguese', 13, 51),
+('Tempo Perdido', 210, '1999-05-15', 'Portuguese', 13, 51),
+-- Cidade Negra - Hits
+('Girassol', 240, '1999-07-22', 'Portuguese', 15, 52),
+('O Erê', 230, '1999-07-22', 'Portuguese', 15, 52),
+('Poxa Vida', 220, '1999-07-22', 'Portuguese', 15, 52),
+-- Na Pista
+('Onda', 210, '2001-11-10', 'Portuguese', 12, 53),
+('Vem Meu Amor', 220, '2001-11-10', 'Portuguese', 12, 53),
+('Festa', 230, '2001-11-10', 'Portuguese', 12, 53),
+-- Meus Momentos
+('Moments of Life', 240, '1998-08-12', 'Portuguese', 66, 15),
+('Saudades', 220, '1998-08-12', 'Portuguese', 66, 15),
+('Lembranças', 230, '1998-08-12', 'Portuguese', 66, 15),
+-- Minha História
+('Memórias Musicais', 220, '2001-09-25', 'Portuguese', 67, 17),
+('Caminho da Vida', 210, '2001-09-25', 'Portuguese', 67, 17),
+('Histórias de Amor', 230, '2001-09-25', 'Portuguese', 67, 17),
+-- MK III The Final Concerts [Disc 1]
+('Farewell Concert', 250, '1996-03-19', 'English', 68, 14),
+('Final Encore', 240, '1996-03-19', 'English', 68, 14),
+('End of the Road', 230, '1996-03-19', 'English', 68, 14),
+-- Physical Graffiti [Disc 1]
+('Rock the House', 250, '1975-02-24', 'English', 69, 15),
+('Stairway to Heaven', 360, '1975-02-24', 'English', 69, 15),
+('Immigrant Song', 210, '1975-02-24', 'English', 69, 15),
+-- Sambas De Enredo 2001
+('Samba do Ano', 200, '2001-01-10', 'Portuguese', 70, 20),
+('Batuque no Coração', 210, '2001-01-10', 'Portuguese', 70, 20),
+('Carnaval na Rua', 220, '2001-01-10', 'Portuguese', 70, 20),
+-- The Best of Ed Motta
+('The Best of the Best', 200, '2000-08-22', 'Portuguese', 72, 12),
+('Soulful Vibes', 220, '2000-08-22', 'Portuguese', 72, 12),
+('Golden Years', 210, '2000-08-22', 'Portuguese', 72, 12),
+-- The Essential Miles Davis [Disc 1]
+('Legendary Trumpet', 230, '2001-05-15', 'English', 73, 12),
+('Jazz Maestro', 240, '2001-05-15', 'English', 73, 12),
+('Miles’ Melodies', 220, '2001-05-15', 'English', 73, 12),
+-- Use Your Illusion II
+('Illusion Dreams', 240, '1991-09-17', 'English', 74, 14),
+('Visions of the Future', 250, '1991-09-17', 'English', 74, 14),
+('Unveiled Truth', 260, '1991-09-17', 'English', 74, 14),
+-- Voyage to India
+('India Calling', 220, '2002-09-24', 'English', 75, 10),
+('Sacred Journey', 230, '2002-09-24', 'English', 75, 10),
+('Vibrations of India', 240, '2002-09-24', 'English', 75, 10),
+-- Yesstory [Disc 2]
+('Timeless Stories', 230, '1993-10-26', 'English', 76, 14),
+('Classic Yes', 250, '1993-10-26', 'English', 76, 14),
+('Legendary Sound', 240, '1993-10-26', 'English', 76, 14),
+-- Zooropa
+('Zooropa Dreams', 220, '1993-07-05', 'English', 77, 10),
+('Virtual Reality', 210, '1993-07-05', 'English', 77, 10),
+('Futuristic Sound', 230, '1993-07-05', 'English', 77, 10),
+-- Greatest Love Songs
+('Eternal Love', 210, '2002-03-25', 'English', 78, 17),
+('Endless Romance', 220, '2002-03-25', 'English', 78, 17),
+('Heartfelt Memories', 230, '2002-03-25', 'English', 78, 17),
+-- Amazing Guitar Hits
+('Guitar Magic', 200, '2003-06-22', 'English', 79, 13),
+('Strings of Destiny', 210, '2003-06-22', 'English', 79, 13),
+('Shredding the Night', 220, '2003-06-22', 'English', 79, 13),
+-- Greatest Show!
+('Showtime!', 180, '1999-11-29', 'English', 81, 22),
+('The Big Finale', 220, '1999-11-29', 'English', 81, 22),
+('Encore Spectacle', 195, '1999-11-29', 'English', 81, 22),
+-- Songs
+('Melody of Life', 210, '2001-03-20', 'English', 82, 18),
+('Soulful Notes', 240, '2001-03-20', 'English', 82, 18),
+('Harmonic Dreams', 230, '2001-03-20', 'English', 82, 18),
+-- HITS
+('Hit Me Up', 200, '2000-11-10', 'English', 83, 12),
+('Chartbuster', 185, '2000-11-10', 'English', 83, 12),
+('Golden Beat', 195, '2000-11-10', 'English', 83, 12),
+-- 90s Forever!
+('Retro Love', 230, '2004-01-05', 'English', 84, 13),
+('Groove Machine', 250, '2004-01-05', 'English', 84, 13),
+('Back to 90s', 240, '2004-01-05', 'English', 84, 13),
+-- MPB Anthology Vol.1
+('Classics of MPB', 210, '2005-07-02', 'Portuguese', 85, 11),
+('Tropical Breeze', 190, '2005-07-02', 'Portuguese', 85, 11),
+('Brazilian Harmony', 200, '2005-07-02', 'Portuguese', 85, 11),
+-- Brasil Roots
+('Samba Spirit', 220, '1999-10-14', 'Portuguese', 86, 16),
+('Carnival Rhythms', 245, '1999-10-14', 'Portuguese', 86, 16),
+('Roots of Brazil', 230, '1999-10-14', 'Portuguese', 86, 16),
+-- Gold Hits
+('Golden Times', 210, '1998-12-15', 'English', 87, 12),
+('Classic Memories', 195, '1998-12-15', 'English', 87, 12),
+('Timeless Tunes', 205, '1998-12-15', 'English', 87, 12),
+-- Pure Music
+('Clean Harmony', 240, '2003-09-21', 'English', 88, 13),
+('Pure Rhythm', 260, '2003-09-21', 'English', 88, 13),
+('Melodic Essence', 250, '2003-09-21', 'English', 88, 13),
+-- Café Brazil
+('Morning Samba', 220, '1998-04-18', 'Portuguese', 89, 14),
+('Brazilian Coffee', 230, '1998-04-18', 'Portuguese', 89, 14),
+('Latte Melody', 240, '1998-04-18', 'Portuguese', 89, 14),
+-- Bossa Nova Night
+('Bossa Vibes', 240, '2004-07-15', 'Portuguese', 90, 12),
+('Nova Dreams', 250, '2004-07-15', 'Portuguese', 90, 12),
+('Smooth Jazz Night', 270, '2004-07-15', 'Portuguese', 90, 12),
+('Lounge Chill', 240, '2001-06-18', 'Portuguese', 13, 94),
+('Samba do Sol', 210, '2001-06-18', 'Portuguese', 13, 94),
+('Relaxando', 220, '2001-06-18', 'Portuguese', 13, 94),
+-- Fiesta Maxima
+('Baila Fiesta', 230, '2003-08-10', 'Spanish', 14, 95),
+('La Fiesta', 240, '2003-08-10', 'Spanish', 14, 95),
+('Viva la Vida', 220, '2003-08-10', 'Spanish', 14, 95),
+-- Ultimate Chill
+('Chill Zone', 250, '2004-12-20', 'English', 18, 96),
+('Easy Going', 210, '2004-12-20', 'English', 18, 96),
+('Night Breeze', 230, '2004-12-20', 'English', 18, 96),
+-- Smooth Jazz Deluxe
+('Smooth Ride', 240, '2005-02-28', 'English', 15, 97),
+('Jazz Breeze', 220, '2005-02-28', 'English', 15, 97),
+('Late Night', 230, '2005-02-28', 'English', 15, 97),
+-- Electro Latino
+('Electro Beat', 210, '2006-10-07', 'Spanish', 20, 98),
+('Latino Groove', 230, '2006-10-07', 'Spanish', 20, 98),
+('Fiesta Electronica', 220, '2006-10-07', 'Spanish', 20, 98),
+-- Samba Carnival
+('Samba da Rua', 240, '2007-01-10', 'Portuguese', 22, 99),
+('Carnaval Carioca', 230, '2007-01-10', 'Portuguese', 22, 99),
+('Samba do Sol', 220, '2007-01-10', 'Portuguese', 22, 99),
+-- Roda De Funk
+('Funk do Roda', 210, '1999-06-25', 'Portuguese', 10, 100),
+('Roda Funk', 220, '1999-06-25', 'Portuguese', 10, 100),
+('Funk Carioca', 230, '1999-06-25', 'Portuguese', 10, 100);
 
 
 
