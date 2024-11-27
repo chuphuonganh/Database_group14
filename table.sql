@@ -51,7 +51,7 @@ CREATE TABLE Library (
 CREATE TABLE Users (
     UsersID INT AUTO_INCREMENT PRIMARY KEY,
     UserName VARCHAR(100) NOT NULL,
-    Email VARCHAR(100) UNIQUE,
+    Email VARCHAR(100),
     JoinedDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     Member ENUM('NORMAL', 'PREMIUM') DEFAULT 'NORMAL',
     LibraryID INT NOT NULL,
@@ -1444,7 +1444,6 @@ INSERT INTO Users (UserName, Email, LibraryID, Address, City, Country) VALUES
 ('Steve', 'steve@example.com', 45, '3333 Chestnut Ave', 'Amsterdam', 'Netherlands'),
 ('Tanya', 'tanya@example.com', 46, '3434 Cypress Ave', 'Copenhagen', 'Denmark'),
 ('Ursula', 'ursula@example.com', 47, '3535 Redwood Ave', 'Dublin', 'Ireland'),
-('Victor', 'victor@example.com', 48, '3636 Elm Lane', 'Reykjavik', 'Iceland'),
 ('Wanda', 'wanda@example.com', 49, '3737 Birch Lane', 'Athens', 'Greece'),
 ('Xena', 'xena@example.com', 50, '3838 Aspen Ave', 'Edinburgh', 'Scotland'),
 ('Adam', 'adam@example.com', 51, '1415 Pine St', 'Los Angeles', 'USA'),
