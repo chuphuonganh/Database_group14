@@ -69,6 +69,10 @@ CREATE TABLE Playlists (
     FOREIGN KEY (LibraryID) REFERENCES Library(LibraryID) ON DELETE CASCADE
 );
 
+ALTER TABLE library
+ADD CONSTRAINT FK_FavouriteSong
+FOREIGN KEY (FavouriteSong) REFERENCES songs(SongsID);
+
 CREATE TABLE Songs_has_Playlists (
     SongsID INT NOT NULL,
     PlaylistID INT NOT NULL,
@@ -76,10 +80,24 @@ CREATE TABLE Songs_has_Playlists (
     FOREIGN KEY (SongsID) REFERENCES Songs(SongsID) ON DELETE CASCADE,
     FOREIGN KEY (PlaylistID) REFERENCES Playlists(PlaylistID) ON DELETE CASCADE
 );
-ALTER TABLE library
-ADD CONSTRAINT FK_FavouriteSong
-FOREIGN KEY (FavouriteSong) REFERENCES songs(SongsID);
-
+CREATE TABLE Ratings (
+    RatingID INT AUTO_INCREMENT PRIMARY KEY,
+    UserID INT NOT NULL,
+    SongID INT NOT NULL,
+    Rating TINYINT CHECK(Rating BETWEEN 1 AND 5),
+    Review TEXT,
+    CreatedDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (UserID) REFERENCES Users(UsersID) ON DELETE CASCADE,
+    FOREIGN KEY (SongID) REFERENCES Songs(SongsID) ON DELETE CASCADE
+);
+CREATE TABLE ArtistFollow (
+    FollowID INT AUTO_INCREMENT PRIMARY KEY,
+    UserID INT NOT NULL,
+    ArtistID INT NOT NULL,
+    FollowDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (UserID) REFERENCES Users(UsersID) ON DELETE CASCADE,
+    FOREIGN KEY (ArtistID) REFERENCES Artist(ArtistID) ON DELETE CASCADE
+);
 
 -- Thêm dữ liệu vào bảng Artist
 INSERT INTO Artist (ArtistName, Country, Style, City, DateOfBirth, Phone, Email) VALUES
