@@ -40,7 +40,7 @@ CREATE TABLE Users (
     UserName VARCHAR(100) NOT NULL,
     Email VARCHAR(100) UNIQUE,
     JoinedDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    Member ENUM('NORMAL', 'PREMIUM') DEFAULT 'NORMAL',
+    Member ENUM('NORMAL', 'PREMIUM', 'VIP') DEFAULT 'NORMAL',
     Address VARCHAR(100),
     City VARCHAR(50),
     Country VARCHAR(50) NOT NULL
@@ -2218,13 +2218,25 @@ SELECT
         ELSE NULL 
     END,  -- Một số bản ghi có thể có review, một số không
     -- Tạo thời gian ngẫu nhiên từ 2024-01-01 đến 2024-12-31
-    DATE_ADD('2024-01-01', INTERVAL (RAND() * 365) DAY)  
+    DATE_ADD('2022-01-01', INTERVAL (RAND() * 900) DAY)  
 FROM 
     (SELECT 1 FROM information_schema.tables LIMIT 350) AS temp;
 -- Chèn dữ liệu vào bảng Library với sự đa dạng
 -- Chèn dữ liệu vào bảng Library với tên thư viện phong phú hơn
+UPDATE Users
+SET JoinedDate = DATE_ADD('2022-01-01', INTERVAL (RAND() * 900) DAY) ;
+UPDATE ArtistFollow
+SET FollowDate = DATE_ADD('2022-01-01', INTERVAL (RAND() * 900) DAY) ;
+UPDATE Users
+SET Member = CASE 
+    WHEN RAND() < 0.4 THEN 'NORMAL'
+    WHEN RAND() < 0.7 THEN 'PREMIUM'
+    ELSE 'VIP'
+END;
+
 select * from Ratings;
 select * from Library;
+select * from ArtistFollow;
 
 
 
