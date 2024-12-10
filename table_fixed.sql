@@ -32,8 +32,8 @@ CREATE TABLE Songs (
     Language VARCHAR(50),
     AlbumID INT,
     GenreID INT NOT NULL,
-    FOREIGN KEY (AlbumID) REFERENCES Album(AlbumID) ON DELETE CASCADE,
-    FOREIGN KEY (GenreID) REFERENCES Genres(GenreID) ON DELETE CASCADE
+    FOREIGN KEY (AlbumID) REFERENCES Album(AlbumID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (GenreID) REFERENCES Genres(GenreID) ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE Users (
     UserID INT AUTO_INCREMENT PRIMARY KEY,
@@ -2233,10 +2233,13 @@ SET Member = CASE
     WHEN RAND() < 0.7 THEN 'PREMIUM'
     ELSE 'VIP'
 END;
+UPDATE Songs
+SET AlbumID = FLOOR(1 + (RAND() * 108))
+WHERE AlbumID IS NULL;
 
 select * from Ratings;
 select * from Library;
 select * from ArtistFollow;
-
+select * from Album;
 
 
