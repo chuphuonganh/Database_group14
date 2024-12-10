@@ -93,8 +93,8 @@ CREATE TABLE Library_Songs (
     SongID INT NOT NULL,
     AddedDate DATETIME DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (LibraryID, SongID),
-    FOREIGN KEY (LibraryID) REFERENCES Library(LibraryID) ON DELETE CASCADE,
-    FOREIGN KEY (SongID) REFERENCES Songs(SongID) ON DELETE CASCADE
+    FOREIGN KEY (LibraryID) REFERENCES Library(LibraryID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (SongID) REFERENCES Songs(SongID) ON DELETE CASCADE ON UPDATE CASCADE
 );
 INSERT INTO Artist (ArtistName, Country, Style, City, DateOfBirth, Phone, Email) VALUES
 ('Taylor Swift', 'USA', 'Pop', 'Nashville', '1989-12-13', '1234567890', 'taylor@swift.com'),
@@ -1775,6 +1775,41 @@ INSERT INTO ArtistFollow (UserID, ArtistID, FollowDate) VALUES
 (149, 28, '2020-06-21'),
 (150, 1, '2020-10-27'),
 (151, 12, '2021-01-28');
+INSERT INTO Library (UserID, LibraryName, Type, TotalSongs, CreatedDate)
+SELECT 
+    FLOOR(1 + (RAND() * 200)),  -- Chọn ngẫu nhiên UserID từ 1 đến 200
+    CASE 
+        WHEN RAND() > 0.95 THEN CONCAT('Chill & Relax ', FLOOR(1 + (RAND() * 1000)))  -- Chill & Relax
+        WHEN RAND() > 0.9 THEN CONCAT('Top 100 Charts ', FLOOR(1 + (RAND() * 1000)))    -- Top Charts
+        WHEN RAND() > 0.85 THEN CONCAT('Indie Discovery ', FLOOR(1 + (RAND() * 500)))    -- Indie Music
+        WHEN RAND() > 0.8 THEN CONCAT('90s Classics ', FLOOR(1 + (RAND() * 400)))        -- 90s Classics
+        WHEN RAND() > 0.75 THEN CONCAT('Hip Hop & R&B ', FLOOR(1 + (RAND() * 600)))       -- Hip Hop & R&B
+        WHEN RAND() > 0.7 THEN CONCAT('Summer Vibes ', FLOOR(1 + (RAND() * 700)))        -- Summer Vibes
+        WHEN RAND() > 0.65 THEN CONCAT('Rock Anthems ', FLOOR(1 + (RAND() * 500)))        -- Rock Anthems
+        WHEN RAND() > 0.6 THEN CONCAT('Personal Playlist ', FLOOR(1 + (RAND() * 200)))   -- Personal Playlist
+        WHEN RAND() > 0.55 THEN CONCAT('Electronic Beats ', FLOOR(1 + (RAND() * 800)))    -- Electronic Beats
+        WHEN RAND() > 0.5 THEN CONCAT('Throwback Hits ', FLOOR(1 + (RAND() * 300)))       -- Throwback Hits
+        WHEN RAND() > 0.45 THEN CONCAT('Workout Power ', FLOOR(1 + (RAND() * 600)))       -- Workout Playlist
+        WHEN RAND() > 0.4 THEN CONCAT('Acoustic Dreams ', FLOOR(1 + (RAND() * 700)))      -- Acoustic Playlist
+        WHEN RAND() > 0.35 THEN CONCAT('Jazz Classics ', FLOOR(1 + (RAND() * 500)))       -- Jazz Music
+        WHEN RAND() > 0.3 THEN CONCAT('Classical Symphony ', FLOOR(1 + (RAND() * 400)))   -- Classical Music
+        WHEN RAND() > 0.25 THEN CONCAT('Deep House Vibes ', FLOOR(1 + (RAND() * 600)))    -- Deep House
+        WHEN RAND() > 0.2 THEN CONCAT('Mellow Beats ', FLOOR(1 + (RAND() * 700)))         -- Mellow Beats
+        WHEN RAND() > 0.15 THEN CONCAT('Lo-Fi Hip Hop ', FLOOR(1 + (RAND() * 500)))        -- Lo-Fi Beats
+        WHEN RAND() > 0.1 THEN CONCAT('Pop Hits Collection ', FLOOR(1 + (RAND() * 800)))  -- Pop Hits
+        WHEN RAND() > 0.05 THEN CONCAT('Country Roads ', FLOOR(1 + (RAND() * 500)))       -- Country Music
+        ELSE CONCAT('Reggae Vibes ', FLOOR(1 + (RAND() * 300)))                           -- Reggae Music
+    END,  -- Tên thư viện phong phú và đa dạng
+    CASE 
+        WHEN RAND() > 0.75 THEN 'FAVORITE' 
+        WHEN RAND() > 0.5 THEN 'PERSONAL' 
+        else 'SHARED' 
+    END,  -- Loại thư viện đa dạng
+    FLOOR(20 + (RAND() * 500)),  -- Số bài hát ngẫu nhiên từ 20 đến 500
+    NOW() - INTERVAL FLOOR(RAND() * 730) DAY  -- Thời gian tạo thư viện trong 2 năm qua
+FROM 
+    (SELECT 1 FROM information_schema.tables LIMIT 200) AS temp;
+
 
 INSERT INTO Library_Songs ( LibraryID, SongID, AddedDate) VALUES 
 (1, 23, '2021-03-10'),
@@ -2188,41 +2223,6 @@ FROM
     (SELECT 1 FROM information_schema.tables LIMIT 350) AS temp;
 -- Chèn dữ liệu vào bảng Library với sự đa dạng
 -- Chèn dữ liệu vào bảng Library với tên thư viện phong phú hơn
-INSERT INTO Library (UserID, LibraryName, Type, TotalSongs, CreatedDate)
-SELECT 
-    FLOOR(1 + (RAND() * 200)),  -- Chọn ngẫu nhiên UserID từ 1 đến 200
-    CASE 
-        WHEN RAND() > 0.95 THEN CONCAT('Chill & Relax ', FLOOR(1 + (RAND() * 1000)))  -- Chill & Relax
-        WHEN RAND() > 0.9 THEN CONCAT('Top 100 Charts ', FLOOR(1 + (RAND() * 1000)))    -- Top Charts
-        WHEN RAND() > 0.85 THEN CONCAT('Indie Discovery ', FLOOR(1 + (RAND() * 500)))    -- Indie Music
-        WHEN RAND() > 0.8 THEN CONCAT('90s Classics ', FLOOR(1 + (RAND() * 400)))        -- 90s Classics
-        WHEN RAND() > 0.75 THEN CONCAT('Hip Hop & R&B ', FLOOR(1 + (RAND() * 600)))       -- Hip Hop & R&B
-        WHEN RAND() > 0.7 THEN CONCAT('Summer Vibes ', FLOOR(1 + (RAND() * 700)))        -- Summer Vibes
-        WHEN RAND() > 0.65 THEN CONCAT('Rock Anthems ', FLOOR(1 + (RAND() * 500)))        -- Rock Anthems
-        WHEN RAND() > 0.6 THEN CONCAT('Personal Playlist ', FLOOR(1 + (RAND() * 200)))   -- Personal Playlist
-        WHEN RAND() > 0.55 THEN CONCAT('Electronic Beats ', FLOOR(1 + (RAND() * 800)))    -- Electronic Beats
-        WHEN RAND() > 0.5 THEN CONCAT('Throwback Hits ', FLOOR(1 + (RAND() * 300)))       -- Throwback Hits
-        WHEN RAND() > 0.45 THEN CONCAT('Workout Power ', FLOOR(1 + (RAND() * 600)))       -- Workout Playlist
-        WHEN RAND() > 0.4 THEN CONCAT('Acoustic Dreams ', FLOOR(1 + (RAND() * 700)))      -- Acoustic Playlist
-        WHEN RAND() > 0.35 THEN CONCAT('Jazz Classics ', FLOOR(1 + (RAND() * 500)))       -- Jazz Music
-        WHEN RAND() > 0.3 THEN CONCAT('Classical Symphony ', FLOOR(1 + (RAND() * 400)))   -- Classical Music
-        WHEN RAND() > 0.25 THEN CONCAT('Deep House Vibes ', FLOOR(1 + (RAND() * 600)))    -- Deep House
-        WHEN RAND() > 0.2 THEN CONCAT('Mellow Beats ', FLOOR(1 + (RAND() * 700)))         -- Mellow Beats
-        WHEN RAND() > 0.15 THEN CONCAT('Lo-Fi Hip Hop ', FLOOR(1 + (RAND() * 500)))        -- Lo-Fi Beats
-        WHEN RAND() > 0.1 THEN CONCAT('Pop Hits Collection ', FLOOR(1 + (RAND() * 800)))  -- Pop Hits
-        WHEN RAND() > 0.05 THEN CONCAT('Country Roads ', FLOOR(1 + (RAND() * 500)))       -- Country Music
-        ELSE CONCAT('Reggae Vibes ', FLOOR(1 + (RAND() * 300)))                           -- Reggae Music
-    END,  -- Tên thư viện phong phú và đa dạng
-    CASE 
-        WHEN RAND() > 0.75 THEN 'FAVORITE' 
-        WHEN RAND() > 0.5 THEN 'PERSONAL' 
-        else 'SHARED' 
-    END,  -- Loại thư viện đa dạng
-    FLOOR(20 + (RAND() * 500)),  -- Số bài hát ngẫu nhiên từ 20 đến 500
-    NOW() - INTERVAL FLOOR(RAND() * 730) DAY  -- Thời gian tạo thư viện trong 2 năm qua
-FROM 
-    (SELECT 1 FROM information_schema.tables LIMIT 200) AS temp;
-
 select * from Ratings;
 select * from Library;
 
