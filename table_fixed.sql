@@ -298,7 +298,13 @@ INSERT INTO Genres (GenreName) VALUES
 ('Neo-soul'),
 ('Modern R&B'),
 ('Soul Pop'),
-('Funk Soul');
+('Funk Soul'),
+('Acoustic'),
+('MPB'),
+('Axé'),
+('Heavy Metal'),
+('Jazz Rock'),
+('Live');
 
 INSERT INTO Users (UserName, Email, Address, City, Country) VALUES
 ('John Doe', 'johndoe1@example.com', '123 Main St', 'New York', 'USA'),
@@ -566,7 +572,7 @@ INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) 
     ('Bongo Fury', '1975-10-02', 23, 23, 10),
     ('Carnaval 2001', '2001-03-10', 21, 21, 15),
     ('Chill: Brazil (Disc 1)', '2002-04-12', 24, 24, 13),
-    ('Chill: Brazil (Disc 2)', '2002-04-12', 6, 6, 13),
+    ('Chill: Brazil (Disc 2)', '2002-04-12', 6, 13, 13),
     ('Garage Inc. (Disc 1)', '1998-11-24', 50, 50, 11),
     ('Greatest Hits II', '1991-10-28', 51, 51, 17),
     ('Greatest Kiss', '1997-04-08', 52, 52, 20),
@@ -2083,6 +2089,796 @@ INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID
 ('2 Be Loved', 230, '2022-07-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Special'), 34),
 ('Special', 250, '2022-07-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Special'), 34),
 ('I Love You Bitch', 245, '2022-07-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Special'), 34);
+-- Thêm song vào album chưa có bài hát naofooo ----
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+-- Bài hát cho album 'Starboy'
+('Starboy', 230, '2016-11-25', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Starboy' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'R&B' LIMIT 1)),
+('Party Monster', 249, '2016-11-25', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Starboy' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'R&B' LIMIT 1)),
+('False Alarm', 220, '2016-11-25', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Starboy' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'R&B' LIMIT 1)),
+
+-- Bài hát cho album 'Chill: Brazil (Disc 2)'
+('Bossa Nova 1', 180, '2002-04-12', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Chill: Brazil (Disc 2)' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Bossa Nova' LIMIT 1)),
+('Bossa Nova 2', 210, '2002-04-12', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Chill: Brazil (Disc 2)' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Bossa Nova' LIMIT 1)),
+('Chill Vibes', 200, '2002-04-12', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Chill: Brazil (Disc 2)' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Bossa Nova' LIMIT 1));
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+-- Bài hát cho album 'Unorthodox Jukebox'
+('Locked Out of Heaven', 232, '2012-12-07', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Unorthodox Jukebox' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Pop' LIMIT 1)),
+('When I Was Your Man', 210, '2012-12-07', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Unorthodox Jukebox' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Pop' LIMIT 1)),
+
+-- Bài hát cho album 'Dangerous Woman'
+('Dangerous Woman', 215, '2016-05-20', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Dangerous Woman' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Pop' LIMIT 1)),
+('Into You', 243, '2016-05-20', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Dangerous Woman' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Pop' LIMIT 1)),
+
+-- Bài hát cho album 'Acústico MTV [Live]'
+('Song 1 - Acústico MTV', 180, '2000-01-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Acústico MTV [Live]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Acoustic' LIMIT 1)),
+('Song 2 - Acústico MTV', 200, '2000-01-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Acústico MTV [Live]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Acoustic' LIMIT 1)),
+
+-- Bài hát cho album 'Cidade Negra - Hits'
+('Song 1 - Cidade Negra', 220, '2010-01-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Cidade Negra - Hits' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Reggae' LIMIT 1)),
+('Song 2 - Cidade Negra', 230, '2010-01-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Cidade Negra - Hits' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Reggae' LIMIT 1)),
+
+-- Bài hát cho album 'Na Pista'
+('Song 1 - Na Pista', 240, '2005-01-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Na Pista' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Electronic' LIMIT 1)),
+('Song 2 - Na Pista', 260, '2005-01-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Na Pista' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Electronic' LIMIT 1));
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+-- Bài hát cho album 'Axé Bahia 2001'
+('Axé Song 1', 210, '2001-01-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Axé Bahia 2001' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Axé' LIMIT 1)),
+('Axé Song 2', 190, '2001-01-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Axé Bahia 2001' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Axé' LIMIT 1)),
+
+-- Bài hát cho album 'Carnaval 2001'
+('Carnaval Song 1', 200, '2001-02-15', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Carnaval 2001' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Samba' LIMIT 1)),
+('Carnaval Song 2', 220, '2001-02-15', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Carnaval 2001' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Samba' LIMIT 1)),
+
+-- Bài hát cho album 'Sambas De Enredo 2001'
+('Enredo Song 1', 250, '2001-03-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Sambas De Enredo 2001' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Samba' LIMIT 1)),
+('Enredo Song 2', 230, '2001-03-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Sambas De Enredo 2001' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Samba' LIMIT 1)),
+
+-- Bài hát cho album 'Vozes do MPB'
+('MPB Song 1', 200, '2000-11-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Vozes do MPB' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('MPB Song 2', 180, '2000-11-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Vozes do MPB' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+
+-- Bài hát cho album 'BBC Sessions [Disc 1] [Live]'
+('BBC Live Song 1', 270, '1995-10-12', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'BBC Sessions [Disc 1] [Live]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Live' LIMIT 1)),
+('BBC Live Song 2', 260, '1995-10-12', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'BBC Sessions [Disc 1] [Live]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Live' LIMIT 1));
+ -- Bài hát cho album 'Physical Graffiti [Disc 1]'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Custard Pie', 390, '1975-02-24', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Physical Graffiti [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('The Rover', 340, '1975-02-24', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Physical Graffiti [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('In My Time of Dying', 480, '1975-02-24', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Physical Graffiti [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Houses of the Holy', 300, '1975-02-24', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Physical Graffiti [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Trampled Under Foot', 380, '1975-02-24', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Physical Graffiti [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Kashmir', 420, '1975-02-24', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Physical Graffiti [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1));
+
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+-- Bài hát cho album 'Goodbye & Good Riddance'
+('All Girls Are the Same', 220, '2018-05-23', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Goodbye & Good Riddance' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Hip-Hop' LIMIT 1)),
+('Lucid Dreams', 239, '2018-05-23', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Goodbye & Good Riddance' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Hip-Hop' LIMIT 1)),
+('Lean wit Me', 172, '2018-05-23', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Goodbye & Good Riddance' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Hip-Hop' LIMIT 1)),
+('Wasted', 227, '2018-05-23', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Goodbye & Good Riddance' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Hip-Hop' LIMIT 1)),
+
+-- Bài hát cho album 'Channel Orange'
+('Thinkin Bout You', 214, '2012-07-10', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Channel Orange' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'R&B' LIMIT 1)),
+('Pyramids', 590, '2012-07-10', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Channel Orange' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'R&B' LIMIT 1)),
+('Super Rich Kids', 310, '2012-07-10', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Channel Orange' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'R&B' LIMIT 1)),
+('Lost', 241, '2012-07-10', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Channel Orange' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'R&B' LIMIT 1)),
+('Sweet Life', 247, '2012-07-10', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Channel Orange' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'R&B' LIMIT 1)),
+('Bad Religion', 200, '2012-07-10', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Channel Orange' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'R&B' LIMIT 1));
+
+
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+-- Bài hát cho album 'Fireball'
+('Fireball', 220, '1971-09-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Fireball' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('The Mule', 290, '1971-09-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Fireball' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+
+-- Bài hát cho album 'Knocking at Your Back Door: The Best Of Deep Purple in the 80\'s'
+('Knocking at Your Back Door', 428, '1984-10-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Knocking at Your Back Door: The Best Of Deep Purple in the 80\'s' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+
+-- Bài hát cho album 'Machine Head'
+('Highway Star', 376, '1972-03-25', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Machine Head' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Smoke on the Water', 340, '1972-03-25', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Machine Head' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+
+-- Bài hát cho album 'Purpendicular'
+('Sometimes I Feel Like Screaming', 420, '1996-02-17', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Purpendicular' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Loosen My Strings', 349, '1996-02-17', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Purpendicular' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+
+-- Bài hát cho album 'Slaves And Masters'
+('King of Dreams', 307, '1990-10-05', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Slaves And Masters' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('The Cut Runs Deep', 347, '1990-10-05', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Slaves And Masters' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+-- Bài hát cho album 'The Battle Rages On'
+('The Battle Rages On', 308, '1993-07-06', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Battle Rages On' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('A Twist in the Tale', 303, '1993-07-06', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Battle Rages On' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+
+-- Bài hát cho album 'Bananas'
+('House of Pain', 303, '2003-05-19', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Bananas' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Picture of Innocence', 353, '2003-05-19', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Bananas' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+
+-- Bài hát cho album 'Now What?!'
+('Above and Beyond', 315, '2013-04-26', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Now What?!' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('All the Time in the World', 348, '2013-04-26', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Now What?!' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+
+-- Bài hát cho album 'Infinite'
+('Time for Bedlam', 317, '2017-04-07', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Infinite' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('The Surprising', 353, '2017-04-07', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Infinite' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+
+-- Bài hát cho album 'Whoosh!'
+('Throw My Bones', 299, '2020-08-07', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Whoosh!' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Nothing at All', 339, '2020-08-07', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Whoosh!' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1));
+
+
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+-- Bài hát cho album 'King For A Day Fool For A Lifetime'
+('Epic', 350, '1992-10-28', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'King For A Day Fool For A Lifetime' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Midlife Crisis', 290, '1992-10-28', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'King For A Day Fool For A Lifetime' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Ricochet', 240, '1992-10-28', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'King For A Day Fool For A Lifetime' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('A Small Victory', 270, '1992-10-28', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'King For A Day Fool For A Lifetime' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+
+-- Bài hát cho album 'The Real Thing'
+('From Out of Nowhere', 300, '1989-06-06', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Real Thing' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Epic', 350, '1989-06-06', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Real Thing' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Falling to Pieces', 250, '1989-06-06', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Real Thing' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('We Care a Lot', 280, '1989-06-06', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Real Thing' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+
+-- Bài hát cho album 'Deixa Entrar'
+('Deixa Entrar', 210, '1992-04-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Deixa Entrar' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('Abertura', 200, '1992-04-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Deixa Entrar' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('Na Carreira', 230, '1992-04-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Deixa Entrar' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('Coração Vagabundo', 240, '1992-04-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Deixa Entrar' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+
+-- Bài hát cho album 'In Your Honor [Disc 1]'
+('All My Life', 240, '2005-02-23', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'In Your Honor [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Best of You', 260, '2005-02-23', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'In Your Honor [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('DOA', 230, '2005-02-23', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'In Your Honor [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Hell', 270, '2005-02-23', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'In Your Honor [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+
+-- Bài hát cho album 'In Your Honor [Disc 2]'
+('Friend of a Friend', 240, '2005-06-13', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'In Your Honor [Disc 2]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Over and Out', 270, '2005-06-13', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'In Your Honor [Disc 2]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('The Last Song', 280, '2005-06-13', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'In Your Honor [Disc 2]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Razor', 230, '2005-06-13', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'In Your Honor [Disc 2]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+
+-- Bài hát cho album 'One By One'
+('All My Life', 230, '2002-10-22', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'One By One' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Times Like These', 220, '2002-10-22', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'One By One' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Low', 240, '2002-10-22', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'One By One' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Have It All', 250, '2002-10-22', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'One By One' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+
+-- Bài hát cho album 'The Colour And The Shape'
+('Everlong', 240, '1997-02-23', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Colour And The Shape' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Monkey Wrench', 220, '1997-02-23', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Colour And The Shape' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('My Hero', 260, '1997-02-23', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Colour And The Shape' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Walking After You', 290, '1997-02-23', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Colour And The Shape' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+
+-- Bài hát cho album 'My Way: The Best Of Frank Sinatra [Disc 1]'
+('My Way', 270, '1969-12-30', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'My Way: The Best Of Frank Sinatra [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Jazz' LIMIT 1)),
+('Fly Me to the Moon', 180, '1964-08-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'My Way: The Best Of Frank Sinatra [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Jazz' LIMIT 1)),
+('New York, New York', 300, '1980-10-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'My Way: The Best Of Frank Sinatra [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Jazz' LIMIT 1)),
+('Strangers in the Night', 240, '1966-03-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'My Way: The Best Of Frank Sinatra [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Jazz' LIMIT 1)),
+
+-- Bài hát cho album 'Roda De Funk'
+('Funkando', 210, '2015-09-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Roda De Funk' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Funk' LIMIT 1));
+-- Bài hát cho album 'Unplugged'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Layla (Unplugged)', 355, '1992-08-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Unplugged' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Tears In Heaven (Unplugged)', 290, '1992-08-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Unplugged' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Wonderful Tonight (Unplugged)', 355, '1992-08-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Unplugged' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1));
+
+-- Bài hát cho album 'Album Of The Year'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('The Unquiet Grave', 240, '2000-10-10', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Album Of The Year' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Ashes In The Wind', 290, '2001-05-15', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Album Of The Year' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('On The Road Again', 245, '2001-05-15', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Album Of The Year' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1));
+-- Bài hát cho album 'Djavan Ao Vivo - Vol. 02'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Oceano', 255, '1989-07-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Djavan Ao Vivo - Vol. 02' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('Se', 232, '1991-06-15', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Djavan Ao Vivo - Vol. 02' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('Samurai', 251, '1989-07-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Djavan Ao Vivo - Vol. 02' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1));
+
+-- Bài hát cho album 'Djavan Ao Vivo - Vol. 1'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Flor De Lis', 270, '1982-06-15', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Djavan Ao Vivo - Vol. 1' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('Esquinas', 239, '1984-04-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Djavan Ao Vivo - Vol. 1' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('Linha Do Equador', 260, '1984-04-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Djavan Ao Vivo - Vol. 1' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1));
+
+-- Bài hát cho album 'The Cream Of Clapton'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Tears In Heaven', 290, '1992-01-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Cream Of Clapton' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Layla', 245, '1970-11-09', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Cream Of Clapton' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Cocaine', 238, '1977-12-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Cream Of Clapton' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1));
+-- Bài hát cho album 'Cássia Eller - Sem Limite [Disc 1]'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Malandragem', 210, '1990-03-15', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Cássia Eller - Sem Limite [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('O Segundo Sol', 245, '1999-09-20', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Cássia Eller - Sem Limite [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1));
+
+-- Bài hát cho album 'Vault: Def Leppard's Greatest Hits'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Pour Some Sugar On Me', 250, '1987-05-30', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Vault: Def Leppard\'s Greatest Hits' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Love Bites', 245, '1988-05-23', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Vault: Def Leppard\'s Greatest Hits' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Hysteria', 250, '1987-08-03', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Vault: Def Leppard\'s Greatest Hits' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1));
+
+-- Bài hát cho album 'Outbreak'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Zombie', 239, '1994-09-06', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Outbreak' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Shine', 245, '1996-10-29', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Outbreak' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1));
+-- Bài hát cho album 'Chronicle, Vol. 1'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Bad Moon Rising', 120, '1969-04-16', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Chronicle, Vol. 1' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Green River', 140, '1969-08-24', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Chronicle, Vol. 1' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Proud Mary', 230, '1969-01-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Chronicle, Vol. 1' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1));
+
+-- Bài hát cho album 'Chronicle, Vol. 2'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Down on the Corner', 200, '1969-09-24', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Chronicle, Vol. 2' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Fortunate Son', 170, '1969-10-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Chronicle, Vol. 2' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Who\'ll Stop the Rain', 220, '1970-01-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Chronicle, Vol. 2' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1));
+
+-- Bài hát cho album 'Cássia Eller - Coleção Sem Limite [Disc 2]'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('O Mundo é Um Moinho', 230, '1995-11-10', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Cássia Eller - Coleção Sem Limite [Disc 2]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('Malandragem', 210, '1990-03-15', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Cássia Eller - Coleção Sem Limite [Disc 2]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('O Segundo Sol', 245, '1999-09-20', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Cássia Eller - Coleção Sem Limite [Disc 2]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1));
+
+-- Bài hát cho album 'The Essential Miles Davis [Disc 2]'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('So What', 545, '1959-08-17', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Essential Miles Davis [Disc 2]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Jazz' LIMIT 1)),
+('Freddie Freeloader', 590, '1959-08-17', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Essential Miles Davis [Disc 2]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Jazz' LIMIT 1)),
+('All Blues', 555, '1959-08-17', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Essential Miles Davis [Disc 2]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Jazz' LIMIT 1));
+
+-- Bài hát cho album 'Up An\' Atom'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Up An\' Atom', 150, '1958-11-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Up An\' Atom' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Jazz' LIMIT 1)),
+('Swing Spring', 270, '1958-11-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Up An\' Atom' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Jazz' LIMIT 1)),
+('The Scene Is Clean', 300, '1958-11-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Up An\' Atom' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Jazz' LIMIT 1));
+
+-- Bài hát cho album 'Vinícius De Moraes - Sem Limite'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Chega de Saudade', 230, '1958-11-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Vinícius De Moraes - Sem Limite' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('Garota de Ipanema', 260, '1962-01-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Vinícius De Moraes - Sem Limite' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('Águas de Março', 290, '1972-03-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Vinícius De Moraes - Sem Limite' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1));
+-- Bài hát cho album 'Deep Purple In Rock'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Speed King', 300, '1970-06-05', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Deep Purple In Rock' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Hard Rock' LIMIT 1)),
+('Child in Time', 420, '1970-06-05', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Deep Purple In Rock' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Hard Rock' LIMIT 1)),
+('Black Night', 240, '1970-06-05', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Deep Purple In Rock' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Hard Rock' LIMIT 1));
+
+-- Bài hát cho album 'Stormbringer'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Stormbringer', 300, '1974-11-15', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Stormbringer' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Hard Rock' LIMIT 1)),
+('Holy Man', 400, '1974-11-15', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Stormbringer' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Hard Rock' LIMIT 1)),
+('You Can’t Do It Right', 245, '1974-11-15', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Stormbringer' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Hard Rock' LIMIT 1));
+
+-- Bài hát cho album 'Supernatural'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Smooth', 271, '1999-06-22', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Supernatural' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Latin' LIMIT 1)),
+('Maria Maria', 300, '1999-06-22', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Supernatural' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Latin' LIMIT 1)),
+('Put Your Lights On', 283, '1999-06-22', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Supernatural' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Latin' LIMIT 1));
+
+-- Bài hát cho album 'The Essential Miles Davis [Disc 1]'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('So What', 545, '1959-08-17', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Essential Miles Davis [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Jazz' LIMIT 1)),
+('Freddie Freeloader', 590, '1959-08-17', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Essential Miles Davis [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Jazz' LIMIT 1)),
+('All Blues', 555, '1959-08-17', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Essential Miles Davis [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Jazz' LIMIT 1));
+-- Bài hát cho album 'Minha História'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('O Mundo é um Moinho', 210, '1999-09-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Minha História' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('Aquarela do Brasil', 250, '1999-09-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Minha História' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('Corcovado', 200, '1999-09-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Minha História' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1));
+
+-- Bài hát cho album 'MK III The Final Concerts [Disc 1]'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Smoke on the Water', 300, '1975-04-07', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'MK III The Final Concerts [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Highway Star', 340, '1975-04-07', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'MK III The Final Concerts [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Space Truckin', 380, '1975-04-07', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'MK III The Final Concerts [Disc 1]' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1));
+
+-- Bài hát cho album 'The Final Concerts (Disc 2)'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Child in Time', 420, '1975-04-08', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Final Concerts (Disc 2)' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('The Mule', 400, '1975-04-08', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Final Concerts (Disc 2)' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Lazy', 370, '1975-04-08', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Final Concerts (Disc 2)' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1));
+
+-- Bài hát cho album 'Come Taste The Band'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Comin’ Home', 260, '1975-11-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Come Taste The Band' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Lady Luck', 300, '1975-11-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Come Taste The Band' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('I Need Love', 320, '1975-11-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Come Taste The Band' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1));
+-- Bài hát cho album 'Heart of the Night'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Heart of the Night', 250, '1988-11-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Heart of the Night' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Pop' LIMIT 1)),
+('Night Moves', 290, '1986-08-05', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Heart of the Night' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Long Night', 240, '1988-11-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Heart of the Night' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Pop' LIMIT 1));
+
+-- Bài hát cho album 'International Superhits'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Basket Case', 210, '1994-02-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'International Superhits' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Punk Rock' LIMIT 1)),
+('Good Riddance (Time of Your Life)', 212, '1997-10-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'International Superhits' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Punk Rock' LIMIT 1)),
+('When I Come Around', 230, '1994-02-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'International Superhits' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Punk Rock' LIMIT 1));
+
+-- Bài hát cho album 'Into The Light'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Into The Light', 250, '1998-06-15', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Into The Light' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Shine', 260, '1998-06-15', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Into The Light' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Hold On', 230, '1998-06-15', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Into The Light' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1));
+
+-- Bài hát cho album 'Meus Momentos'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Meus Momentos', 240, '2001-10-15', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Meus Momentos' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('Tempo Perdido', 260, '2001-10-15', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Meus Momentos' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('O Mundo é um Moinho', 220, '2001-10-15', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Meus Momentos' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1));
+-- Bài hát cho album 'The Rise and Fall of Ziggy Stardust'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Starman', 240, '1972-04-28', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Rise and Fall of Ziggy Stardust' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Ziggy Stardust', 200, '1972-04-28', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Rise and Fall of Ziggy Stardust' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Rock ‘n’ Roll Suicide', 300, '1972-04-28', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Rise and Fall of Ziggy Stardust' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1));
+
+-- Bài hát cho album 'Garage Inc. (Disc 1)'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Turn the Page', 340, '1998-11-24', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Garage Inc. (Disc 1)' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Heavy Metal' LIMIT 1)),
+('The Wait', 250, '1998-11-24', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Garage Inc. (Disc 1)' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Heavy Metal' LIMIT 1)),
+('Loverman', 320, '1998-11-24', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Garage Inc. (Disc 1)' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Heavy Metal' LIMIT 1));
+
+-- Bài hát cho album 'Greatest Hits II'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Under Pressure', 250, '1981-10-26', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Greatest Hits II' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Another One Bites the Dust', 220, '1980-08-22', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Greatest Hits II' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('I Want to Break Free', 230, '1984-04-02', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Greatest Hits II' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1));
+
+-- Bài hát cho album 'Greatest Kiss'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('I Was Made for Lovin’ You', 240, '1979-08-20', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Greatest Kiss' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Rock and Roll All Nite', 250, '1975-02-12', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Greatest Kiss' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1)),
+('Detroit Rock City', 235, '1976-02-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Greatest Kiss' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Rock' LIMIT 1));
+-- Bài hát cho album 'Bongo Fury'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Carolina Hard-Core Ecstasy', 320, '1975-11-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Bongo Fury' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Jazz Rock' LIMIT 1)),
+('Inca Roads', 420, '1975-11-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Bongo Fury' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Jazz Rock' LIMIT 1)),
+('Don’t Eat the Yellow Snow', 350, '1975-11-01', 'English', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Bongo Fury' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Jazz Rock' LIMIT 1));
+
+-- Bài hát cho album 'Chill: Brazil (Disc 1)'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Águas de Março', 250, '1972-03-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Chill: Brazil (Disc 1)' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Bossa Nova' LIMIT 1)),
+('Sampa', 300, '1990-08-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Chill: Brazil (Disc 1)' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('Mas Que Nada', 180, '1963-10-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Chill: Brazil (Disc 1)' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Samba' LIMIT 1));
+
+-- Bài hát cho album 'The Best of Ed Motta'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Manuel', 285, '1990-03-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Best of Ed Motta' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('Festa', 310, '1997-05-15', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Best of Ed Motta' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('Só Você', 270, '1997-05-15', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'The Best of Ed Motta' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1));
+
+-- Bài hát cho album 'Elis Regina-Minha História'
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID)
+VALUES
+('Águas de Março', 250, '1972-03-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Elis Regina-Minha História' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'Bossa Nova' LIMIT 1)),
+('O Leãozinho', 220, '1983-01-01', 'Portuguese', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Elis Regina-Minha História' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1)),
+('Alfonsina y El Mar', 300, '1982-10-01', 'Spanish', 
+ (SELECT AlbumID FROM Album WHERE AlbumName = 'Elis Regina-Minha História' LIMIT 1), 
+ (SELECT GenreID FROM Genres WHERE GenreName = 'MPB' LIMIT 1));
+
 -- Insert 200 PlaylistID and SongID combinations into Playlist_Songs
 INSERT INTO Playlist_Songs (PlaylistID, SongID) 
 VALUES
