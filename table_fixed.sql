@@ -503,6 +503,11 @@ INSERT INTO Users (UserName, Email, Address, City, Country) VALUES
 ('Tyler Baker', 'tylerbaker200@example.com',  '1100 Walnut St', 'Rotterdam', 'Netherlands');
 
 INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+	('Map of the Soul: 7', '2020-02-21', 3, 4, 20),
+	('BE', '2020-11-20', 3, 4, 8),
+	('Love Yourself: Answer', '2018-08-24', 3, 4, 26),
+	('Wings', '2016-10-10', 3, 4, 15),
+	('Dark & Wild', '2014-08-19', 3, 4, 14),
     ('25', '2015-11-20', 4, 1, 11),
 	('A Head Full of Dreams', '2015-12-04', 5, 2, 11),
 	('Lemonade', '2016-04-23', 6, 7, 12),
@@ -788,51 +793,32 @@ INSERT INTO Playlists (PlaylistName, CreatedDate, UserID) VALUES
 ('Mystic Rhythms', '2024-10-10', 106),
 ('Winter Whispers', '2024-11-18', 19);
 INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
-('The Boy Is Mine', 259, '1998-04-27', 'English', NULL, 7),
-('I Wanna Be Down', 222, '1994-10-12', 'English', NULL, 7),
-('Have You Ever?', 283, '1998-04-13', 'English', NULL, 7),
-('Almost Doesn’t Count', 213, '1999-10-25', 'English', NULL, 7),
-('Sitting Up In My Room', 236, '1995-03-21', 'English', NULL, 7),
-('Put It Down', 230, '2012-06-28', 'English', NULL, 7),
-('When You Touch Me', 228, '2004-10-05', 'English', NULL, 7),
-('Baby', 204, '1994-10-12', 'English', NULL, 7),
-('Top of the World', 210, '1999-09-13', 'English', NULL, 7),
-('So Sick', 218, '2006-01-01', 'English', NULL, 7),
-('Miss Independent', 227, '2008-06-25', 'English', NULL, 7),
-('Closer', 220, '2008-04-14', 'English', NULL, 7),
-('Because of You', 220, '2007-04-30', 'English', NULL, 7),
-('Sexy Love', 236, '2006-05-01', 'English', NULL, 7),
-('Let Me Love You', 230, '2004-10-14', 'English', NULL, 7),
-('Go On Girl', 218, '2007-05-01', 'English', NULL, 7),
-('One in a Million', 234, '2006-10-10', 'English', NULL, 7),
-('Part of the List', 218, '2007-12-11', 'English', NULL, 7),
-('All of Me', 269, '2013-08-12', 'English', NULL, 7),
-('Ordinary People', 238, '2005-11-04', 'English', NULL, 7),
-('Tonight (Best You Ever Had)', 247, '2012-12-14', 'English', NULL, 7),
-('Green Light', 215, '2008-11-03', 'English', NULL, 7),
-('Save Room', 204, '2006-10-10', 'English', NULL, 7),
-('Used to Love U', 222, '2004-04-06', 'English', NULL, 7),
-('Let’s Stay Together', 256, '2010-12-01', 'English', NULL, 7),
-('You & I (Nobody in the World)', 228, '2014-03-24', 'English', NULL, 7),
-('If You’re Out There', 238, '2008-11-01', 'English', NULL, 7),
+('Intro: Boy Meets Evil', 120, '2016-10-10', 'Korean', 4, 4),
+('Blood Sweat & Tears', 217, '2016-10-10', 'Korean', 4, 4),
+('Begin', 231, '2016-10-10', 'Korean', 4, 4),
+('Lie', 217, '2016-10-10', 'Korean', 4, 4),
+('Stigma', 218, '2016-10-10', 'Korean', 4, 4),
+('First Love', 230, '2016-10-10', 'Korean', 4, 4),
+('Reflection', 233, '2016-10-10', 'Korean', 4, 4),
+('Mama', 218, '2016-10-10', 'Korean', 4, 4),
+('Blue & Grey', 255, '2020-11-20', 'Korean', 2, 4),
+('Telepathy', 202, '2020-11-20', 'Korean', 2, 4),
+('Stay', 205, '2020-11-20', 'Korean', 2, 4),
+('Dynamite', 199, '2020-11-20', 'English', 2, 4),
 ('Mine', 230, '2010-08-04', 'English', 38, 1),
 ('Back to December', 290, '2010-11-15', 'English', 38, 1),
 ('Speak Now', 244, '2010-10-25', 'English', 38, 1),
-('Dynamite', 199, '2020-08-21', 'English', NULL, 4),
-('Butter', 162, '2021-05-21', 'English', NULL, 4),
-('Permission to Dance', 212, '2021-07-09', 'English', NULL, 4),
-('Boy With Luv', 229, '2019-04-12', 'Korean', NULL, 4),
-('Fake Love', 233, '2018-05-18', 'Korean', NULL, 4),
-('Spring Day', 292, '2017-02-13', 'Korean', NULL, 4),
-('Life Goes On', 223, '2020-11-20', 'Korean', NULL, 4),
-('Fire', 211, '2016-05-02', 'Korean', NULL, 4),
-('Mic Drop', 247, '2017-09-18', 'Korean', NULL, 4),
-('DNA', 224, '2017-09-18', 'Korean', NULL, 4),
-('Idol', 230, '2018-08-24', 'Korean', NULL, 4),
-('Blood Sweat & Tears', 237, '2016-10-10', 'Korean', NULL, 4),
-('Save Me', 215, '2016-05-02', 'Korean', NULL, 4),
-('No More Dream', 228, '2013-06-12', 'Korean', NULL, 4),
-('Run', 233, '2015-11-30', 'Korean', NULL, 4),
+('Euphoria', 229, '2018-08-24', 'Korean', 3, 4),
+('Trivia: Just Dance', 225, '2018-08-24', 'Korean', 3, 4),
+('Serendipity', 276, '2018-08-24', 'Korean', 3, 4),
+('DNA', 223, '2018-08-24', 'Korean', 3, 4),
+('Fake Love', 242, '2018-08-24', 'Korean', 3, 4),
+('IDOL', 222, '2018-08-24', 'Korean', 3, 4),
+('Intro: Persona', 172, '2020-02-21', 'Korean', 1, 4),
+('Boy With Luv', 229, '2020-02-21', 'Korean', 1, 4),
+('Make It Right', 222, '2020-02-21', 'Korean', 1, 4),
+('Jamais Vu', 226, '2020-02-21', 'Korean', 1, 4),
+('Dionysus', 248, '2020-02-21', 'Korean', 1, 4),
 ('A Head Full of Dreams', 237, '2015-12-04', 'English', 2, 2),
 ('Birds', 236, '2015-12-04', 'English', 2, 2),
 ('Hymn for the Weekend', 258, '2016-01-25', 'English', 2, 2),
@@ -1361,16 +1347,6 @@ INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID
 ('Love Me Right', 233, '2020-05-29', 'English', 5, 1),
 ('1000 Doves', 249, '2020-05-29', 'English', 5, 1),
 ('Babylon', 237, '2020-05-29', 'English', 5, 1),
-('Royals', 232, '2013-06-03', 'English', NULL, 1),
-('Green Light', 232, '2017-03-02', 'English', NULL, 1),
-('Tennis Court', 216, '2013-04-22', 'English', NULL, 1),
-('Perfect Places', 258, '2017-06-02', 'English', NULL, 1),
-('Team', 204, '2013-06-03', 'English', NULL, 1),
-('Buzzcut Season', 245, '2013-06-03', 'English', NULL, 1),
-('Liability', 204, '2017-01-27', 'English', NULL, 1),
-('Sober', 225, '2017-06-02', 'English', NULL, 1),
-('A World Alone', 255, '2013-06-03', 'English', NULL, 1),
-('Writer In The Dark', 227, '2017-06-02', 'English', NULL, 1),
 ('Grenade', 234, '2010-10-04', 'English', 8, 1),
 ('Just The Way You Are', 258, '2010-10-04', 'English', 8, 1),
 ('The Lazy Song', 185, '2010-10-04', 'English', 8, 1),
@@ -1381,207 +1357,15 @@ INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID
 ('Our First Time', 244, '2010-10-04', 'English', 8, 1),
 ('Billionaire', 225, '2010-10-04', 'English', 8, 1),
 ('Somewhere In Brooklyn', 255, '2010-10-04', 'English', 8, 1),
-('Youth', 247, '2015-12-04', 'English', NULL, 1),
-('Dance To This', 217, '2018-05-16', 'English', NULL, 1),
-('My My My!', 224, '2018-01-25', 'English', NULL, 1),
-('Bloom', 227, '2018-02-15', 'English', NULL, 1),
-('The Good Side', 213, '2018-02-15', 'English', NULL, 1),
-('Wild', 218, '2015-12-04', 'English', NULL, 1),
-('Fools', 214, '2015-12-04', 'English', NULL, 1),
-('Heaven', 222, '2018-09-14', 'English', NULL, 1),
-('Talk Me Down', 234, '2016-10-21', 'English', NULL, 1),
-('Lucky Strike', 225, '2018-08-31', 'English', NULL, 1),
-('With You', 243, '2007-12-04', 'English', NULL, 7),
-('Forever', 248, '2008-04-09', 'English', NULL, 7),
-('No Guidance', 261, '2019-06-08', 'English', NULL, 7),
-('Heat', 222, '2019-07-26', 'English', NULL, 7),
-('Run It!', 215, '2005-06-30', 'English', NULL, 7),
-('Yeah!', 250, '2004-01-27', 'English', NULL, 7),
-('Burn', 251, '2004-03-21', 'English', NULL, 7),
-('OMG', 268, '2010-03-22', 'English', NULL, 7),
-('U Got It Bad', 257, '2001-08-07', 'English', NULL, 7),
-('Love in This Club', 279, '2008-02-22', 'English', NULL, 7),
-('Say Aah', 245, '2009-11-14', 'English', NULL, 7),
-('Bottoms Up', 250, '2010-07-27', 'English', NULL, 7),
-('Na Na', 230, '2014-01-21', 'English', NULL, 7),
-('Slow Motion', 211, '2015-01-20', 'English', NULL, 7),
-('Heart Attack', 262, '2012-03-26', 'English', NULL, 7),
--- SZA
-('Love Galore', 245, '2017-04-28', 'English', NULL, 18),
-('The Weekend', 236, '2017-06-09', 'English', NULL, 18),
-('Good Days', 279, '2020-12-25', 'English', NULL, 18),
-('I Hate U', 192, '2021-12-03', 'English', NULL, 18),
-('Broken Clocks', 211, '2017-06-09', 'English', NULL, 18),
 
--- H.E.R.
-('Focus', 209, '2016-09-09', 'English', NULL, 12),
-('Best Part', 194, '2017-10-20', 'English', NULL, 12),
-('Slide', 213, '2019-09-27', 'English', NULL, 12),
-('Damage', 198, '2020-10-21', 'English', NULL, 12),
-('Could’ve Been', 234, '2018-08-03', 'English', NULL, 12),
-
--- Jhene Aiko
-('Spotless Mind', 227, '2014-09-09', 'English', NULL, 12),
-('The Worst', 237, '2013-11-12', 'English', NULL, 12),
-('B.S.', 206, '2020-03-06', 'English', NULL, 12),
-('P*$$Y Fairy (OTW)', 208, '2020-01-17', 'English', NULL, 12),
-('Sativa', 257, '2017-09-22', 'English', NULL, 12),
-
--- Normani
-('Motivation', 223, '2019-08-16', 'English', NULL, 7),
-('Wild Side', 221, '2021-07-16', 'English', NULL, 7),
-('Waves', 228, '2018-11-15', 'English', NULL, 7),
-('Love Lies', 204, '2018-02-14', 'English', NULL, 7),
-('Fair', 197, '2022-03-18', 'English', NULL, 7),
--- Nas
-('If I Ruled The World', 247, '1996-06-04', 'English', NULL, 6),
-('The World Is Yours', 267, '1994-04-19', 'English', NULL, 6),
-('One Mic', 285, '2002-04-16', 'English', NULL, 6),
-('NY State of Mind', 292, '1994-04-19', 'English', NULL, 6),
-('Nas Is Like', 235, '1999-03-02', 'English', NULL, 6),
-
--- Kendrick Lamar
-('HUMBLE.', 177, '2017-03-30', 'English', NULL, 6),
-('DNA.', 185, '2017-04-14', 'English', NULL, 6),
-('Alright', 217, '2015-06-30', 'English', NULL, 6),
-('Swimming Pools (Drank)', 237, '2012-07-31', 'English', NULL, 6),
-('Money Trees', 393, '2012-10-22', 'English', NULL, 6),
-
--- J. Cole
-('No Role Modelz', 290, '2014-12-09', 'English', NULL, 6),
-('Middle Child', 215, '2019-01-23', 'English', NULL, 6),
-('Love Yourz', 229, '2014-12-09', 'English', NULL, 6),
-('Wet Dreamz', 239, '2014-12-09', 'English', NULL, 6),
-('G.O.M.D.', 298, '2014-12-09', 'English', NULL, 6),
-
--- Logic
-('1-800-273-8255', 251, '2017-04-28', 'English', NULL, 6),
-('Homicide', 244, '2019-05-03', 'English', NULL, 6),
-('Black Spiderman', 309, '2017-04-14', 'English', NULL, 6),
-('Under Pressure', 560, '2014-10-21', 'English', NULL, 6),
-('Everyday', 247, '2018-03-02', 'English', NULL, 6),
-
--- Lizzo
-('Truth Hurts', 173, '2017-09-19', 'English', NULL, 1),
-('Juice', 212, '2019-01-04', 'English', NULL, 1),
-('Good as Hell', 167, '2016-03-08', 'English', NULL, 1),
-('About Damn Time', 199, '2022-04-14', 'English', NULL, 1),
-('Cuz I Love You', 175, '2019-04-19', 'English', NULL, 1),
--- Lil Nas X
-('Old Town Road', 157, '2019-12-03', 'English', NULL, 6),
-('Montero (Call Me By Your Name)', 137, '2021-03-26', 'English', NULL, 6),
-('Industry Baby', 213, '2021-07-23', 'English', NULL, 6),
-('Panini', 118, '2019-06-20', 'English', NULL, 6),
-('That’s What I Want', 177, '2021-09-17', 'English', NULL, 6),
-
--- Travis Scott
-('SICKO MODE', 312, '2018-08-03', 'English', NULL, 20),
-('HIGHEST IN THE ROOM', 181, '2019-10-04', 'English', NULL, 20),
-('STARGAZING', 240, '2018-08-03', 'English', NULL, 20),
-('GOOSEBUMPS', 242, '2016-09-16', 'English', NULL, 20),
-('ANTIDOTE', 263, '2015-09-18', 'English', NULL, 20),
-
--- Future
-('Mask Off', 215, '2017-02-17', 'English', NULL, 20),
-('Life Is Good', 222, '2020-01-10', 'English', NULL, 20),
-('Low Life', 314, '2016-02-05', 'English', NULL, 20),
-('Wait For U', 182, '2022-04-29', 'English', NULL, 20),
-('Jumpman', 213, '2015-09-20', 'English', NULL, 20),
-
--- Kanye West
-('Stronger', 311, '2007-07-31', 'English', NULL, 6),
-('Gold Digger', 207, '2005-07-05', 'English', NULL, 6),
-('Heartless', 225, '2008-11-04', 'English', NULL, 6),
-('Flashing Lights', 232, '2007-11-22', 'English', NULL, 6),
-('Power', 276, '2010-07-01', 'English', NULL, 6),
-
--- Jay-Z
-('Empire State of Mind', 275, '2009-10-20', 'English', NULL, 6),
-('99 Problems', 211, '2004-04-27', 'English', NULL, 6),
-('Run This Town', 267, '2009-08-24', 'English', NULL, 6),
-('Big Pimpin\'', 293, '2000-12-28', 'English', NULL, 6),
-('Dirt Off Your Shoulder', 250, '2003-12-04', 'English', NULL, 6),
-
--- Eminem
-('Lose Yourself', 326, '2002-10-28', 'English', NULL, 6),
-('Without Me', 291, '2002-05-14', 'English', NULL, 6),
-('The Real Slim Shady', 284, '2000-04-18', 'English', NULL, 6),
-('Stan', 404, '2000-12-09', 'English', NULL, 6),
-('Love the Way You Lie', 263, '2010-06-21', 'English', NULL, 6),
--- Jessie J
-('Price Tag', 220, '2011-01-25', 'English', NULL, 1),
-('Domino', 214, '2011-08-29', 'English', NULL, 1),
-('Bang Bang', 219, '2014-07-29', 'English', NULL, 1),
-('Flashlight', 208, '2015-04-23', 'English', NULL, 1),
-('Who You Are', 213, '2011-11-07', 'English', NULL, 1),
-
--- Demi Lovato
-('Skyscraper', 223, '2011-07-12', 'English', NULL, 1),
-('Sorry Not Sorry', 211, '2017-07-11', 'English', NULL, 1),
-('Confident', 223, '2015-10-16', 'English', NULL, 1),
-('Heart Attack', 211, '2013-02-24', 'English', NULL, 1),
-('Cool for the Summer', 205, '2015-07-01', 'English', NULL, 1),
-
--- Nicki Minaj
-('Super Bass', 203, '2011-04-05', 'English', NULL, 6),
-('Anaconda', 252, '2014-08-04', 'English', NULL, 6),
-('Starships', 211, '2012-02-14', 'English', NULL, 6),
-('Moment 4 Life', 263, '2010-12-07', 'English', NULL, 6),
-('Chun-Li', 209, '2018-04-12', 'English', NULL, 6),
-
--- Cardi B
-('Bodak Yellow', 230, '2017-06-16', 'English', NULL, 6),
-('I Like It', 253, '2018-05-25', 'English', NULL, 6),
-('WAP', 187, '2020-08-07', 'English', NULL, 6),
-('Money', 192, '2018-10-23', 'English', NULL, 6),
-('Press', 178, '2019-05-31', 'English', NULL, 6),
-
--- Megan Thee Stallion
-('Savage', 157, '2020-04-07', 'English', NULL, 6),
-('Hot Girl Summer', 201, '2019-08-09', 'English', NULL, 6),
-('Body', 162, '2020-11-20', 'English', NULL, 6),
-('Thot Shit', 198, '2021-06-11', 'English', NULL, 6),
-('Big Ole Freak', 182, '2018-10-22', 'English', NULL, 6),
-
--- Doja Cat
-('Say So', 238, '2019-11-07', 'English', NULL, 6),
-('Kiss Me More', 208, '2021-04-09', 'English', NULL, 6),
-('Juicy', 191, '2019-08-15', 'English', NULL, 6),
-('Woman', 172, '2021-10-01', 'English', NULL, 6),
-('Streets', 217, '2019-11-07', 'English', NULL, 6),
-('Dance Monkey', 209, '2019-05-10', 'English', NULL, 1),
-('Never Seen the Rain', 208, '2019-07-16', 'English', NULL, 1),
-('Fly Away', 230, '2020-11-13', 'English', NULL, 1),
-('Cloudy Day', 211, '2021-06-10', 'English', NULL, 1),
-('Bad Child', 192, '2020-03-12', 'English', NULL, 1),
-
--- Lorde
-('Royals', 185, '2013-06-03', 'English', NULL, 1),
-('Team', 193, '2013-09-13', 'English', NULL, 1),
-('Green Light', 228, '2017-03-02', 'English', NULL, 1),
-('Solar Power', 216, '2021-06-10', 'English', NULL, 1),
-('Tennis Court', 198, '2013-06-07', 'English', NULL, 1),
-
--- Sam Smith
-('Stay With Me', 172, '2014-04-14', 'English', NULL, 12),
-('I’m Not the Only One', 248, '2014-08-31', 'English', NULL, 12),
-('Too Good at Goodbyes', 201, '2017-09-08', 'English', NULL, 12),
-('Dancing with a Stranger', 171, '2019-01-11', 'English', NULL, 12),
-('Unholy', 156, '2022-09-22', 'English', NULL, 12),
-
--- Ellie Goulding
-('Lights', 231, '2010-11-16', 'English', NULL, 9),
-('Burn', 231, '2013-07-05', 'English', NULL, 9),
-('Love Me Like You Do', 252, '2015-01-07', 'English', NULL, 9),
-('On My Mind', 224, '2015-09-17', 'English', NULL, 9),
-('Close to Me', 211, '2018-10-24', 'English', NULL, 9),
-
--- Florence Welch
-('Dog Days Are Over', 252, '2008-12-01', 'English', NULL, 17),
-('Shake It Out', 244, '2011-09-14', 'English', NULL, 17),
-('Spectrum', 224, '2012-07-05', 'English', NULL, 17),
-('Hunger', 220, '2018-05-03', 'English', NULL, 17),
-('King', 262, '2022-02-23', 'English', NULL, 17);
+('Intro: What Am I to You', 166, '2014-08-19', 'Korean', 5, 4),
+('Danger', 244, '2014-08-19', 'Korean', 5, 4),
+('War of Hormone', 240, '2014-08-19', 'Korean', 5, 4),
+('Let Me Know', 255, '2014-08-19', 'Korean', 5, 4),
+('Rain', 265, '2014-08-19', 'Korean', 5, 4),
+('BTS Cypher Pt.3: Killer', 267, '2014-08-19', 'Korean', 5, 4),
+('Hip Hop Lover', 259, '2014-08-19', 'Korean', 5, 4),
+('Blanket Kick', 220, '2014-08-19', 'Korean', 5, 4);
 -- Insert 200 PlaylistID and SongID combinations into Playlist_Songs
 INSERT INTO Playlist_Songs (PlaylistID, SongID) 
 VALUES
@@ -2241,5 +2025,719 @@ select * from Ratings;
 select * from Library;
 select * from ArtistFollow;
 select * from Album;
+-------------------------------------------- SỬA DỮ LIỆU--------------------------------
+-- Thêm album của Rihanna
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+('Good Girl Gone Bad', '2007-05-30', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Rihanna'), 1, 12),
+('Rated R', '2009-11-20', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Rihanna'), 1, 13),
+('Loud', '2010-11-12', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Rihanna'), 1, 11),
+('Talk That Talk', '2011-11-18', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Rihanna'), 1, 11),
+('Unapologetic', '2012-11-19', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Rihanna'), 1, 14);
+-- Thêm album của Jolin Tsai
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+('Show Your Love', '2003-06-18', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Jolin Tsai'), 39, 10),
+('Magic', '2005-11-25', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Jolin Tsai'), 39, 12),
+('Dancing Diva', '2006-11-02', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Jolin Tsai'), 39, 10),
+('Butterfly', '2009-11-20', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Jolin Tsai'), 39, 11),
+('MUSE', '2014-07-18', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Jolin Tsai'), 39, 12);
+-- Thêm album của Alan Walker
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+('Different World', '2018-12-14', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Alan Walker'), 21, 10),
+('Walkerverse', '2020-05-15', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Alan Walker'), 21, 12);
+-- Thêm album của Avicii
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+('True', '2013-09-13', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Avicii'), 21, 12),
+('Stories', '2015-10-02', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Avicii'), 21, 14);
+-- Thêm album của Calvin Harris
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+('18 Months', '2012-10-26', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Calvin Harris'), 21, 10),
+('Motion', '2014-11-04', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Calvin Harris'), 21, 12);
+-- Thêm album của David Guetta
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+('One Love', '2009-08-24', (SELECT ArtistID FROM Artist WHERE ArtistName = 'David Guetta'), 21, 12),
+('Nothing But the Beat', '2011-08-26', (SELECT ArtistID FROM Artist WHERE ArtistName = 'David Guetta'), 21, 14);
+-- Thêm album của Shakira
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+('Laundry Service', '2001-11-13', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Shakira'), 21, 13),
+('El Dorado', '2017-05-26', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Shakira'), 21, 10);
+-- Thêm album của Maluma
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+('F.A.M.E.', '2018-05-18', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Maluma'), 34, 12),
+('11:11', '2019-05-17', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Maluma'), 34, 11);
 
+-- Thêm album của Bad Bunny
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+('X 100PRE', '2018-12-24', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Bad Bunny'), 34, 12),
+('YHLQMDLG', '2020-02-29', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Bad Bunny'), 34, 20);
 
+-- Thêm album của Camila Cabello
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+('Camila', '2018-01-12', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Camila Cabello'), 34, 10),
+('Romance', '2019-12-06', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Camila Cabello'), 34, 14);
+
+-- Thêm album của Demi Lovato
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+('Confident', '2015-10-16', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Demi Lovato'), 34, 10),
+('Tell Me You Love Me', '2017-09-29', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Demi Lovato'), 34, 12);
+
+-- Thêm album của Nicki Minaj
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+('Pink Friday', '2010-11-22', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Nicki Minaj'), 34, 13),
+('The Pinkprint', '2014-12-15', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Nicki Minaj'), 34, 16);
+
+-- Thêm album của Cardi B
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+('Invasion of Privacy', '2018-04-06', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Cardi B'), 34, 13);
+
+-- Thêm album của Megan Thee Stallion
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+('Suga', '2020-03-06', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Megan Thee Stallion'), 34, 9),
+('Good News', '2020-11-20', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Megan Thee Stallion'), 34, 17);
+
+-- Thêm album của Doja Cat
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+('Amala', '2018-03-30', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Doja Cat'), 34, 9),
+('Hot Pink', '2019-11-07', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Doja Cat'), 34, 10);
+
+-- Thêm album của Lil Nas X
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+('7', '2019-06-21', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Lil Nas X'), 34, 8);
+
+-- Thêm album của Travis Scott
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+('Astroworld', '2018-08-03', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Travis Scott'), 34, 17);
+
+-- Thêm album của Future
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
+('DS2', '2015-07-17', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Future'), 34, 18),
+('Hndrxx', '2017-02-24', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Future'), 34, 14);
+INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) 
+VALUES
+('Illmatic', '1994-04-19', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Nas'), 34, 10),
+('It Was Written', '1996-07-02', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Nas'), 34, 14),
+
+('DAMN.', '2017-04-14', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Kendrick Lamar'), 34, 14),
+('To Pimp a Butterfly', '2015-03-15', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Kendrick Lamar'), 34, 16),
+
+('2014 Forest Hills Drive', '2014-12-09', (SELECT ArtistID FROM Artist WHERE ArtistName = 'J. Cole'), 34, 13),
+('KOD', '2018-04-20', (SELECT ArtistID FROM Artist WHERE ArtistName = 'J. Cole'), 34, 12),
+
+('Under Pressure', '2014-10-21', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Logic'), 34, 12),
+('The Incredible True Story', '2015-11-13', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Logic'), 34, 18),
+
+('Cuz I Love You', '2019-04-19', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Lizzo'), 34, 12),
+('Special', '2022-07-15', (SELECT ArtistID FROM Artist WHERE ArtistName = 'Lizzo'), 34, 10);
+-- Thêm dữ liệu bài hát.
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "Good Girl Gone Bad"
+('Umbrella', 274, '2007-03-29', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good Girl Gone Bad'), 1),
+('Shut Up and Drive', 220, '2007-06-11', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good Girl Gone Bad'), 1),
+('Hate That I Love You', 229, '2007-09-04', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good Girl Gone Bad'), 1),
+('Take a Bow', 203, '2008-04-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good Girl Gone Bad'), 1),
+('Disturbia', 230, '2008-07-08', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good Girl Gone Bad'), 1),
+('Rehab', 246, '2008-01-28', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good Girl Gone Bad'), 1),
+('Don\'t Stop the Music', 231, '2007-10-31', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good Girl Gone Bad'), 1),
+('Breakin’ Dishes', 217, '2008-01-08', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good Girl Gone Bad'), 1),
+('Love Without Tragedy', 255, '2007-11-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good Girl Gone Bad'), 1),
+('Push Up on Me', 240, '2007-08-07', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good Girl Gone Bad'), 1),
+('Good Girl Gone Bad', 263, '2007-05-30', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good Girl Gone Bad'), 1),
+
+-- Album "Rated R"
+('Russian Roulette', 258, '2009-10-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Rated R'), 1),
+('Hard', 229, '2009-11-23', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Rated R'), 1),
+('Rude Boy', 227, '2010-01-25', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Rated R'), 1),
+('Fire Bomb', 237, '2009-11-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Rated R'), 1),
+('Te Amo', 243, '2010-03-23', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Rated R'), 1),
+('Love the Way You Lie (Part II)', 271, '2009-12-22', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Rated R'), 1),
+('Photographs', 249, '2009-12-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Rated R'), 1),
+('Stupid in Love', 220, '2009-03-11', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Rated R'), 1),
+
+-- Album "Loud"
+('Only Girl (In the World)', 232, '2010-10-25', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Loud'), 1),
+('What’s My Name?', 227, '2010-10-25', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Loud'), 1),
+('S&M', 233, '2010-01-21', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Loud'), 1),
+('Cheers (Drink to That)', 232, '2011-06-17', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Loud'), 1),
+('California King Bed', 246, '2011-05-03', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Loud'), 1),
+('Man Down', 251, '2011-05-16', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Loud'), 1),
+('Raining Men', 231, '2010-11-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Loud'), 1),
+('Complicated', 220, '2010-12-07', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Loud'), 1),
+
+-- Album "Talk That Talk"
+('We Found Love', 238, '2011-09-22', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Talk That Talk'), 1),
+('You Da One', 223, '2011-11-11', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Talk That Talk'), 1),
+('Talk That Talk', 231, '2011-11-11', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Talk That Talk'), 1),
+('Where Have You Been', 238, '2012-03-05', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Talk That Talk'), 1),
+('Birthday Cake', 170, '2012-02-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Talk That Talk'), 1),
+('Cockiness (Love It)', 223, '2011-11-11', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Talk That Talk'), 1),
+
+-- Album "Unapologetic"
+('Diamonds', 228, '2012-11-09', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Unapologetic'), 1),
+('Stay', 213, '2012-01-07', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Unapologetic'), 1),
+('Pour It Up', 257, '2013-01-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Unapologetic'), 1),
+('Love Without Tragedy', 255, '2013-02-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Unapologetic'), 1),
+('What Now', 244, '2012-11-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Unapologetic'), 1),
+('Numb', 234, '2012-11-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Unapologetic'), 1);
+
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "Show Your Love"
+('Show Your Love', 210, '2003-06-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Show Your Love'), 39),
+('The Rose', 240, '2003-06-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Show Your Love'), 39),
+('Kiss Me', 230, '2003-06-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Show Your Love'), 39),
+('Love You More', 210, '2003-06-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Show Your Love'), 39),
+('I Am Not Yours', 220, '2003-06-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Show Your Love'), 39),
+('Stay With Me', 250, '2003-06-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Show Your Love'), 39),
+('Happy Alone', 235, '2003-06-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Show Your Love'), 39),
+('Last Kiss', 245, '2003-06-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Show Your Love'), 39),
+('Don\'t Cry', 230, '2003-06-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Show Your Love'), 39),
+('Secret Garden', 240, '2003-06-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Show Your Love'), 39),
+
+-- Album "Magic"
+('Magic', 233, '2005-11-25', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Magic'), 39),
+('You', 245, '2005-11-25', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Magic'), 39),
+('Love is Here', 250, '2005-11-25', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Magic'), 39),
+('Fate', 240, '2005-11-25', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Magic'), 39),
+('Don\'t Let Me Go', 255, '2005-11-25', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Magic'), 39),
+('Goodbye', 230, '2005-11-25', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Magic'), 39),
+('Love & Magic', 250, '2005-11-25', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Magic'), 39),
+('Nothing Can Change My Love for You', 245, '2005-11-25', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Magic'), 39),
+('Butterfly Dream', 240, '2005-11-25', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Magic'), 39),
+('In Love With You', 230, '2005-11-25', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Magic'), 39),
+
+-- Album "Dancing Diva"
+('Dancing Diva', 235, '2006-11-02', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Dancing Diva'), 39),
+('Queen', 220, '2006-11-02', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Dancing Diva'), 39),
+('Passion', 250, '2006-11-02', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Dancing Diva'), 39),
+('Superstar', 240, '2006-11-02', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Dancing Diva'), 39),
+('Dance Floor', 245, '2006-11-02', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Dancing Diva'), 39),
+('Diva', 230, '2006-11-02', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Dancing Diva'), 39),
+('Fly Away', 255, '2006-11-02', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Dancing Diva'), 39),
+('Never Say Goodbye', 230, '2006-11-02', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Dancing Diva'), 39),
+('Show Me the Way', 240, '2006-11-02', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Dancing Diva'), 39),
+('Dance with Me', 235, '2006-11-02', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Dancing Diva'), 39),
+
+-- Album "Butterfly"
+('Butterfly', 240, '2009-11-20', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Butterfly'), 39),
+('Wings', 235, '2009-11-20', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Butterfly'), 39),
+('Transformation', 250, '2009-11-20', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Butterfly'), 39),
+('Love Butterfly', 245, '2009-11-20', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Butterfly'), 39),
+('Fly High', 235, '2009-11-20', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Butterfly'), 39),
+('True Love', 245, '2009-11-20', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Butterfly'), 39),
+('Believe in Love', 240, '2009-11-20', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Butterfly'), 39),
+('Magical Love', 250, '2009-11-20', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Butterfly'), 39),
+('Eternal Love', 230, '2009-11-20', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Butterfly'), 39),
+('Butterfly Kiss', 235, '2009-11-20', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'Butterfly'), 39),
+
+-- Album "MUSE"
+('MUSE', 240, '2014-07-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'MUSE'), 39),
+('Lost in Time', 245, '2014-07-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'MUSE'), 39),
+('The Awakening', 230, '2014-07-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'MUSE'), 39),
+('Fading Away', 255, '2014-07-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'MUSE'), 39),
+('Never Turn Back', 240, '2014-07-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'MUSE'), 39),
+('Muse\'s Heart', 230, '2014-07-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'MUSE'), 39),
+('Sing to Me', 245, '2014-07-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'MUSE'), 39),
+('Fascination', 240, '2014-07-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'MUSE'), 39),
+('In the Dark', 250, '2014-07-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'MUSE'), 39),
+('Dreams', 240, '2014-07-18', 'Mandarin', (SELECT AlbumID FROM Album WHERE AlbumName = 'MUSE'), 39);
+-- Thêm bài hát vào album của Alan Walker
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "Different World"
+('Different World', 210, '2018-12-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Different World'), 21),
+('All Falls Down', 220, '2018-12-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Different World'), 21),
+('Faded', 240, '2018-12-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Different World'), 21),
+('Alone', 210, '2018-12-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Different World'), 21),
+('Tired', 230, '2018-12-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Different World'), 21),
+('Sing Me to Sleep', 240, '2018-12-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Different World'), 21),
+('Darkside', 250, '2018-12-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Different World'), 21),
+('On My Way', 220, '2018-12-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Different World'), 21),
+('Diamond Heart', 240, '2018-12-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Different World'), 21),
+('Lost Control', 250, '2018-12-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Different World'), 21),
+
+-- Album "Walkerverse"
+('Fade', 225, '2020-05-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Walkerverse'), 21),
+('No Sleep', 240, '2020-05-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Walkerverse'), 21),
+('Lily', 230, '2020-05-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Walkerverse'), 21),
+('Unity', 240, '2020-05-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Walkerverse'), 21),
+('Hey Brother', 250, '2020-05-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Walkerverse'), 21),
+('Spectre', 220, '2020-05-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Walkerverse'), 21),
+('Sing Me to Sleep', 240, '2020-05-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Walkerverse'), 21),
+('The Spectre', 245, '2020-05-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Walkerverse'), 21),
+('Faded Reborn', 250, '2020-05-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Walkerverse'), 21),
+('Force', 220, '2020-05-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Walkerverse'), 21);
+
+-- Thêm bài hát vào album của Avicii
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "True"
+('Wake Me Up', 250, '2013-09-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'True'), 21),
+('Hey Brother', 240, '2013-09-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'True'), 21),
+('Addicted to You', 230, '2013-09-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'True'), 21),
+('I Could Be the One', 240, '2013-09-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'True'), 21),
+('Lay Me Down', 235, '2013-09-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'True'), 21),
+('Dear Boy', 230, '2013-09-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'True'), 21),
+('Dancing in My Head', 245, '2013-09-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'True'), 21),
+('Hope There’s Someone', 255, '2013-09-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'True'), 21),
+('The Nights', 240, '2013-09-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'True'), 21),
+('Shameless', 230, '2013-09-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'True'), 21),
+
+-- Album "Stories"
+('Waiting for Love', 240, '2015-10-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Stories'), 21),
+('For a Better Day', 230, '2015-10-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Stories'), 21),
+('Broken Arrows', 245, '2015-10-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Stories'), 21),
+('The Days', 220, '2015-10-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Stories'), 21),
+('Without You', 235, '2015-10-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Stories'), 21),
+('Pure Grinding', 250, '2015-10-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Stories'), 21),
+('Sunset Jesus', 245, '2015-10-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Stories'), 21),
+('Broke Our Hearts', 255, '2015-10-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Stories'), 21),
+('City Lights', 240, '2015-10-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Stories'), 21),
+('Touch Me', 230, '2015-10-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Stories'), 21);
+
+-- Thêm bài hát vào album của Calvin Harris
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "18 Months"
+('Bounce', 235, '2012-10-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '18 Months'), 21),
+('Let’s Go', 245, '2012-10-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '18 Months'), 21),
+('We Found Love', 240, '2012-10-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '18 Months'), 21),
+('I Need Your Love', 230, '2012-10-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '18 Months'), 21),
+('Drinking from the Bottle', 255, '2012-10-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '18 Months'), 21),
+('Sweet Nothing', 245, '2012-10-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '18 Months'), 21),
+('Under Control', 240, '2012-10-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '18 Months'), 21),
+('Iron', 230, '2012-10-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '18 Months'), 21),
+('Awooga', 250, '2012-10-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '18 Months'), 21),
+('Here 2 China', 245, '2012-10-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '18 Months'), 21),
+
+-- Album "Motion"
+('Summer', 240, '2014-11-04', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Motion'), 21),
+('Blame', 230, '2014-11-04', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Motion'), 21),
+('Outside', 240, '2014-11-04', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Motion'), 21),
+('Pray to God', 245, '2014-11-04', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Motion'), 21),
+('My Way', 250, '2014-11-04', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Motion'), 21),
+('Open Wide', 235, '2014-11-04', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Motion'), 21),
+('Love Now', 240, '2014-11-04', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Motion'), 21),
+('Slow Acid', 250, '2014-11-04', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Motion'), 21),
+('It Was You', 240, '2014-11-04', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Motion'), 21),
+('Numb', 230, '2014-11-04', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Motion'), 21);
+-- Thêm bài hát vào album của David Guetta
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "One Love"
+('When Love Takes Over', 240, '2009-08-24', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'One Love'), 21),
+('Sexy Bitch', 230, '2009-08-24', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'One Love'), 21),
+('Memories', 220, '2009-08-24', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'One Love'), 21),
+('I Gotta Feeling', 240, '2009-08-24', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'One Love'), 21),
+('On the Dancefloor', 230, '2009-08-24', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'One Love'), 21),
+('Missing You', 225, '2009-08-24', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'One Love'), 21),
+('Love Is Gone', 220, '2009-08-24', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'One Love'), 21),
+('Tomorrow Can Wait', 230, '2009-08-24', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'One Love'), 21),
+('Gettin\' Over You', 240, '2009-08-24', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'One Love'), 21),
+('How Soon Is Now', 230, '2009-08-24', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'One Love'), 21),
+('The World Is Mine', 235, '2009-08-24', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'One Love'), 21),
+('One Love', 240, '2009-08-24', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'One Love'), 21),
+
+-- Album "Nothing But the Beat"
+('Where Them Girls At', 235, '2011-08-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Nothing But the Beat'), 21),
+('Without You', 245, '2011-08-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Nothing But the Beat'), 21),
+('Turn Me On', 230, '2011-08-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Nothing But the Beat'), 21),
+('Little Bad Girl', 240, '2011-08-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Nothing But the Beat'), 21),
+('I Can Only Imagine', 250, '2011-08-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Nothing But the Beat'), 21),
+('Where Is the Love', 240, '2011-08-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Nothing But the Beat'), 21),
+('Sweat', 225, '2011-08-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Nothing But the Beat'), 21),
+('Just One Last Time', 230, '2011-08-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Nothing But the Beat'), 21),
+('Nothing But the Beat', 240, '2011-08-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Nothing But the Beat'), 21),
+('The Alphabeat', 230, '2011-08-26', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Nothing But the Beat'),21);
+
+-- Thêm bài hát vào album của Shakira
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "Laundry Service"
+('Whenever, Wherever', 230, '2001-11-13', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'Laundry Service'), 21),
+('Underneath Your Clothes', 240, '2001-11-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Laundry Service'), 21),
+('Hips Don’t Lie', 245, '2001-11-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Laundry Service'), 21),
+('Te Dejo Madrid', 220, '2001-11-13', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'Laundry Service'), 21),
+('Inevitable', 235, '2001-11-13', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'Laundry Service'), 21),
+('The One', 240, '2001-11-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Laundry Service'), 21),
+('Antología', 230, '2001-11-13', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'Laundry Service'), 21),
+('Ciega, Sordomuda', 240, '2001-11-13', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'Laundry Service'), 21),
+('Tú', 225, '2001-11-13', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'Laundry Service'), 21),
+('Ojos Así', 245, '2001-11-13', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'Laundry Service'), 21),
+
+-- Album "El Dorado"
+('Me Enamoré', 240, '2017-05-26', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'El Dorado'), 21),
+('Perro Fiel', 230, '2017-05-26', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'El Dorado'), 21),
+('Chantaje', 235, '2017-05-26', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'El Dorado'), 21),
+('La Bicicleta', 240, '2017-05-26', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'El Dorado'), 21),
+('El Dorado', 250, '2017-05-26', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'El Dorado'), 21),
+('Nada', 230, '2017-05-26', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'El Dorado'), 21),
+('Amarillo', 240, '2017-05-26', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'El Dorado'), 21),
+('Caderas Blancas', 245, '2017-05-26', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'El Dorado'), 21),
+('Toneladas de Amor', 235, '2017-05-26', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'El Dorado'), 21),
+('Blackmail', 230, '2017-05-26', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'El Dorado'), 21);
+
+-- Thêm bài hát vào album của Maluma
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "F.A.M.E."
+('Felices los 4', 230, '2018-05-18', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'F.A.M.E.'), 34),
+('Corazón', 235, '2018-05-18', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'F.A.M.E.'), 34),
+('Borró Cassette', 240, '2018-05-18', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'F.A.M.E.'), 34),
+('Vivir Mi Vida', 230, '2018-05-18', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'F.A.M.E.'), 34),
+('El Préstamo', 220, '2018-05-18', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'F.A.M.E.'), 34),
+('Amigos con Derechos', 245, '2018-05-18', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'F.A.M.E.'), 34),
+('Hawái', 250, '2018-05-18', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'F.A.M.E.'), 34),
+('24 Horas', 240, '2018-05-18', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'F.A.M.E.'), 34),
+('La Resaca', 230, '2018-05-18', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'F.A.M.E.'), 34),
+('Mala Mía', 235, '2018-05-18', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'F.A.M.E.'), 34),
+
+-- Album "11:11"
+('No Se Me Quita', 245, '2019-05-17', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = '11:11'), 34),
+('Instinto', 230, '2019-05-17', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = '11:11'), 34),
+('Qué Chimba', 240, '2019-05-17', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = '11:11'), 34),
+('La Noche', 230, '2019-05-17', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = '11:11'), 34),
+('Vente Pa\' Ca', 235, '2019-05-17', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = '11:11'), 34),
+('No Te Vayas', 240, '2019-05-17', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = '11:11'), 34),
+('Solita', 230, '2019-05-17', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = '11:11'), 34),
+('Me Gusta', 235, '2019-05-17', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = '11:11'), 34),
+('Sin Contrato', 245, '2019-05-17', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = '11:11'), 34),
+('Tu Amor', 240, '2019-05-17', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = '11:11'), 34); 
+-- Thêm bài hát vào album của Bad Bunny
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "X 100PRE"
+('Mía', 240, '2018-12-24', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'X 100PRE'), 34),
+('Vete', 230, '2018-12-24', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'X 100PRE'), 34),
+('La Canción', 245, '2018-12-24', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'X 100PRE'), 34),
+('Ni Bien Ni Mal', 235, '2018-12-24', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'X 100PRE'), 34),
+('Estamos Bien', 230, '2018-12-24', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'X 100PRE'), 34),
+('Solo de Mí', 240, '2018-12-24', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'X 100PRE'), 34),
+('Si Estuviésemos Juntos', 245, '2018-12-24', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'X 100PRE'), 34),
+('Como Te Quiero Yo a Ti', 250, '2018-12-24', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'X 100PRE'), 34),
+('Qué Pretendes', 240, '2018-12-24', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'X 100PRE'), 34),
+('Pa\' Romperla', 230, '2018-12-24', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'X 100PRE'), 34),
+('Esquema', 235, '2018-12-24', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'X 100PRE'), 34),
+('X 100PRE', 240, '2018-12-24', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'X 100PRE'), 34),
+
+-- Album "YHLQMDLG"
+('Si Veo a Tu Mamá', 245, '2020-02-29', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'YHLQMDLG'), 34),
+('La Santa', 230, '2020-02-29', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'YHLQMDLG'), 34),
+('Bichiyal', 240, '2020-02-29', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'YHLQMDLG'), 34),
+('Pa\' Romperla', 245, '2020-02-29', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'YHLQMDLG'), 34),
+('Safaera', 250, '2020-02-29', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'YHLQMDLG'), 34),
+('Bye Me Fui', 240, '2020-02-29', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'YHLQMDLG'), 34),
+('El Apagón', 230, '2020-02-29', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'YHLQMDLG'), 34),
+('Pa\' Ti', 235, '2020-02-29', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'YHLQMDLG'), 34),
+('Vete', 230, '2020-02-29', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'YHLQMDLG'), 34),
+('Pa\' Las Mujeres', 240, '2020-02-29', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'YHLQMDLG'), 34),
+('Rodeo', 250, '2020-02-29', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'YHLQMDLG'), 34),
+('YHLQMDLG', 240, '2020-02-29', 'Spanish', (SELECT AlbumID FROM Album WHERE AlbumName = 'YHLQMDLG'), 34);
+
+-- Thêm bài hát vào album của Camila Cabello
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "Camila"
+('Havana', 240, '2018-01-12', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Camila'), 34),
+('Never Be the Same', 235, '2018-01-12', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Camila'), 34),
+('Crying in the Club', 245, '2018-01-12', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Camila'), 34),
+('Into It', 230, '2018-01-12', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Camila'), 34),
+('Real Friends', 240, '2018-01-12', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Camila'), 34),
+('All These Years', 230, '2018-01-12', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Camila'), 34),
+('She Loves Control', 250, '2018-01-12', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Camila'), 34),
+('I Have Questions', 240, '2018-01-12', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Camila'), 34),
+('Something\'s Gotta Give', 245, '2018-01-12', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Camila'), 34),
+('Consequences', 235, '2018-01-12', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Camila'), 34),
+
+-- Album "Romance"
+('Liar', 235, '2019-12-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Romance'), 34),
+('Shameless', 245, '2019-12-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Romance'), 34),
+('Cry for Me', 240, '2019-12-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Romance'), 34),
+('Easy', 230, '2019-12-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Romance'), 34),
+('Find You Again', 240, '2019-12-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Romance'), 34),
+('Should\'ve Said It', 235, '2019-12-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Romance'), 34),
+('Dream of You', 240, '2019-12-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Romance'), 34),
+('Used to This', 230, '2019-12-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Romance'), 34),
+('Bad Kind of Butterflies', 245, '2019-12-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Romance'), 34),
+('Living Proof', 250, '2019-12-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Romance'), 34);
+
+-- Thêm bài hát vào album của Demi Lovato
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "Confident"
+('Confident', 240, '2015-10-16', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Confident'), 34),
+('Cool for the Summer', 230, '2015-10-16', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Confident'), 34),
+('Old Ways', 240, '2015-10-16', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Confident'), 34),
+('Kingdom Come', 250, '2015-10-16', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Confident'), 34),
+('Stone Cold', 245, '2015-10-16', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Confident'), 34),
+('Waitin for You', 230, '2015-10-16', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Confident'), 34),
+('Father', 240, '2015-10-16', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Confident'), 34),
+('Heart Attack', 250, '2015-10-16', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Confident'), 34),
+('Yes', 230, '2015-10-16', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Confident'), 34),
+('Warrior', 240, '2015-10-16', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Confident'), 34),
+
+-- Album "Tell Me You Love Me"
+('Sorry Not Sorry', 240, '2017-09-29', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Tell Me You Love Me'), 34),
+('Tell Me You Love Me', 235, '2017-09-29', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Tell Me You Love Me'), 34),
+('You Don\'t Do It for Me Anymore', 250, '2017-09-29', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Tell Me You Love Me'), 34),
+('Games', 240, '2017-09-29', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Tell Me You Love Me'), 34),
+('Concentration', 245, '2017-09-29', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Tell Me You Love Me'), 34),
+('Hitchhiker', 230, '2017-09-29', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Tell Me You Love Me'), 34),
+('Only Forever', 240, '2017-09-29', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Tell Me You Love Me'), 34),
+('Lonely', 235, '2017-09-29', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Tell Me You Love Me'), 34),
+('Sober', 230, '2017-09-29', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Tell Me You Love Me'), 34),
+('Skyscraper', 240, '2017-09-29', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Tell Me You Love Me'), 34);
+-- Thêm bài hát vào album của Nicki Minaj
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "Pink Friday"
+('Your Love', 240, '2010-11-22', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Pink Friday'), 34),
+('Roman\'s Revenge', 235, '2010-11-22', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Pink Friday'), 34),
+('Check It Out', 250, '2010-11-22', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Pink Friday'), 34),
+('Moment 4 Life', 245, '2010-11-22', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Pink Friday'), 34),
+('Super Bass', 230, '2010-11-22', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Pink Friday'), 34),
+('Fly', 240, '2010-11-22', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Pink Friday'), 34),
+('Blazin', 235, '2010-11-22', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Pink Friday'), 34),
+('Did It On\'em', 240, '2010-11-22', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Pink Friday'), 34),
+('Right Thru Me', 250, '2010-11-22', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Pink Friday'), 34),
+('I’m the Best', 240, '2010-11-22', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Pink Friday'), 34),
+('Here I Am', 230, '2010-11-22', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Pink Friday'), 34),
+('Save Me', 245, '2010-11-22', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Pink Friday'), 34),
+('Last Chance', 235, '2010-11-22', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Pink Friday'), 34),
+
+-- Album "The Pinkprint"
+('All Things Go', 240, '2014-12-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Pinkprint'), 34),
+('I Lied', 230, '2014-12-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Pinkprint'), 34),
+('The Crying Game', 245, '2014-12-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Pinkprint'), 34),
+('Feeling Myself', 240, '2014-12-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Pinkprint'), 34),
+('Only', 230, '2014-12-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Pinkprint'), 34),
+('Truffle Butter', 245, '2014-12-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Pinkprint'), 34),
+('Swalla', 230, '2014-12-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Pinkprint'), 34),
+('Anaconda', 250, '2014-12-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Pinkprint'), 34),
+('Pills N Potions', 240, '2014-12-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Pinkprint'), 34),
+('Bed of Lies', 235, '2014-12-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Pinkprint'), 34),
+('Grand Piano', 240, '2014-12-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Pinkprint'), 34),
+('Looking Ass', 245, '2014-12-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Pinkprint'), 34),
+('All Eyes on Me', 230, '2014-12-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Pinkprint'), 34),
+('Big Bank', 240, '2014-12-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Pinkprint'), 34),
+('The Night Is Still Young', 235, '2014-12-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Pinkprint'), 34);
+
+-- Thêm bài hát vào album của Cardi B
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "Invasion of Privacy"
+('Bodak Yellow', 230, '2018-04-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Invasion of Privacy'), 34),
+('I Like It', 240, '2018-04-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Invasion of Privacy'), 34),
+('Be Careful', 235, '2018-04-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Invasion of Privacy'), 34),
+('Ring', 245, '2018-04-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Invasion of Privacy'), 34),
+('Money', 250, '2018-04-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Invasion of Privacy'), 34),
+('Bartier Cardi', 240, '2018-04-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Invasion of Privacy'), 34),
+('Drip', 230, '2018-04-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Invasion of Privacy'), 34),
+('Choppa', 245, '2018-04-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Invasion of Privacy'), 34),
+('Best Life', 235, '2018-04-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Invasion of Privacy'), 34),
+('Thru Your Phone', 240, '2018-04-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Invasion of Privacy'), 34),
+('Up', 235, '2018-04-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Invasion of Privacy'), 34),
+('I Do', 240, '2018-04-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Invasion of Privacy'), 34),
+('Get Up 10', 250, '2018-04-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Invasion of Privacy'), 34);
+
+-- Thêm bài hát vào album của Megan Thee Stallion
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "Suga"
+('Savage', 230, '2020-03-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Suga'), 34),
+('Captain Hook', 240, '2020-03-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Suga'), 34),
+('B.I.T.C.H.', 250, '2020-03-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Suga'), 34),
+('Hit My Phone', 245, '2020-03-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Suga'), 34),
+('Sugar Baby', 235, '2020-03-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Suga'), 34),
+('Cry Baby', 240, '2020-03-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Suga'), 34),
+('What’s New', 230, '2020-03-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Suga'), 34),
+('Intercourse', 240, '2020-03-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Suga'), 34),
+('Savage Remix', 245, '2020-03-06', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Suga'), 34),
+
+-- Album "Good News"
+('Good News', 240, '2020-11-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good News'), 34),
+('Body', 235, '2020-11-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good News'), 34),
+('Do It On the Tip', 245, '2020-11-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good News'), 34),
+('Girls in the Hood', 240, '2020-11-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good News'), 34),
+('Cry Baby', 235, '2020-11-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good News'), 34),
+('Freak', 245, '2020-11-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good News'), 34),
+('Hot Girl Summer', 230, '2020-11-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good News'), 34),
+('Savage Remix', 240, '2020-11-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good News'), 34),
+('Big Ole Freak', 230, '2020-11-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Good News'), 34);
+-- Thêm bài hát vào album của Doja Cat
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "Amala"
+('Go To Town', 210, '2018-03-30', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Amala'), 34),
+('So High', 230, '2018-03-30', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Amala'), 34),
+('Moo!', 240, '2018-03-30', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Amala'), 34),
+('Roll With Us', 245, '2018-03-30', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Amala'), 34),
+('Freak', 250, '2018-03-30', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Amala'), 34),
+('Tia Tamera', 240, '2018-03-30', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Amala'), 34),
+('Want You', 230, '2018-03-30', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Amala'), 34),
+('Downtown', 220, '2018-03-30', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Amala'), 34),
+('Bye Bitch', 240, '2018-03-30', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Amala'), 34),
+
+-- Album "Hot Pink"
+('Juicy', 230, '2019-11-07', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Hot Pink'), 34),
+('Say So', 240, '2019-11-07', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Hot Pink'), 34),
+('Like That', 235, '2019-11-07', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Hot Pink'), 34),
+('Cyber Sex', 250, '2019-11-07', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Hot Pink'), 34),
+('Streets', 245, '2019-11-07', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Hot Pink'), 34),
+('Talk Dirty', 240, '2019-11-07', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Hot Pink'), 34),
+('Wine', 235, '2019-11-07', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Hot Pink'), 34),
+('Bottom Bitch', 240, '2019-11-07', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Hot Pink'), 34),
+('Need to Know', 250, '2019-11-07', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Hot Pink'), 34);
+
+-- Thêm bài hát vào album của Lil Nas X
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "7"
+('Old Town Road', 130, '2019-06-21', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '7'), 34),
+('Panini', 210, '2019-06-21', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '7'), 34),
+('Rodeo', 240, '2019-06-21', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '7'), 34),
+('Bring U Down', 220, '2019-06-21', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '7'), 34),
+('C7osure', 240, '2019-06-21', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '7'), 34),
+('Kick It', 230, '2019-06-21', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '7'), 34),
+('F9mily', 225, '2019-06-21', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '7'), 34),
+('Don’t Want It', 215, '2019-06-21', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '7'), 34);
+
+-- Thêm bài hát vào album của Travis Scott
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "Astroworld"
+('SICKO MODE', 320, '2018-08-03', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Astroworld'), 34),
+('STARGAZING', 260, '2018-08-03', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Astroworld'), 34),
+('STOP TRYING TO BE GOD', 245, '2018-08-03', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Astroworld'), 34),
+('R.I.P. SCREW', 240, '2018-08-03', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Astroworld'), 34),
+('NO BYSTANDERS', 250, '2018-08-03', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Astroworld'), 34),
+('YOSEMITE', 230, '2018-08-03', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Astroworld'), 34),
+('HOUSTONFORNIA', 240, '2018-08-03', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Astroworld'), 34),
+('SKELETONS', 245, '2018-08-03', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Astroworld'), 34),
+('WAKE UP', 220, '2018-08-03', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Astroworld'), 34),
+('CAN’T SAY', 235, '2018-08-03', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Astroworld'), 34),
+('5% TINT', 230, '2018-08-03', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Astroworld'), 34),
+('BUTTERFLY EFFECT', 240, '2018-08-03', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Astroworld'), 34),
+('GATTI', 250, '2018-08-03', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Astroworld'), 34),
+('HOUSTONFORNIA', 245, '2018-08-03', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Astroworld'), 34),
+('HIGHEST IN THE ROOM', 220, '2018-08-03', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Astroworld'), 34),
+('SICKO MODE REMIX', 320, '2018-08-03', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Astroworld'), 34);
+
+-- Thêm bài hát vào album của Future
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "DS2"
+('Thought It Was a Drought', 260, '2015-07-17', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DS2'), 34),
+('Blow a Bag', 250, '2015-07-17', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DS2'), 34),
+('Where Ya At', 240, '2015-07-17', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DS2'), 34),
+('F*** Up Some Commas', 255, '2015-07-17', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DS2'), 34),
+('Stick Talk', 245, '2015-07-17', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DS2'), 34),
+('I Serve the Base', 230, '2015-07-17', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DS2'), 34),
+('Slave Master', 235, '2015-07-17', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DS2'), 34),
+('Where Ya At', 240, '2015-07-17', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DS2'), 34),
+('Trap Niggas', 230, '2015-07-17', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DS2'), 34),
+
+-- Album "Hndrxx"
+('Selfish', 245, '2017-02-24', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Hndrxx'), 34),
+('Incredible', 240, '2017-02-24', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Hndrxx'), 34),
+('Commas', 250, '2017-02-24', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Hndrxx'), 34),
+('Poppin', 235, '2017-02-24', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Hndrxx'), 34),
+('March Madness', 260, '2017-02-24', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Hndrxx'), 34);
+-- Thêm bài hát vào album của Nas
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "Illmatic"
+('N.Y. State of Mind', 240, '1994-04-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Illmatic'), 34),
+('Life\'s a Bitch', 245, '1994-04-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Illmatic'), 34),
+('The World Is Yours', 255, '1994-04-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Illmatic'), 34),
+('Halftime', 220, '1994-04-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Illmatic'), 34),
+('Memory Lane', 245, '1994-04-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Illmatic'), 34),
+('One Love', 250, '1994-04-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Illmatic'), 34),
+('Represent', 230, '1994-04-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Illmatic'), 34),
+('It Ain\'t Hard to Tell', 255, '1994-04-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Illmatic'), 34),
+('Ain\'t No Such Thing', 250, '1994-04-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Illmatic'), 34),
+('The Genesis', 235, '1994-04-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Illmatic'), 34),
+
+-- Album "It Was Written"
+('The Message', 240, '1996-07-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'It Was Written'), 34),
+('Take It In Blood', 235, '1996-07-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'It Was Written'), 34),
+('Street Dreams', 250, '1996-07-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'It Was Written'), 34),
+('I Gave You Power', 245, '1996-07-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'It Was Written'), 34),
+('Watch Dem Niggas', 240, '1996-07-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'It Was Written'), 34),
+('Affirmative Action', 250, '1996-07-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'It Was Written'), 34),
+('Nas Is Coming', 245, '1996-07-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'It Was Written'), 34),
+('Black Girl Lost', 240, '1996-07-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'It Was Written'), 34),
+('Suspect', 230, '1996-07-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'It Was Written'), 34),
+('You Owe Me', 255, '1996-07-02', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'It Was Written'), 34);
+
+-- Thêm bài hát vào album của Kendrick Lamar
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "DAMN."
+('DNA.', 230, '2017-04-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DAMN.'), 34),
+('HUMBLE.', 220, '2017-04-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DAMN.'), 34),
+('ELEMENT.', 235, '2017-04-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DAMN.'), 34),
+('LOYALTY.', 240, '2017-04-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DAMN.'), 34),
+('PRIDE.', 250, '2017-04-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DAMN.'), 34),
+('FEEL.', 245, '2017-04-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DAMN.'), 34),
+('LOVE.', 230, '2017-04-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DAMN.'), 34),
+('XXX.', 240, '2017-04-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DAMN.'), 34),
+('FEAR.', 245, '2017-04-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DAMN.'), 34),
+('GOD.', 230, '2017-04-14', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'DAMN.'), 34),
+
+-- Album "To Pimp a Butterfly"
+('Wesley\'s Theory', 250, '2015-03-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'To Pimp a Butterfly'), 34),
+('For Free?', 230, '2015-03-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'To Pimp a Butterfly'), 34),
+('King Kunta', 240, '2015-03-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'To Pimp a Butterfly'), 34),
+('Institutionalized', 245, '2015-03-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'To Pimp a Butterfly'), 34),
+('These Walls', 250, '2015-03-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'To Pimp a Butterfly'), 34),
+('U', 235, '2015-03-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'To Pimp a Butterfly'), 34),
+('Alright', 240, '2015-03-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'To Pimp a Butterfly'), 34),
+('For Sale?', 245, '2015-03-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'To Pimp a Butterfly'), 34),
+('Momma', 230, '2015-03-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'To Pimp a Butterfly'), 34);
+
+-- Thêm bài hát vào album của J. Cole
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "2014 Forest Hills Drive"
+('January 28th', 240, '2014-12-09', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '2014 Forest Hills Drive'), 34),
+('Wet Dreamz', 230, '2014-12-09', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '2014 Forest Hills Drive'), 34),
+('03\' Adolescence', 250, '2014-12-09', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '2014 Forest Hills Drive'), 34),
+('A Tale of 2 Citiez', 245, '2014-12-09', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '2014 Forest Hills Drive'), 34),
+('Fire Squad', 240, '2014-12-09', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '2014 Forest Hills Drive'), 34),
+('St. Tropez', 230, '2014-12-09', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '2014 Forest Hills Drive'), 34),
+('G.O.M.D.', 250, '2014-12-09', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '2014 Forest Hills Drive'), 34),
+('Love Yourz', 240, '2014-12-09', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '2014 Forest Hills Drive'), 34),
+('Note to Self', 255, '2014-12-09', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = '2014 Forest Hills Drive'), 34),
+
+-- Album "KOD"
+('KOD', 240, '2018-04-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'KOD'), 34),
+('ATM', 230, '2018-04-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'KOD'), 34),
+('Motiv8', 245, '2018-04-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'KOD'), 34),
+('KOD', 240, '2018-04-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'KOD'), 34),
+('Friends', 255, '2018-04-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'KOD'), 34),
+('Once an Addict', 245, '2018-04-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'KOD'), 34),
+('The Cut Off', 250, '2018-04-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'KOD'), 34),
+('Close', 235, '2018-04-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'KOD'), 34),
+('Brackets', 240, '2018-04-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'KOD'), 34),
+('Window Pain', 245, '2018-04-20', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'KOD'), 34);
+
+-- Thêm bài hát vào album của Logic
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "Under Pressure"
+('Intro', 210, '2014-10-21', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Under Pressure'), 34),
+('Soul Food', 250, '2014-10-21', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Under Pressure'), 34),
+('Nikki', 245, '2014-10-21', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Under Pressure'), 34),
+('Growing Pains', 240, '2014-10-21', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Under Pressure'), 34),
+('The Come Up', 230, '2014-10-21', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Under Pressure'), 34),
+('Under Pressure', 240, '2014-10-21', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Under Pressure'), 34),
+('Till the End', 255, '2014-10-21', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Under Pressure'), 34),
+('Paradise', 250, '2014-10-21', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Under Pressure'), 34),
+('The Man Who Fell from the Sky', 245, '2014-10-21', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Under Pressure'), 34),
+
+-- Album "The Incredible True Story"
+('Contact', 240, '2015-11-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Incredible True Story'), 34),
+('Fade Away', 250, '2015-11-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Incredible True Story'), 34),
+('The Incredible True Story', 245, '2015-11-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Incredible True Story'), 34),
+('Paradise', 240, '2015-11-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Incredible True Story'), 34),
+('Young Jedi', 230, '2015-11-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Incredible True Story'), 34),
+('Intermission', 225, '2015-11-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Incredible True Story'), 34),
+('The Cube', 235, '2015-11-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Incredible True Story'), 34),
+('Like Me', 245, '2015-11-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Incredible True Story'), 34),
+('Under Pressure', 230, '2015-11-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Incredible True Story'), 34),
+('City Lights', 245, '2015-11-13', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'The Incredible True Story'), 34);
+
+-- Thêm bài hát vào album của Lizzo
+INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
+-- Album "Cuz I Love You"
+('Cuz I Love You', 240, '2019-04-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Cuz I Love You'), 34),
+('Juice', 235, '2019-04-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Cuz I Love You'), 34),
+('Tempo', 250, '2019-04-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Cuz I Love You'), 34),
+('Soulmate', 245, '2019-04-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Cuz I Love You'), 34),
+('Good as Hell', 240, '2019-04-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Cuz I Love You'), 34),
+('Truth Hurts', 255, '2019-04-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Cuz I Love You'), 34),
+('Lingerie', 230, '2019-04-19', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Cuz I Love You'), 34),
+
+-- Album "Special"
+('About Damn Time', 240, '2022-07-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Special'), 34),
+('2 Be Loved', 230, '2022-07-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Special'), 34),
+('Special', 250, '2022-07-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Special'), 34),
+('I Love You Bitch', 245, '2022-07-15', 'English', (SELECT AlbumID FROM Album WHERE AlbumName = 'Special'), 34);
