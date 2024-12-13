@@ -3102,7 +3102,7 @@ SELECT
         WHEN RAND() > 0.5 THEN 'PERSONAL' 
         else 'SHARED' 
     END,  -- Loại thư viện đa dạng
-    FLOOR(20 + (RAND() * 500)),  -- Số bài hát ngẫu nhiên từ 20 đến 500
+    FLOOR(50 + (RAND() * 300)),  -- Số bài hát ngẫu nhiên từ 20 đến 500
     NOW() - INTERVAL FLOOR(RAND() * 730) DAY  -- Thời gian tạo thư viện trong 2 năm qua
 FROM 
     (SELECT 1 FROM information_schema.tables LIMIT 200) AS temp;
