@@ -3444,6 +3444,11 @@ SET Member = CASE
     WHEN RAND() < 0.7 THEN 'PREMIUM'
     ELSE 'VIP'
 END;
+USE music;
+UPDATE library l
+JOIN users u ON l.userID = u.userID
+SET l.createdDate = u.joinedDate + INTERVAL 1 DAY
+WHERE l.createdDate < u.joinedDate;
 
 select * from Ratings;
 select * from Library;
