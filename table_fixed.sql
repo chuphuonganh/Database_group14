@@ -507,6 +507,11 @@ INSERT INTO Users (UserName, Email, Address, City, Country) VALUES
 ('Riley Reed', 'rileyreed198@example.com',  '1098 Birch St', 'Milan', 'Italy'),
 ('Sophie Clark', 'sophieclark199@example.com', '1099 Chestnut St', 'Amsterdam', 'Netherlands'),
 ('Tyler Baker', 'tylerbaker200@example.com',  '1100 Walnut St', 'Rotterdam', 'Netherlands');
+UPDATE Users
+SET JoinedDate = DATE_ADD(
+    '2010-01-01',
+    INTERVAL FLOOR(RAND() * (DATEDIFF('2024-12-13', '2010-01-01'))) DAY
+);
 
 INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) VALUES
 	('Map of the Soul: 7', '2020-02-21', 3, 4, 20),
@@ -622,182 +627,318 @@ INSERT INTO Album (AlbumName, PublishedDate, ArtistID, GenreID, NumberOfTracks) 
     ('The Colour And The Shape', '1997-05-20', 84, 84, 13),
     ('My Way: The Best Of Frank Sinatra [Disc 1]', '1997-10-14', 85, 85, 15),
     ('Roda De Funk', '1999-06-25', 86, 86, 10);
-INSERT INTO Playlists (PlaylistName, CreatedDate, UserID) VALUES 
-('Star', '2023-04-09', 100),
-('Chill Vibes', '2023-05-10', 9),
-('Workout Mix', '2023-06-15', 51),
-('Road Trip', '2023-07-20', 122),
-('Morning Motivation', '2023-08-01', 181),
-('Relax and Unwind', '2023-09-05', 134),
-('Party Hits', '2023-10-12', 98),
-('Focus Playlist', '2023-11-18', 78),
-('Classic Rock', '2023-12-25', 67),
-('Top 100', '2024-01-01', 31),
-('Pop Favorites', '2024-02-14', 162),
-('Indie Discoveries', '2024-03-10', 17),
-('Jazz Essentials', '2024-04-22', 75),
-('Throwback Tunes', '2024-05-30', 26),
-('Summer Hits', '2024-06-21', 189),
-('Romantic Evening', '2024-07-14', 103),
-('Acoustic Moods', '2024-08-27', 40),
-('Electronic Beats', '2024-09-09', 166),
-('Hip-Hop Collection', '2024-10-13', 59),
-('Country Roads', '2024-11-26', 195),
-('Evening Serenade', '2023-04-12', 154),
-('Late Night Jazz', '2023-05-03', 48),
-('Sunny Days', '2023-06-15', 102),
-('Dreamy Pop', '2023-07-20', 6),
-('Epic Soundtracks', '2023-08-11', 114),
-('Meditation Bliss', '2023-09-01', 36),
-('Sunday Brunch', '2023-10-09', 141),
-('Rainy Day Moods', '2023-11-05', 75),
-('Upbeat Morning', '2023-12-18', 12),
-('Cinema Classics', '2024-01-10', 181),
-('Urban Chill', '2024-02-14', 50),
-('R&B Essentials', '2024-03-01', 163),
-('Festival Energy', '2024-04-22', 124),
-('Calm Ocean Waves', '2024-05-05', 195),
-('Hiking Tunes', '2024-06-08', 38),
-('Street Beats', '2024-07-12', 11),
-('Soul Revival', '2024-09-18', 63),
-('Winter Warmth', '2024-10-23', 190),
-('Chillstep Sessions', '2024-11-09', 133),
-('Global Beats', '2024-12-02', 77),
-('Acoustic Nights', '2023-04-15', 16),
-('Road Trip Anthems', '2023-05-10', 121),
-('Morning Coffee', '2023-06-25', 85),
-('Classical Inspirations', '2023-07-30', 193),
-('Workout Pump', '2023-08-20', 143),
-('Chill Vibes', '2023-09-10', 58),
-('Weekend Energy', '2023-10-25', 9),
-('Holiday Cheer', '2023-11-15', 73),
-('Lofi Chill', '2023-12-22', 28),
-('New Year Beats', '2024-01-15', 187),
-('Retro Grooves', '2024-02-20', 122),
-('Synthwave Stories', '2021-08-22', 151),
-('90s Nostalgia', '2021-09-12', 138),
-('Campfire Songs', '2021-09-30', 72),
-('Electronic Escapes', '2021-10-05', 116),
-('Meditation Bliss', '2021-10-25', 44),
-('Sound of the 80s', '2021-11-08', 102),
-('Caribbean Grooves', '2021-11-22', 67),
-('Dreamy Nights', '2021-12-01', 185),
-('Holiday Jazz', '2021-12-20', 19),
-('Chillwave Essentials', '2022-01-05', 89),
-('Urban Beats', '2022-01-25', 28),
-('Classical Sunday', '2022-02-12', 54),
-('Blues Revival', '2022-02-25', 81),
-('Festival Nights', '2022-03-10', 161),
-('Bohemian Vibes', '2022-03-25', 134),
-('House Party Anthems', '2022-04-15', 11),
-('Soulful Evenings', '2022-04-30', 122),
-('Ocean Waves', '2022-05-10', 42),
-('Feel the Groove', '2022-05-28', 156),
-('Weekend Jams', '2022-06-05', 99),
-('Bossa Nova Bliss', '2022-06-20', 110),
-('Morning Energy', '2022-07-08', 14),
-('Cafe Chillout', '2022-07-22', 75),
-('Rock Ballads', '2022-08-05', 171),
-('Guitar Solos', '2022-08-18', 56),
-('Street Vibes', '2022-09-02', 28),
-('Acoustic Covers', '2022-09-15', 196),
-('Halloween Hits', '2022-10-20', 6),
-('Indie Anthems', '2022-10-30', 146),
-('Christmas Cheer', '2022-12-05', 163),
-('Saxophone Nights', '2022-12-20', 39),
-('Pop Party', '2023-01-12', 45),
-('Winter Blues', '2023-01-25', 117),
-('Love Ballads', '2023-02-14', 89),
-('Early Bird Beats', '2023-02-28', 29),
-('Retro Funk', '2023-03-10', 179),
-('Vinyl Treasures', '2023-03-25', 155),
-('Open Road Vibes', '2023-04-15', 183),
-('Festival Favourites', '2023-04-28', 101),
-('City Lights', '2023-05-10', 39),
-('Dreamy Pop', '2023-05-20', 120),
-('Indie Acoustic', '2023-06-01', 10),
-('Feel Good Fridays', '2023-06-15', 45),
-('Island Rhythms', '2023-07-05', 97),
-('Night Drive', '2023-07-25', 52),
-('The Chill Spot', '2023-08-08', 58),
-('Weekend Relax', '2023-08-20', 98),
-('Autumn Walks', '2023-09-10', 82),
-('Haunted Tunes', '2023-10-25', 132),
-('Coastal Drive', '2023-11-05', 167),
-('Holiday Magic', '2023-12-20', 59),
-('Fireplace Warmth', '2023-12-31', 113),
-('Midnight Magic', '2024-01-15', 65),
-('Fresh Vibes', '2024-01-28', 174),
-('Love & Harmony', '2024-02-14', 29),
-('Serenity Sounds', '2024-02-28', 147),
-('Afternoon Bliss', '2024-03-12', 39),
-('Rooftop Sessions', '2024-03-30', 61),
-('Desert Dreams', '2024-04-10', 8),
-('Wild Adventures', '2024-04-25', 96),
-('Tropical Escape', '2024-05-15', 162),
-('Urban Chill', '2024-05-30', 168),
-('Smooth Jazz Nights', '2024-06-20', 179),
-('Sunset Lounge', '2024-06-30', 134),
-('Morning Dew', '2024-07-12', 175),
-('Hidden Gems', '2024-07-25', 112),
-('Global Tunes', '2024-08-15', 137),
-('Evening Stars', '2024-08-30', 27),
-('City Stories', '2024-09-10', 64),
-('Cozy Evenings', '2024-09-25', 33),
-('October Chill', '2024-10-15', 148),
-('Haunting Melodies', '2024-10-31', 88),
-('Winter Glow', '2024-11-20', 166),
-('Tranquil Tunes', '2021-01-12', 40),
-('Candlelight Classics', '2021-02-18', 118),
-('Spring Awakening', '2021-03-10', 154),
-('Festival Beats', '2021-04-15', 17),
-('Vintage Vinyl', '2021-05-08', 91),
-('Road Trip Anthems', '2021-06-25', 162),
-('Summer Vibes', '2021-07-10', 163),
-('Peaceful Piano', '2021-08-12', 39),
-('Evening Groove', '2021-09-05', 60),
-('Coastal Chill', '2021-10-15', 101),
-('Winter Wonders', '2021-11-10', 125),
-('Holiday Memories', '2021-12-22', 82),
-('New Year Hopes', '2022-01-01', 99),
-('Morning Calm', '2022-01-20', 40),
-('Rainy Reflections', '2022-02-10', 47),
-('Ocean Dreams', '2022-03-08', 134),
-('Happy Hour', '2022-04-02', 91),
-('Sunlit Pathways', '2022-05-15', 159),
-('Epic Escapes', '2022-06-18', 106),
-('Under the Stars', '2022-07-30', 51),
-('Golden Sunsets', '2022-08-20', 74),
-('Falling Leaves', '2022-09-15', 19),
-('Cozy Winter Nights', '2022-10-22', 75),
-('Halloween Haunts', '2022-10-31', 28),
-('Autumn Serenity', '2022-11-20', 72),
-('December Dreams', '2022-12-15', 140),
-('Midnight Bliss', '2023-01-05', 53),
-('Sunrise Serenity', '2023-01-22', 131),
-('Dream Catcher', '2023-02-08', 81),
-('Love Stories', '2023-02-14', 144),
-('High Spirits', '2023-03-01', 164),
-('Evening Echoes', '2023-04-10', 108),
-('Breeze Beats', '2023-05-12', 175),
-('Summer Serenades', '2023-06-20', 72),
-('Quiet Reflections', '2023-07-15', 96),
-('City Wanderlust', '2023-08-01', 57),
-('Harvest Rhythms', '2023-09-25', 178),
-('Wicked Vibes', '2023-10-13', 168),
-('Moonlight Melodies', '2023-11-05', 110),
-('Frosty Feelings', '2023-12-11', 109),
-('Rebirth Tunes', '2024-01-03', 40),
-('Calm After Storm', '2024-02-10', 151),
-('Harmony Haven', '2024-03-20', 88),
-('Desert Breeze', '2024-04-25', 114),
-('Island Chill', '2024-05-12', 155),
-('Hidden Horizons', '2024-06-05', 82),
-('Evening Glow', '2024-07-10', 164),
-('Urban Escapes', '2024-08-08', 62),
-('Whispering Winds', '2024-09-02', 109),
-('Mystic Rhythms', '2024-10-10', 106),
-('Winter Whispers', '2024-11-18', 19);
+INSERT INTO Playlists (PlaylistName, CreatedDate, UserID)
+SELECT 
+    PlaylistName,
+    DATE_ADD(Users.JoinedDate, INTERVAL FLOOR(RAND() * 365) + 1 DAY) AS CreatedDate,
+    Users.UserID
+FROM 
+    (SELECT 
+        'The Ultimate Rock Classics Playlist for Every Mood 836' AS PlaylistName, 1 AS UserID
+    UNION
+        SELECT 'Chill Vibes for a Perfect Evening with Friends 713', 2
+    UNION
+        SELECT 'Essential Jazz Tracks to Relax and Unwind 894', 3
+    UNION
+        SELECT 'Summer Hits to Keep You Dancing All Day 142', 4
+    UNION
+        SELECT 'Indie Beats to Enhance Your Creative Mindset 451', 5
+    UNION
+        SELECT 'Party Playlist for an Unforgettable Night Out 274', 6
+    UNION
+        SELECT 'Relaxing Tunes to Calm Your Soul After a Busy Day 634', 7
+    UNION
+        SELECT 'Workout Motivation with High-Energy Songs 852', 8
+    UNION
+        SELECT 'Classical Masterpieces to Set the Perfect Mood 319', 9
+    UNION
+        SELECT 'Throwback Hits from the 90s to Relive Your Youth 915', 10
+    UNION
+        SELECT 'Mood Boosters to Lift Your Spirits in Any Situation 451', 11
+    UNION
+        SELECT 'Romantic Playlist for a Cozy Night with Someone Special 813', 12
+    UNION
+        SELECT 'Morning Coffee and Chill Tunes to Start Your Day Right 204', 13
+    UNION
+        SELECT 'Dance Party Playlist for the Best Moves All Night Long 489', 14
+    UNION
+        SELECT 'Rock and Roll Anthems to Pump Up Your Energy 392', 15
+    UNION
+        SELECT 'Acoustic Favorites for a Cozy Afternoon at Home 932', 16
+    UNION
+        SELECT 'Hip Hop Beats to Feel the Rhythm of the Streets 557', 17
+    UNION
+        SELECT 'Relaxing Piano Melodies for a Peaceful Evening 661', 18
+    UNION
+        SELECT 'Pop Hits for Every Celebration and Good Time 930', 19
+    UNION
+        SELECT 'Road Trip Tunes for Your Next Adventure 168', 20
+    UNION
+        SELECT 'Chill Jazz to Wind Down and Enjoy the Night 315', 21
+    UNION
+        SELECT 'R&B Vibes for a Smooth and Sexy Evening 110', 22
+    UNION
+        SELECT 'Night Drive Playlist to Keep You Energized After Dark 852', 23
+    UNION
+        SELECT 'Indie Rock Essentials for a Refreshing Sound 583', 24
+    UNION
+        SELECT 'Electronic Dance Music for an Epic Party Vibe 274', 25
+    UNION
+        SELECT 'Motivational Mix to Get You Through the Toughest Days 901', 26
+    UNION
+        SELECT 'Old School Hip Hop Classics to Feel the Beat 745', 27
+    UNION
+        SELECT 'Relaxing Mornings with Soft Tunes to Start Your Day 426', 28
+    UNION
+        SELECT 'Chillhop Beats for the Perfect Study Session 719', 29
+    UNION
+        SELECT 'Ambient Sounds for a Perfect Meditation Experience 202', 30
+    UNION
+        SELECT 'Fresh Pop Tracks to Keep You Moving 543', 31
+    UNION
+        SELECT 'Rock Ballads to Touch Your Heart 352', 32
+    UNION
+        SELECT 'Classic Country Hits to Relive the Glory Days 763', 33
+    UNION
+        SELECT 'Latin Rhythms for a Dance Party 119', 34
+    UNION
+        SELECT 'Guitar Solo Magic to Impress the Crowd 459', 35
+    UNION
+        SELECT 'Electric Blues for a Soulful Evening 560', 36
+    UNION
+        SELECT 'Piano Solos for a Reflective Afternoon 349', 37
+    UNION
+        SELECT 'Instrumental Chillout for Focused Work 894', 38
+    UNION
+        SELECT 'Epic Movie Soundtracks to Feel Like a Hero 820', 39
+    UNION
+        SELECT 'Ska and Reggae for a Relaxed Vibe 312', 40
+    UNION
+        SELECT 'Fresh Indie Discoveries for Every Mood 293', 41
+    UNION
+        SELECT 'Synthwave Hits to Get Lost in Time 501', 42
+    UNION
+        SELECT 'Classical Music for Study and Focus 854', 43
+    UNION
+        SELECT 'Folk Songs for a Peaceful Getaway 660', 44
+    UNION
+        SELECT 'Experimental Sounds for Open Minds 439', 45
+    UNION
+        SELECT 'Classic Rock Hits to Keep You Pumped Up 233', 46
+    UNION
+        SELECT 'Top 40 Pop Hits for Every Party 512', 47
+    UNION
+        SELECT 'Funky Grooves for a Feel-Good Day 320', 48
+    UNION
+        SELECT 'Groovy Beats for an Afternoon Chillout 175', 49
+    UNION
+        SELECT 'Vocal Jazz for Relaxing Moments 586', 50
+    UNION
+        SELECT 'Alternative Rock Gems for a Fresh Sound 302', 51
+    UNION
+        SELECT 'Dream Pop Playlist for Peaceful Nights 203', 52
+    UNION
+        SELECT 'Lo-fi Chill Beats for Studying or Relaxing 104', 53
+    UNION
+        SELECT 'Top Reggae Hits to Set the Island Vibes 309', 54
+    UNION
+        SELECT 'Electronic Chillout for a Modern Relaxation 248', 55
+    UNION
+        SELECT 'Metal Anthems to Fuel Your Energy 981', 56
+    UNION
+        SELECT 'Country Duets for a Romantic Evening 742', 57
+    UNION
+        SELECT 'Indie Folk for a Calming Escape 150', 58
+    UNION
+        SELECT 'Symphonic Masterpieces to Amaze Your Ears 421', 59
+    UNION
+        SELECT 'Progressive Rock for an Epic Journey 389', 60
+    UNION
+        SELECT 'Hip Hop Classics for Old-School Vibes 557', 61
+    UNION
+        SELECT 'Jazz Fusion Tracks to Impress Your Friends 389', 62
+    UNION
+        SELECT 'The Best of 80s Dance Music 240', 63
+    UNION
+        SELECT 'World Music for a Cultural Experience 190', 64
+    UNION
+        SELECT 'Acoustic Love Songs for Special Moments 899', 65
+    UNION
+        SELECT 'Pop Punk Hits to Revive Your Teenage Spirit 162', 66
+	    UNION
+        SELECT 'Pop Rock Favorites for a Nostalgic Night', 67
+    UNION
+        SELECT 'Soulful Ballads to Ease Your Mind', 68
+    UNION
+        SELECT 'Groove Essentials for Funk Lovers', 69
+    UNION
+        SELECT 'Country Road Trip Playlist', 70
+    UNION
+        SELECT 'Electronic Chill Beats for Creative Work', 71
+    UNION
+        SELECT 'Feel-Good Acoustic Covers', 72
+    UNION
+        SELECT 'High-Energy EDM Party Mix', 73
+    UNION
+        SELECT 'Blues Legends: The Best of All Time', 74
+    UNION
+        SELECT 'Vocal Harmony Gems', 75
+    UNION
+        SELECT 'Alternative Hits for an Adventurous Mood', 76
+    UNION
+        SELECT 'Pop Ballads to Sing Along', 77
+    UNION
+        SELECT 'Classic Opera Arias for a Majestic Feel', 78
+    UNION
+        SELECT 'Indie Favorites for Music Explorers', 79
+    UNION
+        SELECT 'Rock and Blues Crossover Classics', 80
+    UNION
+        SELECT 'Summer Chill: The Ultimate Beach Playlist', 81
+    UNION
+        SELECT 'Smooth Jazz Vibes for Cozy Nights', 82
+    UNION
+        SELECT 'Hip Hop Party Anthems', 83
+    UNION
+        SELECT 'Meditative Tracks for Deep Focus', 84
+    UNION
+        SELECT 'Pop Hits from the 2000s', 85
+    UNION
+        SELECT 'Romantic Latin Ballads', 86
+    UNION
+        SELECT 'Psychedelic Rock Classics', 87
+    UNION
+        SELECT 'Electronic Lounge Music', 88
+    UNION
+        SELECT 'Power Ballads for a Heartfelt Journey', 89
+    UNION
+        SELECT 'Rising Indie Stars', 90
+    UNION
+        SELECT 'Afrobeats Rhythms for a Vibrant Dance', 91
+    UNION
+        SELECT 'Jazz Standards for the Perfect Dinner Party', 92
+    UNION
+        SELECT 'Grunge Rock Essentials', 93
+    UNION
+        SELECT 'Global Beats for a Worldly Experience', 94
+    UNION
+        SELECT 'Opera Duets for a Magical Evening', 95
+    UNION
+        SELECT 'K-Pop Favorites for Fans Worldwide', 96
+    UNION
+        SELECT 'Retro Hits from the 80s', 97
+    UNION
+        SELECT 'Singer-Songwriter Favorites', 98
+    UNION
+        SELECT 'Pop Divas: The Ultimate Playlist', 99
+    UNION
+        SELECT 'Relaxing Nature Sounds', 100
+    UNION
+        SELECT 'Bossa Nova Classics', 101
+    UNION
+        SELECT 'Dark Synthwave for Night Owls', 102
+    UNION
+        SELECT 'Gospel and Spiritual Favorites', 103
+    UNION
+        SELECT 'Irish Folk Songs for a Cultural Journey', 104
+    UNION
+        SELECT 'Garage Rock Revival', 105
+    UNION
+        SELECT 'Top Hits for a Workout Boost', 106
+    UNION
+        SELECT 'Broadway Showstoppers', 107
+    UNION
+        SELECT 'Epic Gaming Soundtracks', 108
+    UNION
+        SELECT 'Festival Anthems: Summer Edition', 109
+    UNION
+        SELECT 'Intense Metal for the Ultimate Energy', 110
+    UNION
+        SELECT 'Lush Instrumentals for Reflection', 111
+    UNION
+        SELECT 'Beachside Chill: The Ultimate Relaxation Mix', 112
+    UNION
+        SELECT 'Jazzy Christmas Classics', 113
+    UNION
+        SELECT 'R&B Throwbacks for the Soul', 114
+    UNION
+        SELECT 'Top Indie Rock Anthems', 115
+    UNION
+        SELECT 'Melodic Dubstep for Creative Flow', 116
+    UNION
+        SELECT 'Summer Reggae Party', 117
+    UNION
+        SELECT 'Symphonic Fantasy Adventures', 118
+    UNION
+        SELECT 'Dreamy Pop Tunes for a Chill Vibe', 119
+    UNION
+        SELECT 'Hardcore Rock Hits to Get You Moving', 120
+    UNION
+        SELECT 'Country Love Songs for a Romantic Night', 121
+    UNION
+        SELECT 'Peaceful Guitar Melodies for a Quiet Evening', 122
+    UNION
+        SELECT 'Epic Choral Performances', 123
+    UNION
+        SELECT 'Indie Electronic Explorations', 124
+    UNION
+        SELECT 'Big Band Swing Classics', 125
+    UNION
+        SELECT 'Blues Revival: Modern Takes on a Classic Genre', 126
+    UNION
+        SELECT 'Golden Age of Hollywood Soundtracks', 127
+    UNION
+        SELECT 'Feel-Good Anthems for Any Occasion', 128
+    UNION
+        SELECT 'Punk Rock Essentials', 129
+    UNION
+        SELECT 'World Fusion: A Cultural Melting Pot', 130
+    UNION
+        SELECT 'Acoustic Favorites for a Cozy Afternoon', 131
+    UNION
+        SELECT 'Upbeat K-Pop Party Mix', 132
+    UNION
+        SELECT 'Opera Highlights: The Greatest Moments', 133
+    UNION
+        SELECT 'Lo-fi Beats for Relaxed Vibes', 134
+    UNION
+        SELECT 'Vintage Jazz Club Hits', 135
+    UNION
+        SELECT 'Chill Electronic Vibes for the Perfect Sunset', 136
+    UNION
+        SELECT 'Guitar Heroes: Iconic Solos', 137
+    UNION
+        SELECT 'Funky Jazz Fusion', 138
+    UNION
+        SELECT 'Latin Dance Hits', 139
+    UNION
+        SELECT 'Alternative Pop Anthems', 140
+    UNION
+        SELECT 'Symphonic Metal Power Ballads', 141
+    UNION
+        SELECT 'Relaxing Binaural Beats', 142
+    UNION
+        SELECT 'Dreamy Synth Pop for a Retro Mood', 143
+    UNION
+        SELECT 'R&B Soul Revival', 144
+    UNION
+        SELECT 'Indie Acoustic Covers', 145
+    UNION
+        SELECT 'Upbeat Jazz Instrumentals', 146
+    UNION
+        SELECT 'Ambient Guitar Scapes', 147
+    UNION
+        SELECT 'Melancholy Tunes for Reflection', 148
+    UNION
+        SELECT 'Psybient Beats for Relaxed Energy', 149
+    UNION
+        SELECT 'Neo-Soul for a Modern Groove', 150) AS Playlists
+JOIN 
+    Users ON Users.UserID = Playlists.UserID;
+UPDATE Playlists
+SET UserID = FLOOR(1 + (RAND() * 200));
+select * from Playlists;
+
 INSERT INTO Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) VALUES
 ('Intro: Boy Meets Evil', 120, '2016-10-10', 'Korean', 4, 4),
 ('Blood Sweat & Tears', 217, '2016-10-10', 'Korean', 4, 4),
@@ -3407,8 +3548,28 @@ INSERT INTO Library_Songs (LibraryID, SongID, AddedDate) VALUES
 (69, 565, '2024-12-14'),
 (62, 413, '2024-12-15');
 
+INSERT INTO Ratings (UserID, SongID, Rating, Review, CreatedDate)
+SELECT 
+    U.UserID,
+    FLOOR(1 + (RAND() * 748)),
+    FLOOR(1 + (RAND() * 5)),
+    CASE 
+        WHEN RAND() > 0.5 THEN 'Great song!' 
+        ELSE NULL 
+    END,
+    DATE_ADD(U.JoinedDate, INTERVAL (RAND() * 365) DAY)
+FROM
+    (SELECT UserID, JoinedDate FROM Users ORDER BY RAND() LIMIT 350) AS U; 
 
-    
+UPDATE ArtistFollow
+SET FollowDate = DATE_ADD('2010-01-01', INTERVAL (RAND() * 900) DAY) ;
+UPDATE Users
+SET Member = CASE 
+    WHEN RAND() < 0.4 THEN 'NORMAL'
+    WHEN RAND() < 0.7 THEN 'PREMIUM'
+    ELSE 'VIP'
+END;
+
 Alter table Album drop column GenreID;
 select * from Album;
 select * from Artist;
@@ -3417,41 +3578,10 @@ select * from Genres;
 select * from Playlists;
 select * from Songs;
 select * from Playlist_Songs;
--- Đảm bảo có ít nhất 350 bản ghi trong bảng Ratings
--- Chèn dữ liệu với thời gian ngẫu nhiên cho mỗi bản ghi
-INSERT INTO Ratings (UserID, SongID, Rating, Review, CreatedDate)
-SELECT 
-    FLOOR(1 + (RAND() * 200)),  -- Chọn ngẫu nhiên UserID từ 1 đến 200
-    FLOOR(1 + (RAND() * 748)),  -- Chọn ngẫu nhiên SongID từ 1 đến 748
-    FLOOR(1 + (RAND() * 5)),    -- Chọn ngẫu nhiên Rating từ 1 đến 5
-    CASE 
-        WHEN RAND() > 0.5 THEN 'Great song!' 
-        ELSE NULL 
-    END,  -- Một số bản ghi có thể có review, một số không
-    -- Tạo thời gian ngẫu nhiên từ 2024-01-01 đến 2024-12-31
-    DATE_ADD('2022-01-01', INTERVAL (RAND() * 900) DAY)  
-FROM 
-    (SELECT 1 FROM information_schema.tables LIMIT 350) AS temp;
--- Chèn dữ liệu vào bảng Library với sự đa dạng
--- Chèn dữ liệu vào bảng Library với tên thư viện phong phú hơn
-UPDATE Users
-SET JoinedDate = DATE_ADD('2022-01-01', INTERVAL (RAND() * 900) DAY) ;
-UPDATE ArtistFollow
-SET FollowDate = DATE_ADD('2022-01-01', INTERVAL (RAND() * 900) DAY) ;
-UPDATE Users
-SET Member = CASE 
-    WHEN RAND() < 0.4 THEN 'NORMAL'
-    WHEN RAND() < 0.7 THEN 'PREMIUM'
-    ELSE 'VIP'
-END;
-USE music;
-UPDATE library l
-JOIN users u ON l.userID = u.userID
-SET l.createdDate = u.joinedDate + INTERVAL 1 DAY
-WHERE l.createdDate < u.joinedDate;
 
 select * from Ratings;
 select * from Library;
 select * from ArtistFollow;
 select * from Album;
+select * from Playlists;
 
