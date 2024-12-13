@@ -43,3 +43,80 @@ BEGIN
 END $$
 
 DELIMITER ;
+-- 4. Lấy danh sách tất cả các playlists của một người dùng
+DELIMITER $$
+CREATE PROCEDURE GetPlaylistsByUser(
+    IN UserNameIs VARCHAR(100)
+)
+BEGIN
+    SELECT p.PlaylistName, p.CreatedDate
+    FROM playlists p
+    JOIN users u ON p.UserID = u.UserID
+    WHERE u.UserName = UserNameIs;
+END$$
+DELIMITER ;
+
+-- 5. Thêm một bài hát mới vào playlist
+DELIMITER $$
+CREATE PROCEDURE AddSongToPlaylist(
+    IN PlaylistNameIs VARCHAR(100),
+    IN SongIDIs INT
+)
+BEGIN
+    DECLARE PlaylistID INT;
+    SELECT PlaylistID INTO PlaylistID
+    FROM playlists
+    WHERE PlaylistName = PlaylistNameIs;
+    
+    IF PlaylistID IS NOT NULL THEN
+        INSERT INTO playlist_songs (PlaylistID, SongID)
+        VALUES (PlaylistID, SongIDIs);
+    END IF;
+END$$
+DELIMITER ;
+
+-- 6. Lấy tất cả bài hát của một thể loại cụ thể
+DELIMITER $$
+CREATE PROCEDURE GetSongsByGenre(
+    IN GenreNameIs VARCHAR(50)
+)
+BEGIN
+    SELECT s.SongName, s.Duration
+    FROM songs s
+    JOIN genres g ON s.GenreID = g.GenreID
+    WHERE g.GenreName = GenreNameIs;
+END$$
+DELIMITER ;
+
+-- 7. Đánh giá một bài hát (thêm rating vào bảng ratings)
+DELIMITER $$
+CREATE PROCEDURE AddRatingToSong(
+    IN UserIDIs INT,
+    IN SongIDIs INT,
+    IN RatingValue TINYINT,
+    IN ReviewText TEXT
+)
+BEGIN
+    INSERT INTO ratings (UserID, SongID, Rating, Review, CreatedDate)
+    VALUES (UserIDIs, SongIDIs, RatingValue, ReviewText, NOW());
+END$$
+DELIMITER ;
+
+-- 8. Lấy danh sách các nghệ sĩ được theo dõi bởi một người dùng
+DELIMITER $$
+CREATE PROCEDURE GetFollowedArtists(
+    IN UserIDIs INT
+)
+BEGIN
+    SELECT a.ArtistName, a.Country, a.Style
+    FROM artistfollow af
+    JOIN artist a ON af.ArtistID = a.ArtistID
+    WHERE af.UserID = UserIDIs;
+END$$
+DELIMITER ;
+
+CALL GetPlaylistsByUser('Samantha Blue');
+CALL AddSongToPlaylist('My Favorite Playlist', 5);
+CALL GetSongsByGenre('Pop');
+CALL GetFollowedArtists(1);
+
