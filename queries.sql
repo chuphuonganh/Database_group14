@@ -364,4 +364,268 @@ WHERE AlbumID IN (
     FROM album
     WHERE AlbumName LIKE 'A%'
 );
+-- ---------------------------------------------------------------------
+-- PHẦN 4: SUBQUERY IN FROM
+-- 1.Tìm người dùng có tổng số bài hát trong thư viện lớn nhất
+with temp as(
+select sum(l.TotalSongs) as TotalSongs, l.UserID, u.UserName from Library l
+join Users u on l.UserID = u.UserID 
+group by u.UserID, u.UserName) 
+select TotalSongs, UserID, UserName from temp
+where TotalSongs = (select max(TotalSongs) from temp);
+
+-- 2. Tính số người dùng trung bình trên mỗi quốc gia 
+SELECT Country, AVG(UserCount) AS AvgUsers
+FROM (
+    SELECT Users.Country, COUNT(Users.UserID) AS UserCount
+    FROM Users
+    GROUP BY Users.Country
+) AS CountryUsers
+GROUP BY Country;
+
+-- 3. Tổng số lượng đánh giá mỗi bài hát
+SELECT s.SongName, COUNT(subquery.RatingID) AS TotalTurnsRatings
+FROM songs s
+INNER JOIN (
+    SELECT r.RatingID, r.SongID
+    FROM ratings r
+) AS subquery ON s.SongID = subquery.SongID
+GROUP BY s.SongName;
+
+-- 4.Tổng thời lượng bài hát trong album
+SELECT a.AlbumName, SUM(subquery.Duration) AS TotalDuration
+FROM album a
+INNER JOIN (
+    SELECT s.AlbumID, s.Duration
+    FROM songs s
+) AS subquery ON a.AlbumID = subquery.AlbumID
+GROUP BY a.AlbumName;
+
+-- 5. nghệ sĩ cùng với số lượng bài hát trong thư viện
+SELECT a.ArtistName, COUNT(s.SongID) AS SongCount
+FROM artist a
+INNER JOIN album al ON a.ArtistID = al.ArtistID
+INNER JOIN songs s ON s.AlbumID = al.AlbumID
+GROUP BY a.ArtistName
+HAVING COUNT(s.SongID) > (
+    SELECT AVG(song_count)
+    FROM (
+        SELECT COUNT(s.SongID) AS song_count
+        FROM songs s
+        INNER JOIN album al ON s.AlbumID = al.AlbumID
+        GROUP BY al.ArtistID
+    ) AS artist_song_counts
+);
+
+-- 6. Playlist chứa nhiều bài hát nhất
+SELECT *
+FROM (
+    SELECT p.PlaylistName, COUNT(ps.SongID) AS TotalSongs
+    FROM playlists p
+    LEFT JOIN playlist_songs ps ON p.PlaylistID = ps.PlaylistID
+    GROUP BY p.PlaylistName
+) AS PlaylistCounts
+ORDER BY TotalSongs DESC
+LIMIT 1;
+
+-- 7. Truy vấn danh sách tên bài hát và tên nghệ sĩ cho các bài hát 
+-- có ít nhất một đánh giá lớn hơn 3 sao từ người dùng ở 'Milan', 'Italy'
+SELECT song_with_ratings.SongName, song_with_ratings.ArtistName
+FROM (
+    SELECT s.SongName, a.ArtistName, r.Rating
+    FROM Songs s
+    JOIN Album al ON al.AlbumID = s.AlbumID
+    JOIN Artist a ON al.ArtistID = a.ArtistID
+    JOIN Ratings r ON s.SongID = r.SongID
+    JOIN Users u ON r.UserID = u.UserID
+    WHERE u.City = 'Milan' AND r.Rating >= 3 and u.Country = 'Italy'
+) AS song_with_ratings;
+
+-- 8.Truy vấn danh sách người dùng đã thêm ít nhất 5 bài hát vào thư viện của mình
+SELECT user_with_library.UserName
+FROM (
+    SELECT u.UserName, COUNT(ls.SongID) AS SongCount
+    FROM Users u
+    JOIN Library l ON u.UserID = l.UserID
+    JOIN Library_Songs ls ON l.LibraryID = ls.LibraryID
+    GROUP BY u.UserName
+) AS user_with_library
+WHERE user_with_library.SongCount >= 5;
+
+-- 9. Truy vấn danh sách tên bài hát và album của bài hát có đánh giá cao nhất (5 sao)
+SELECT song_with_ratings.SongName, song_with_ratings.AlbumName
+FROM (
+    SELECT s.SongName, a.AlbumName, r.Rating
+    FROM Songs s
+    JOIN Album a ON s.AlbumID = a.AlbumID
+    JOIN Ratings r ON s.SongID = r.SongID
+    WHERE r.Rating = 5
+) AS song_with_ratings;
+
+-- 10. Truy vấn danh sách bài hát trong album '25' 
+-- được đánh giá 5 sao trở lên
+SELECT song_with_ratings.SongName, song_with_ratings.Rating
+FROM (
+    SELECT s.SongName, r.Rating
+    FROM Songs s
+    JOIN Album a ON s.AlbumID = a.AlbumID
+    JOIN Ratings r ON s.SongID = r.SongID
+    WHERE a.AlbumName = '25' AND r.Rating >= 5
+) AS song_with_ratings;
+
+-- 11.Truy vấn tên người dùng và số lượng bài hát thuộc thể loại 'Jazz' trong thư viện của họ
+SELECT DISTINCT user_library.UserName, user_library.JazzSongCount
+FROM (
+    SELECT u.UserName, COUNT(ls.SongID) AS JazzSongCount
+    FROM Users u
+    JOIN Library l ON u.UserID = l.UserID
+    JOIN Library_Songs ls ON l.LibraryID = ls.LibraryID
+    JOIN Songs s ON ls.SongID = s.SongID
+    JOIN Genres g ON s.GenreID = g.GenreID
+    WHERE g.GenreName = 'Jazz'
+    GROUP BY u.UserName
+) AS user_library;
+
+-- 12. Truy vấn danh sách các nghệ sĩ mà có ít nhất 2 bài hát được đánh giá 5 sao
+SELECT artist_with_ratings.ArtistName
+FROM (
+    SELECT a.ArtistName, COUNT(DISTINCT r.SongID) AS SongCount
+    FROM Artist a
+    JOIN Album al ON al.ArtistID = a.ArtistID
+    JOIN Songs s ON s.AlbumID = al.AlbumID
+    JOIN Ratings r ON s.SongID = r.SongID
+    WHERE r.Rating = 5
+    GROUP BY a.ArtistName
+) AS artist_with_ratings
+WHERE artist_with_ratings.SongCount >= 2;
+
+-- 13. Truy vấn danh sách người dùng có bài hát yêu thích thuộc thể loại 'Pop' nhưng chưa theo dõi nghệ sĩ nào
+SELECT DISTINCT u.UserName
+FROM (
+    SELECT u.UserID
+    FROM Users u
+    JOIN Library l ON u.UserID = l.UserID
+    JOIN Library_Songs ls ON l.LibraryID = ls.LibraryID
+    JOIN Songs s ON ls.SongID = s.SongID
+    JOIN Genres g ON s.GenreID = g.GenreID
+    WHERE g.GenreName = 'Pop'
+) AS user_with_pop_songs
+LEFT JOIN ArtistFollow af ON user_with_pop_songs.UserID = af.UserID
+LEFT JOIN Users u ON u.UserID = user_with_pop_songs.UserID
+WHERE af.ArtistID IS NULL;
+
+-- 14.Truy vấn danh sách bài hát có ít nhất một bài hát đã 
+-- được người dùng ở UK thêm vào thư viện
+SELECT song_with_user.SongName
+FROM (
+    SELECT s.SongName, ls.LibraryID
+    FROM Songs s
+    JOIN Library_Songs ls ON s.SongID = ls.SongID
+    JOIN Library l ON ls.LibraryID = l.LibraryID
+    JOIN Users u ON l.UserID = u.UserID
+    WHERE u.Country = 'UK'
+) AS song_with_user;
+
+-- 15.Tìm thể loại có số lượng bài hát nhiều nhất theo từng ngôn ngữ
+SELECT Language, GenreName, TotalSongs
+FROM (
+    SELECT s.Language, g.GenreName, COUNT(s.SongID) AS TotalSongs,
+           RANK() OVER (PARTITION BY s.Language ORDER BY COUNT(s.SongID) DESC) AS rnk
+    FROM Songs s
+    JOIN Genres g ON s.GenreID = g.GenreID
+    GROUP BY s.Language, g.GenreName
+) AS GenreLanguageStats
+WHERE rnk = 1;
+
+-- -----------------------------------------
+-- PHẦN 5: Query using group by and aggregate functions
+
+-- 1 Tổng bài hát, tổng album và tổng ArtistID
+SELECT 
+    (SELECT COUNT(SongID) FROM songs) AS TotalSongs,
+    (SELECT COUNT(AlbumID) FROM album) AS TotalAlbums,
+    (SELECT COUNT(ArtistID) FROM artist) AS TotalArtists;
+
+-- 2 Tìm album có nhiều bài hát nhất và số lượng bài hát trong đó (Group by - hàm tông hợp)
+SELECT a.AlbumName, COUNT(s.SongID) AS TotalSongs
+FROM album a
+LEFT JOIN songs s ON a.AlbumID = s.AlbumID
+GROUP BY a.AlbumID
+ORDER BY TotalSongs DESC
+LIMIT 1;
+
+-- 3. Người dùng follow bao nhiêu nghệ sĩ
+SELECT u.UserName, COUNT(DISTINCT af.ArtistID) AS TotalFollowedArtists
+FROM users u
+LEFT JOIN artistfollow af ON u.UserID = af.UserID
+GROUP BY u.UserID;
+
+-- 4. các album được xuất bản sau năm 2015 và có tổng số bài hát lớn hơn 5
+SELECT *
+FROM album a
+WHERE a.PublishedDate > '2015-01-01' AND (
+    SELECT COUNT(s.SongID)
+    FROM songs s
+    WHERE s.AlbumID = a.AlbumID
+) > 5;
+
+-- 6. Điểm đánh giá cao nhất mà mỗi bài hát nhận được
+SELECT s.SongName, MAX(r.Rating) AS HighestRating
+FROM songs s
+LEFT JOIN ratings r ON s.SongID = r.SongID
+GROUP BY s.SongName;
+
+-- 7. Số lượng bài hát trong mỗi thể loại do từng nghệ sĩ tạo ra
+SELECT a.ArtistName, g.GenreName, COUNT(s.SongID) AS TotalSongs
+FROM artist a
+LEFT JOIN album al on al.ArtistID = a.ArtistID
+LEFT JOIN songs s ON al.AlbumID = s.AlbumID
+LEFT JOIN genres g ON s.GenreID = g.GenreID
+GROUP BY a.ArtistName, g.GenreName;
+
+-- 8.Truy vấn bài hát có đánh giá cao nhất trong mỗi album
+	SELECT s.AlbumID, s.SongName, MAX(r.Rating) AS MaxRating
+	FROM Songs s
+	JOIN Ratings r ON s.SongID = r.SongID
+	GROUP BY s.AlbumID, s.SongName;
+    
+-- 8.Truy vấn các thể loại nhạc được theo dõi nhiều nhất
+	SELECT g.GenreName, COUNT(af.UserID) AS FollowCount
+	FROM Genres g
+	JOIN Songs s ON g.GenreID = s.GenreID
+    JOIN Album al on al.AlbumID = s.AlbumID
+    JOIN Artist art on art.ArtistID = al.ArtistID
+	JOIN ArtistFollow af ON art.ArtistID = af.ArtistID
+	GROUP BY g.GenreName
+	ORDER BY FollowCount DESC;
+    
+-- 9. Đếm số lượng Type Shared của tất cả User có Country = "USA"
+select count(Type) from 
+(select l.Type from Library l
+join Users u on l.UserID = u.UserID
+where u.Country = 'USA') as temp
+group by Type
+having Type = 'Shared';
+
+-- 10.Tìm nghệ sĩ có tổng số bài hát lớn nhất trong mỗi quốc gia
+select max(total) as totalSong from
+(select a.ArtistName, count(s.SongID) as total from Artist a
+join Album al on a.ArtistID = al.ArtistID
+join songs s on al.AlbumID = s.SongID
+group by a.Country, a.ArtistName) as temp ;
+
+-- 11.Tìm bài hát có đánh giá trung bình cao nhất trong mỗi ngôn ngữ
+with temp as (
+select s.SongName,s.language, avg(Rating) as averageRating  from Ratings r
+join songs s on r.SongID  = s.SongID
+ group by s.SongName, s.SongID)
+ select averageRating, SongName, language from temp
+ where (averageRating, language) in (select min(averageRating), language from temp 
+ group by language);
+
+-- 12.Tìm năm phát hành có tổng số bài hát lớn nhất 
+with temp as (select count(SongID) as totalSongs, year(publishedDate) as year from songs
+group by year(publishedDate))
+select totalSongs, year from temp
+where totalSongs = (select max(totalSongs) from temp);
 
