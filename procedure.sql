@@ -16,22 +16,26 @@ CALL GetArtistByNameOfSong('Back to December');
 
 -- 2. Dùng câu lệnh Procedures để thêm một User mới vào hệ thống
 DELIMITER $$
-	CREATE PROCEDURE InsertIntoUsers(
-		IN UserName VARCHAR(100),
-		IN Email VARCHAR(100),
-		IN JoinedDate DATETIME,
-		IN Address VARCHAR(100),
-		IN City VARCHAR(50),
-		IN Country VARCHAR(50)
-	)
-	BEGIN
-		INSERT INTO Users VALUES (UserName, Email, JoinedDate,Address, City, Country);
-	END$$
+CREATE PROCEDURE InsertIntoUsers(
+    IN UserName VARCHAR(100),
+    IN Email VARCHAR(100),
+    
+    IN JoinedDate DATETIME,
+    IN Member ENUM('NORMAL', 'PREMIUM', 'VIP'),
+    IN Address VARCHAR(100),
+    IN City VARCHAR(50),
+    IN Country VARCHAR(50)
+)
+BEGIN
+    INSERT INTO Users (UserName, Email, JoinedDate,Member, Address, City, Country) 
+    VALUES (UserName, Email, JoinedDate, Member, Address, City, Country);
+END$$
 DELIMITER ;
- 
+CALL InsertIntoUsers('Dophinmew', 'mewmew@gmail.com', NOW(),'NORMAL', 'Hoàn Long', 'Hưng Yên', 'Việt Nam');
+select * from Users
+where UserID = last_insert_id();
 --  3. Lấy danh sách bài hát trong 1 album
 DELIMITER $$
-
 CREATE PROCEDURE GetSongsByAlbumName(
     IN AlbumNameIs VARCHAR(100)
 )
@@ -43,6 +47,7 @@ BEGIN
 END $$
 
 DELIMITER ;
+CALL GetSongsByAlbumName('BE');
 -- 4. Lấy danh sách tất cả các playlists của một người dùng
 DELIMITER $$
 CREATE PROCEDURE GetPlaylistsByUser(
@@ -101,7 +106,9 @@ BEGIN
     VALUES (UserIDIs, SongIDIs, RatingValue, ReviewText, NOW());
 END$$
 DELIMITER ;
-
+CALL AddRatingToSong(134,2,4,NULL);
+select * from Ratings
+where UserID = 134 and SongID = 2;
 -- 8. Lấy danh sách các nghệ sĩ được theo dõi bởi một người dùng
 DELIMITER $$
 CREATE PROCEDURE GetFollowedArtists(
@@ -115,8 +122,10 @@ BEGIN
 END$$
 DELIMITER ;
 
-CALL GetPlaylistsByUser('Samantha Blue');
-CALL AddSongToPlaylist('My Favorite Playlist', 5);
+CALL GetPlaylistsByUser('Maya Pink');
+CALL AddSongToPlaylist('Vocal Harmony Gems', 5);
+select * from Playlists
+where PlaylistName = 'Vocal Harmony Gems';
 CALL GetSongsByGenre('Pop');
 CALL GetFollowedArtists(1);
-
+DROP PROCEDURE IF EXISTS InsertIntoUsers;

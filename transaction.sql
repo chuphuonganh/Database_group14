@@ -6,21 +6,31 @@ values ('see you again', 126, '2024-12-12', 'English', 101, 12);
 select * from songs
 where SongName = 'see you again' and Duration = 126;
 rollback;
+select * from songs
+where SongName = 'see you again' and Duration = 126;
 
 -- 2.Thêm nghệ sĩ mới và hoàn tác
 start TRANSACTION;
 insert into Artist(ArtistName, Country, Style, City, DateOfBirth, Phone)
 values ('Đàm Vĩnh Hưng', 'Việt Nam', 'Rock', 'Hưng Yên', '2005-11-14', 
-'23020390');  
+'23020390');
+select * from Artist
+where ArtistName = 'Đàm Vĩnh Hưng';  
 ROLLBACK;
+select * from Artist
+where ArtistName = 'Đàm Vĩnh Hưng';  
 
 -- thêm nghệ sĩ và bài hát, quay lại điểm lưu nếu không thêm được bài hát
 start TRANSACTION;
 savepoint add_artist;
 insert into Artist (ArtistName, Country, Style, City, DateOfBirth, Phone) 
 values  ('ali cooper', 'UK', 'Pop', 'London', '1985-06-15', '987654321');
+select * from Artist
+where ArtistID = last_insert_id();
 insert into Songs (SongName, Duration, PublishedDate, Language, AlbumID, GenreID) 
 values('Pop Tune', 200, '2024-04-01', 'English', NULL, 1);
+select  * from songs
+where SongID = last_insert_id();
 ROLLBACK TO add_artist;
 
 -- 2. Thêm một Playlist và thêm bài hát vào Playlist đó, sau đó hủy
@@ -45,14 +55,19 @@ start TRANSACTION;
 update Ratings
 set Rating = 5
 where UserID = 10 AND SongID = 65;
-insert into Ratings (UserID, SongID, Rating, Review, CreatedDate) 
-values (1, 2, 5, 'Amazing song!', NOW());
+select * from Ratings
+where UserID = 10;
 ROLLBACK;
 
 -- 5.Xóa đánh giá bài hát và hủy 
+select * from Ratings
+where UserID = 193;
+
 start TRANSACTION;
 delete from Ratings
-where UserID = 193 and Review = 'Great song!';
+where UserID = 193;
+select * from Ratings
+where UserID = 193;
 ROLLBACK;
 
 -- 7.Theo dõi nghệ sĩ và thêm bài hát vào thư viện
@@ -76,38 +91,31 @@ values(7,134);
 ROLLBACK TO before_add_songs;
 
 -- 9. Cập nhật bài hát và đánh giá bài hát, quay lại điểm lưu nếu xảy ra lỗi khi đánh giá:
+select * from songs
+where SongID = 225;
+select * from Ratings
+where SongID = 225 and UserID = 146;
 start transaction;
 savepoint add_song;
 update Songs 
 set AlbumID = 80
-where SongName = 'Have You Ever?';
-set @tempID = (select AlbumID from Songs where SongName = 'Have You Ever?');
-
+where SongID = 225;
 savepoint add_rating;
 insert into Ratings (UserID, SongID, Rating, Review, CreatedDate) 
-select 8, @tempID, 100, 'Masterpiece!', NOW()
+select 2, 225, 5, 'Great Song!', '2011-12-20'
 from dual
 where not exists(
     select 1 from Ratings 
-    where UserID = 8 and SongID = @tempID
+    where UserID = 2 and SongID = 225
 );
 rollback to add_rating;
-rollback to add_song;
-
+rollback;
 -- 10.Quản lý album và danh sách phát, quay lại điểm lưu nếu xảy ra lỗi khi thêm bài hát vào playlist
-start transaction;
-
-savepoint update_album;
 select * from songs;
-update songs 
-set AlbumID = 45
-where SongName = 'Life Goes On' and AlbumID != 45;
-
-set @songid = (select SongID from songs where SongName = 'Life Goes On');
-set @playlistid = (select PlaylistID from Playlists where PlaylistName = 'Party Hits' and UserID = 98);
-
+start transaction;
+set @songid = (select SongID from songs where SongName = 'Begin');
+set @playlistid = (select PlaylistID from Playlists where PlaylistID = 32 );
 savepoint add_song_to_playlist;
-
 insert into Playlist_Songs (PlaylistID, SongID)
 select @playlistid, @songid
 from dual
@@ -115,9 +123,6 @@ where not exists (
     select 1 from Playlist_Songs 
     where PlaylistID = @playlistid and SongID = @songid
 );
-
-rollback to add_song_to_playlist;
-
-rollback to update_album;
-
-commit;
+select * from Playlist_Songs
+where PlaylistID = @playlistid and SongID = @songid;
+rollback;

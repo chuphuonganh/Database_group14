@@ -12,12 +12,12 @@ begin
 END$$
 DELIMITER ;
 -- test hoàn thiện
-select TotalSongs from Library
+select LibraryID, TotalSongs from Library
 where LibraryID = 18;
 select * from Library_Songs;
 insert into Library_Songs(LibraryID, SongID)
 values(18, 34);
-select TotalSongs from Library
+select LibraryID, TotalSongs from Library
 where LibraryID = 18;
 
 -- 2.Tự động trừ đi một bài khi xóa 1 bài khỏi Library
@@ -31,9 +31,11 @@ begin
 end $$
 DELIMITER ;
 -- test hoàn thiện
+select LibraryID, TotalSongs from Library
+where LibraryID = 18;
 delete from Library_Songs
 where LibraryID = 18 and SongID = 34;
-select TotalSongs from Library
+select LibraryID, TotalSongs from Library
 where LibraryID = 18;
 
 -- 3.Trigger kiểm tra bài hát có tồn tại trước khi thêm bài không 
@@ -120,15 +122,30 @@ rollback;
 -- 5. Tự động chuẩn hóa định dạng Artist thành chữ thường
 DELIMITER $$
 create trigger normalize_artist_name
-before insert on Artist for each row
+before insert on Artist
+for each row
 begin
-	set NEW.ArtistName = Lower(NEW.ArtistName);
+    declare pos int default 1;
+    declare len int default 0;
+    declare result varchar(255) default '';
+
+    set new.ArtistName = trim(lower(new.ArtistName));
+
+    while pos <= char_length(new.ArtistName) do
+        if pos = 1 or substring(new.ArtistName, pos - 1, 1) = ' ' then
+            set result = concat(result, upper(substring(new.ArtistName, pos, 1)));
+        else
+            set result = concat(result, substring(new.ArtistName, pos, 1));
+        end if;
+        set pos = pos + 1;
+    end while;
+    set new.ArtistName = result;
 end $$
 DELIMITER ;
 -- test hoàn thiện
 start transaction;
 insert into Artist(ArtistName)
-values('KAGG GLE');
+values('KAGGGLE');
 select * from Artist
 where ArtistID = last_insert_id();
 rollback;
@@ -158,7 +175,8 @@ DELIMITER ;
 start transaction;
 select count(r.Rating), r.UserID, u.Member from Ratings r
 join Users u on r.UserID = u.UserID
-group by r.UserID, u.Member; 
+group by r.UserID, u.Member
+having r.UserID = 24; 
 INSERT INTO Ratings(UserID, SongID, Rating) values
 (24,12,3);
 select * from Users where UserID = 24;
