@@ -63,63 +63,7 @@ create table if not exists Library_Log(
 	LogID INT AUTO_INCREMENT PRIMARY KEY,
     LibraryID INT NOT NULL,
     SongID INT NOT NULL,
-    Action ENUM('ADD', 'REMOVE') NOT NULL,
-    ActionDate DATETIME DEFAULT CURRENT_TIMESTAMP );
--- Trigger ghi log khi thêm bài hát 
-DELIMITER $$
-create trigger after_add_song_to_library_log
-after insert on Library_Songs for each row
-begin
-	insert into Library_Log(LibraryID, SongID, Action)
-	values(NEW.LibraryID, NEW.SongID, 'ADD');
-	end $$
-DELIMITER ;
--- test hoàn thiện
-insert into Library_Songs(LibraryID, SongID)
-values(4, 577);
-select * from Library_Log
-where LibraryID = 4 and SongID = 577;
-
--- Trigger ghi log khi xóa bài hát
-DELIMITER $$
-create trigger after_delete_song_from_library_log
-after delete on Library_Songs for each row
-begin
-	insert into Library_Log(LibraryID, SongID, Action)
-	values(OLD.LibraryID, OLD.SongID, 'REMOVE');
-	end $$
-DELIMITER ;
-
--- test hoàn thiện
-delete from Library_Songs
-where LibraryID = 4 and SongID = 577;
-select * from Library_Log
-where LibraryID = 4 and SongID = 577;
-
--- 4. Trigger giới hạn số lượng bài hát của mỗi thư viện
-DELIMITER $$
-create trigger before_add_song_to_library_limit
-before insert on Library_Songs for each row
-begin
-	declare song_count int;
-    select TotalSongs into song_count from Library
-    where LibraryID = NEW.LibraryID;
-    if song_count >= 500
-    then
-		SIGNAL SQLSTATE '45000'
-        set message_text='Thư viện không thể có hơn 500 bài';
-	end if;
-end $$
-DELIMITER ;
--- test hoàn thiện
-start transaction;
-insert into Library(UserID, LibraryName, TotalSongs)
-values(89, 'Electronic', 500);
-insert into Library_Songs(LibraryID, SongID)
-values(last_insert_id(), 15);
-rollback;
-
--- 5. Tự động chuẩn hóa định dạng Artist thành chữ thường
+    Action ENUM('ADD', 'REMOVE') đầu
 DELIMITER $$
 create trigger normalize_artist_name
 before insert on Artist
