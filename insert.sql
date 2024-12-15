@@ -1,3 +1,4 @@
+USE Music;
 INSERT INTO Artist (ArtistName, Country, Style, City, DateOfBirth, Phone, Email) VALUES
 ('Taylor Swift', 'USA', 'Pop', 'Nashville', '1989-12-13', '1234567890', 'taylor@swift.com'),
 ('Ed Sheeran', 'UK', 'Pop, Folk', 'Halifax', '1991-02-17', '0987654321', 'ed@sheeran.com'),
